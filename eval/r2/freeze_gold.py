@@ -9,6 +9,7 @@
 必须在任何第二轮模型调用之前运行并提交。用法：
   uv run python eval/r2/freeze_gold.py           # 冻结
   uv run python eval/r2/freeze_gold.py --check   # 只检查（复现）
+  --dev                                           # 开发集（dev_questions.json → dev_gold.json）
 """
 
 from __future__ import annotations
@@ -91,8 +92,9 @@ def data_fingerprint(conn) -> dict:
 
 def main() -> int:
     check_only = "--check" in sys.argv
-    qpath = HERE / "questions.json"
-    out = HERE / "gold.json"
+    dev = "--dev" in sys.argv
+    qpath = HERE / ("dev_questions.json" if dev else "questions.json")
+    out = HERE / ("dev_gold.json" if dev else "gold.json")
     questions = json.loads(qpath.read_text(encoding="utf-8"))
     ids = [q["id"] for q in questions]
     assert len(ids) == len(set(ids)), "duplicate question ids"
@@ -154,7 +156,7 @@ def main() -> int:
     qbytes = qpath.read_bytes().replace(b"\r\n", b"\n")
     gold = {
         "frozen_at": dt.datetime.now(dt.UTC).isoformat(timespec="seconds"),
-        "questions_file": "r2/questions.json",
+        "questions_file": "r2/" + qpath.name,
         "questions_sha256": hashlib.sha256(qbytes).hexdigest(),
         "data": fingerprint,
         "items": items,

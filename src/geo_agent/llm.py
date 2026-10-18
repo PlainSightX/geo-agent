@@ -20,8 +20,9 @@ LEDGER_PATH = Path(
     os.environ.get("GEO_AGENT_LEDGER", Path(__file__).resolve().parents[2] / "eval" / "runs" / "ledger.jsonl")
 )
 BUDGET_USD = 4.0
-# 留 10% 余量：累计达到 3.6 美元即停止，避免最后一批并发调用冲破上限
-BUDGET_STOP_USD = 3.6
+# 留 10% 余量：累计达到 3.6 美元即停止，避免最后一批并发调用冲破上限。
+# 第二轮（用户确认费用不是约束）通过环境变量 GEO_AGENT_BUDGET_STOP_USD 提高停止线，默认值保持第一轮口径。
+BUDGET_STOP_USD = float(os.environ.get("GEO_AGENT_BUDGET_STOP_USD", "3.6"))
 _lock = threading.Lock()
 
 

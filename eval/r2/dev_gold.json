@@ -1,0 +1,216 @@
+{
+ "frozen_at": "2026-10-18T09:54:34+00:00",
+ "questions_file": "r2/dev_questions.json",
+ "questions_sha256": "7031956e0c670b502aa8fb5d62f6ffa852926f3461be1446c28f43a760d51012",
+ "data": {
+  "table_counts": {
+   "districts": 11,
+   "pois": 9088,
+   "metro_stations": 272,
+   "parks": 495,
+   "residential_areas": 1995,
+   "bus_stops": 4250,
+   "poi_tags": 16734,
+   "walk_edges": 118304,
+   "walk_vertices": 87970,
+   "standard_clauses": 31
+  },
+  "walk_network": {
+   "edges": 118304,
+   "vertices": 87970,
+   "total_km": 21203.6,
+   "components": 1088,
+   "main_vertex_share": 0.9444,
+   "main_length_share": 0.9728
+  },
+  "postgis_version": "3.5.2",
+  "pgrouting_version": "3.8.0",
+  "pgvector_version": "0.8.6",
+  "osm_snapshot": "jiangsu-261017.osm.pbf",
+  "osm_snapshot_sha256": "dcba9384eb5919ae3bf4aeb209fac913b0754133a5f5d4e2acd2b4d5f1b2652e",
+  "clauses_sha256": "c7e2489b4eec0a348fc11fa5ddbf2bc75ddeedff9f0dc4a9fdd491043d91ea88"
+ },
+ "items": [
+  {
+   "id": "V01",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     31
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "d4ef529167b2ecd261723cd7cb983a771738798a82ebccda9f0e6511db58dd4c"
+  },
+  {
+   "id": "V02",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     29
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "186e96430016d8b113eb1319864170492b86e645861c823897841f5b22d98745"
+  },
+  {
+   "id": "V03",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "南京陆军指挥学院"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "eb0b9634fd96bca125bbce9b1ac56879f8fd231982414aa88bdfc298999b2c2a"
+  },
+  {
+   "id": "V04",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     2
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "83e0df629d22856549e3a636f4bf605bd8e2cae551b85ce13e7e306c48d38078"
+  },
+  {
+   "id": "V05",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "area_ha"
+   ],
+   "rows": [
+    [
+     18.68383197254697
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "55e8b4ace79f59a3fa7f4a3421f2726835d5f434b12058377602c33dd65d6a45"
+  },
+  {
+   "id": "V06",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "perimeter_m"
+   ],
+   "rows": [
+    [
+     1743.5236828543937
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "4f380cadf4508f50dc47a01f636e63eeee5dbbc156d700e0b6d2a99cffe64b2b"
+  },
+  {
+   "id": "V07",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_m"
+   ],
+   "rows": [
+    [
+     904.9174086409427
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "2687626538e7fc4701dcb4f5c1a68c395a8acf79c5061d5cea4c712e8d051e5e"
+  },
+  {
+   "id": "V08",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "area_km2"
+   ],
+   "rows": [
+    [
+     1.4791172157801598
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "0b3fd53859c4d8d0b2bfa5777c99506423f8246b3e8e9f01aee2e392298146f8"
+  },
+  {
+   "id": "V09",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     3
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "1316c39cbd671a6249957f393ff4c9a989dac092a58d3e4c5537ecf84cd2e2f7"
+  },
+  {
+   "id": "V10",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:初中",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     true,
+     "GB50180-2018:C.0.1:初中",
+     1000
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "d163a06653dc57f4e63299c1222e83564559f5f2ca22b5fbb287881249cd6af9"
+  },
+  {
+   "id": "V11",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:公交车站",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.1:公交车站",
+     500
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "a18d83e7627d865a9fcdf4e179d8294d2a105f913899c16fae8e6ecf788539a3"
+  },
+  {
+   "id": "V12",
+   "tier": "unanswerable",
+   "answerable": false
+  }
+ ],
+ "items_sha256": "12e63849a3176c3117e3edd7157b125fa7ec34df396de76a830210f22ab2861c"
+}
