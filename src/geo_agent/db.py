@@ -16,7 +16,7 @@ from typing import Any
 import psycopg
 from psycopg import sql as pgsql
 
-from .config import BUSINESS_TABLES, Settings, get_settings
+from .config import BUSINESS_TABLES, R2_TABLES, Settings, get_settings
 from .sql_guard import check_sql
 
 
@@ -59,14 +59,19 @@ def run_select(
     settings: Settings | None = None,
     row_limit: int | None = None,
     guard: bool = True,
+    r2: bool = False,
 ) -> QueryResult:
     """执行一条只读查询，返回最多 row_limit 行（多取 1 行用于判断是否截断）。
 
     guard=False 仅供金标 SQL 冻结脚本使用：金标是人工编写的可信 SQL，但仍在只读事务内执行。
+    r2=True：第二轮表白名单（含路网/标签/条文表）并放行 pgRouting、pgvector 函数。
     """
     s = settings or get_settings()
     limit = row_limit or s.row_limit
-    text = check_sql(sql_text).sql if guard else sql_text.strip().rstrip(";")
+    if guard:
+        text = (check_sql(sql_text, R2_TABLES, allow_pgr=True) if r2 else check_sql(sql_text)).sql
+    else:
+        text = sql_text.strip().rstrip(";")
     own = conn is None
     c = conn or connect(s)
     try:

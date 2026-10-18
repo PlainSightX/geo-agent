@@ -21,6 +21,18 @@ from pydantic import BaseModel, Field
 from .db import QueryResult, run_select
 
 LayerName = Literal["pois", "metro_stations", "districts", "water_areas", "parks", "waterways", "roads"]
+# 第二轮扩展的图层（只在第二轮工具中使用；第一轮 Agent 的工具定义仍用上面的 7 个图层）
+R2LayerName = Literal[
+    "pois",
+    "metro_stations",
+    "districts",
+    "water_areas",
+    "parks",
+    "waterways",
+    "roads",
+    "residential_areas",
+    "bus_stops",
+]
 # 各图层可用于过滤的类别列
 _CATEGORY_COLUMN: dict[str, str | None] = {
     "pois": "subtype",
@@ -30,6 +42,8 @@ _CATEGORY_COLUMN: dict[str, str | None] = {
     "parks": None,
     "waterways": "waterway",
     "roads": "highway",
+    "residential_areas": None,
+    "bus_stops": None,
 }
 
 
@@ -54,11 +68,19 @@ class TargetFilter(BaseModel):
     )
 
 
-def _execute(sql_obj: pgsql.Composable, params: dict[str, Any], conn: psycopg.Connection) -> QueryResult:
+class R2TargetFilter(TargetFilter):
+    """第二轮目标过滤：图层增加 residential_areas、bus_stops（第一轮 TargetFilter 的 JSON schema 保持不变）。"""
+
+    layer: R2LayerName = Field(description="layer to search")  # type: ignore[assignment]
+
+
+def _execute(
+    sql_obj: pgsql.Composable, params: dict[str, Any], conn: psycopg.Connection, r2: bool = False
+) -> QueryResult:
     # 工具生成的 SQL 已参数化，但仍在只读事务中执行；先在客户端渲染成字符串以便记录与复现
     text = sql_obj.as_string(conn)
     rendered = psycopg.ClientCursor(conn).mogrify(text, params)
-    return run_select(rendered, conn=conn, guard=True)
+    return run_select(rendered, conn=conn, guard=True, r2=r2)
 
 
 def _target_where(t: TargetFilter, alias: str, params: dict[str, Any]) -> list[pgsql.Composable]:

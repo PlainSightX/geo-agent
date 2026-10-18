@@ -16,6 +16,18 @@ BUSINESS_TABLES: tuple[str, ...] = (
     "metro_stations",
 )
 
+# 第二轮新增的表（路网、原始标签、小区、公交站、标准条文）。第一轮代码路径仍只用 BUSINESS_TABLES，
+# 第二轮的两个评测臂用 R2_TABLES（超集），因此第一轮行为与结果不受影响。
+R2_EXTRA_TABLES: tuple[str, ...] = (
+    "poi_tags",
+    "residential_areas",
+    "bus_stops",
+    "walk_edges",
+    "walk_vertices",
+    "standard_clauses",
+)
+R2_TABLES: tuple[str, ...] = BUSINESS_TABLES + R2_EXTRA_TABLES
+
 
 @dataclass(frozen=True)
 class Settings:

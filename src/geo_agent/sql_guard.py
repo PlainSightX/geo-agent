@@ -66,6 +66,28 @@ _EXTRA_ALLOWED_FUNCS: frozenset[str] = frozenset(
 # 即使以 st_ 开头也拒绝的函数：可能读取服务器文件或产生超大输出
 _DENIED_ST_FUNCS: frozenset[str] = frozenset({"st_fromgdalraster", "st_asgdalraster"})
 
+# 第二轮：pgRouting 函数的第一个参数是“边查询”字符串，数据库会在函数内部执行它。
+# 只有在调用方显式传入 allow_pgr=True 时才放行这些函数，并且其中的字符串字面量参数
+# 必须本身是一条能通过守卫的 SELECT（递归检查），否则可借字符串执行任意 SQL。
+_PGR_FUNCS: frozenset[str] = frozenset(
+    {
+        "pgr_dijkstra",
+        "pgr_dijkstracost",
+        "pgr_drivingdistance",
+        "pgr_connectedcomponents",
+        "pgr_ksp",
+        "pgr_astar",
+        "pgr_bddijkstra",
+        "pgr_withpoints",
+        "pgr_withpointscost",
+        "pgr_withpointsdd",
+    }
+)
+# pgvector 运算与转换函数（距离运算符 <=>、<-> 是语法节点，不经函数白名单）
+_VECTOR_FUNCS: frozenset[str] = frozenset(
+    {"cosine_distance", "l2_distance", "inner_product", "vector_dims", "l2_normalize"}
+)
+
 
 class SqlRejected(ValueError):
     """SQL 未通过守卫；message 为面向模型的英文原因，便于其自行修复。"""
@@ -81,8 +103,18 @@ def _cte_names(tree: exp.Expression) -> set[str]:
     return {cte.alias_or_name.lower() for cte in tree.find_all(exp.CTE)}
 
 
-def check_sql(sql: str, allowed_tables: tuple[str, ...] = BUSINESS_TABLES) -> GuardResult:
-    """校验并返回规范化信息；不通过时抛出 SqlRejected。"""
+def check_sql(
+    sql: str,
+    allowed_tables: tuple[str, ...] = BUSINESS_TABLES,
+    allow_pgr: bool = False,
+    _depth: int = 0,
+) -> GuardResult:
+    """校验并返回规范化信息；不通过时抛出 SqlRejected。
+
+    allow_pgr=True（第二轮）：放行 pgRouting 函数与 pgvector 函数；pgr_* 的字符串参数递归按同一白名单检查。
+    """
+    if _depth > 2:
+        raise SqlRejected("nested SQL too deep")
     text = sql.strip().rstrip(";").strip()
     if not text:
         raise SqlRejected("empty SQL")
@@ -119,6 +151,18 @@ def check_sql(sql: str, allowed_tables: tuple[str, ...] = BUSINESS_TABLES) -> Gu
             fname = func.name.lower()
             if fname in _DENIED_ST_FUNCS:
                 raise SqlRejected(f"function not allowed: {fname}")
+            if allow_pgr and fname in _PGR_FUNCS:
+                for arg in func.expressions:
+                    if isinstance(arg, exp.Literal) and arg.is_string:
+                        try:
+                            inner = check_sql(arg.this, allowed_tables, allow_pgr, _depth + 1)
+                        except SqlRejected as err:
+                            raise SqlRejected(f"{fname} inner query rejected: {err}") from err
+                        used |= inner.tables
+                    # 非字面量参数（如 (SELECT vid FROM a)、ARRAY[...]）是普通子树，已被外层遍历检查
+                continue
+            if allow_pgr and fname in _VECTOR_FUNCS:
+                continue
             if not (fname.startswith("st_") or fname in _EXTRA_ALLOWED_FUNCS):
                 raise SqlRejected(f"function not allowed: {fname}")
 

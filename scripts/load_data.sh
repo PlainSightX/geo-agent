@@ -38,3 +38,9 @@ docker run --rm --network "$NET" \
 
 docker exec -i geo-agent-db psql -U geo_admin -d geo -v ON_ERROR_STOP=1 < "$ROOT/sql/build_tables.sql"
 docker exec geo-agent-db psql -U geo_admin -d geo -c "SELECT * FROM dataset_summary ORDER BY table_name;"
+
+# ---- 第二轮：原始标签/小区/公交站/条文表、步行路网、条文向量 ----
+docker exec -i geo-agent-db psql -U geo_admin -d geo -v ON_ERROR_STOP=1 < "$ROOT/sql/build_r2_tables.sql"
+docker exec -i geo-agent-db psql -U geo_admin -d geo -v ON_ERROR_STOP=1 < "$ROOT/sql/build_walk_network.sql"
+bash "$ROOT/scripts/fetch_model.sh"
+(cd "$ROOT" && uv run python scripts/load_standards.py)

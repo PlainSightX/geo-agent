@@ -1,7 +1,12 @@
-# PostGIS 服务：固定镜像 tag + digest，保证评测时的空间函数行为可复现
+# 数据库服务：第一轮用 postgis/postgis:16-3.5（digest 94146ac3…），
+# 第二轮改为 docker/db.Dockerfile 构建的镜像：pgrouting/pgrouting:16-3.5-3.8.0（固定 digest）+ pgvector 0.8.6（固定 deb sha256）。
+# 两者的 PostgreSQL 16.9 / PostGIS 3.5.2 完全相同，复用同一个数据卷；第一轮金标在新镜像上逐题复现（freeze_gold.py --check）。
 services:
   db:
-    image: postgis/postgis:16-3.5@sha256:94146ac37bc61e2322f88016056c5920729cb8c64c8542ed590af8fc2abdac07
+    build:
+      context: ./docker
+      dockerfile: db.Dockerfile
+    image: geo-agent-db:r2
     container_name: geo-agent-db
     environment:
       POSTGRES_USER: geo_admin
