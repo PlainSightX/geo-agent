@@ -107,9 +107,7 @@ def main() -> int:
         print("all checks passed (check only, nothing written)")
         return 0
     # 按 LF 规范化后再哈希：git 仓库内存储为 LF，Windows 工作区可能是 CRLF
-    qbytes = qpath.read_bytes().replace(b"
-", b"
-")
+    qbytes = qpath.read_bytes().replace(b"\r\n", b"\n")
     gold = {
         "frozen_at": dt.datetime.now(dt.UTC).isoformat(timespec="seconds"),
         "questions_file": qpath.name,
