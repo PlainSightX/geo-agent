@@ -68,21 +68,26 @@ function render(data) {
   }
 }
 
+const params = new URLSearchParams(location.search);
 document.getElementById("f").addEventListener("submit", async (e) => {
   e.preventDefault();
   const out = document.getElementById("out");
   out.textContent = "查询中…";
   try {
     const r = await fetch("/ask", { method: "POST", headers: { "Content-Type": "application/json" },
-                                   body: JSON.stringify({ question: document.getElementById("q").value }) });
+                                   body: JSON.stringify({ question: document.getElementById("q").value, agent: params.get("agent") === "round2" ? "round2" : "round1" }) });
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
     render(await r.json());
   } catch (err) { out.textContent = "请求失败：" + err.message; }
 });
 
-// 支持 /?q=问题 直接提问（便于分享链接与无头浏览器截图）
-const preset = new URLSearchParams(location.search).get("q");
-if (preset) {
+// 支持 /?q=问题 直接提问（便于分享链接与无头浏览器截图）；/?demo=小区名 渲染不调用模型的生活圈演示
+const preset = params.get("q");
+const demo = params.get("demo");
+if (demo) {
+  document.getElementById("q").value = demo + " 步行生活圈内是否有中学（GB 50180-2018）";
+  fetch("/demo/life-circle?residential=" + encodeURIComponent(demo)).then(r => r.json()).then(render);
+} else if (preset) {
   document.getElementById("q").value = preset;
   document.getElementById("f").requestSubmit();
 }

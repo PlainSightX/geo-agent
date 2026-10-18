@@ -25,7 +25,7 @@ class FakeAgent:
 
 
 def test_ask_returns_bound_answer_and_geojson(monkeypatch) -> None:
-    monkeypatch.setattr(api, "get_agent", lambda: FakeAgent())
+    monkeypatch.setattr(api, "get_agent", lambda kind="round1": FakeAgent())
     client = TestClient(api.app)
     r = client.post("/ask", json={"question": "离南京图书馆最近的地铁站？"})
     assert r.status_code == 200
@@ -37,7 +37,7 @@ def test_ask_returns_bound_answer_and_geojson(monkeypatch) -> None:
 
 
 def test_ask_validates_input(monkeypatch) -> None:
-    monkeypatch.setattr(api, "get_agent", lambda: FakeAgent())
+    monkeypatch.setattr(api, "get_agent", lambda kind="round1": FakeAgent())
     client = TestClient(api.app)
     assert client.post("/ask", json={"question": ""}).status_code == 422
     assert client.post("/ask", json={"question": "x" * 301}).status_code == 422
@@ -47,3 +47,10 @@ def test_index_served() -> None:
     client = TestClient(api.app)
     r = client.get("/")
     assert r.status_code == 200 and "leaflet" in r.text
+
+
+def test_ask_rejects_unknown_agent(monkeypatch) -> None:
+    monkeypatch.setattr(api, "get_agent", lambda kind="round1": FakeAgent())
+    client = TestClient(api.app)
+    assert client.post("/ask", json={"question": "测试问题", "agent": "round2"}).status_code == 200
+    assert client.post("/ask", json={"question": "测试问题", "agent": "other"}).status_code == 422
