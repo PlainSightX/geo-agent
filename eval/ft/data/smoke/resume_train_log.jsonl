@@ -1,0 +1,2 @@
+{"step": 11, "total": 332, "loss": 0.3424, "grad_norm": 0.4848, "lr": 7.479703644027707e-05, "seq_tokens": 54098, "loss_tokens": 1192, "step_s": 17.18, "elapsed": 17.2, "session": "2026-10-18T23:01:28", "max_mem_gb": 20.7, "max_reserved_gb": 26.8}
+{"step": 12, "total": 332, "loss": 0.37747, "grad_norm": 0.4391, "lr": 8.09883728860044e-05, "seq_tokens": 52959, "loss_tokens": 1001, "step_s": 16.54, "elapsed": 33.7, "session": "2026-10-18T23:01:28", "max_mem_gb": 20.7, "max_reserved_gb": 28.8}

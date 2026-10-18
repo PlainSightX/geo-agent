@@ -1,0 +1,44 @@
+{
+ "trajectories": 1397,
+ "rendered": 1397,
+ "dropped_total": 0,
+ "dropped": {},
+ "tools_dict_source": "vllm",
+ "tokens_total": 9211974,
+ "loss_tokens_total": 180663,
+ "seq_len": {
+  "mean": 6594.1,
+  "min": 6240,
+  "p10": 6338,
+  "p50": 6474,
+  "p90": 7187,
+  "p99": 7487,
+  "max": 7651
+ },
+ "loss_tokens_per_traj": {
+  "mean": 129.3,
+  "min": 64,
+  "p10": 78,
+  "p50": 126,
+  "p90": 208,
+  "p99": 224,
+  "max": 234
+ },
+ "loss_turns_per_traj": {
+  "mean": 2.8,
+  "min": 1,
+  "p10": 2,
+  "p50": 3,
+  "p90": 4,
+  "p99": 4,
+  "max": 4
+ },
+ "hermes_roundtrip_ok_turns": 3880,
+ "history_think_tokens_total": 11244,
+ "vllm_tokenize_check": {
+  "trajectories": 528,
+  "with_error_turn": 328,
+  "prompts": 1782,
+  "mismatch": 0
+ }
+}
