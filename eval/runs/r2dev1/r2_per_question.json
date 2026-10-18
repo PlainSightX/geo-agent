@@ -1,0 +1,308 @@
+{
+ "baseline": [
+  {
+   "id": "V01",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V02",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V03",
+   "tier": "join",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 学校简称/别名（如“陆指”）不在数据库字段中，poi_tags 的 alt_name/short_name 无法可靠匹配简称，无法确定正式名称",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "V04",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V05",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "V06",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "V07",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V08",
+   "tier": "route",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): InvalidParameterValue: Only lon/lat coordinate systems are supported in geography.",
+   "failure": "exec_error"
+  },
+  {
+   "id": "V09",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "V10",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": false,
+   "reason": "compliance answer must be 1 row, got 0",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "V11",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V12",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  }
+ ],
+ "agent": [
+  {
+   "id": "V01",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V02",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V03",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V04",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V05",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "V06",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "V07",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V08",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V09",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V10",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V11",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V12",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  }
+ ],
+ "ablation": [
+  {
+   "id": "V01",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V02",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V03",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V04",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V05",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "V06",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "V07",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V08",
+   "tier": "route",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): Isochrone SQL was rejected by the unit/CRS validator before execution, so no area value could be computed.",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "V09",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "V10",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V11",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "V12",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  }
+ ]
+}

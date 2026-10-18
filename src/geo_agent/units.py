@@ -85,6 +85,11 @@ def _is_metric(arg: exp.Expression) -> tuple[bool, str]:
         "st_convexhull",
         "st_unaryunion",
         "st_closestpoint",
+        # 第二轮开发集发现的漏项（误报：ST_Buffer(ST_Simplify(ST_Transform(g, 32650), 2), 50) 被判为度坐标）
+        "st_simplify",
+        "st_simplifypreservetopology",
+        "st_snaptogrid",
+        "st_linemerge",
     }:
         # 这些函数保持输入的单位：任一几何参数米制即视为米制（如 ST_Intersection(a::geography, ...) 不合法，但 transform 合法）
         inner = [a for a in _args(node) if not isinstance(a, exp.Literal)]
