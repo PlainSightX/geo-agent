@@ -1,0 +1,1131 @@
+{
+ "frozen_at": "2026-10-18T09:49:44+00:00",
+ "questions_file": "r2/questions.json",
+ "questions_sha256": "857a519312f587f36f051975ade9f231c072f3120dd0d669d5ab5dcebae11aa6",
+ "data": {
+  "table_counts": {
+   "districts": 11,
+   "pois": 9088,
+   "metro_stations": 272,
+   "parks": 495,
+   "residential_areas": 1995,
+   "bus_stops": 4250,
+   "poi_tags": 16734,
+   "walk_edges": 118304,
+   "walk_vertices": 87970,
+   "standard_clauses": 31
+  },
+  "walk_network": {
+   "edges": 118304,
+   "vertices": 87970,
+   "total_km": 21203.6,
+   "components": 1088,
+   "main_vertex_share": 0.9444,
+   "main_length_share": 0.9728
+  },
+  "postgis_version": "3.5.2",
+  "pgrouting_version": "3.8.0",
+  "pgvector_version": "0.8.6",
+  "osm_snapshot": "jiangsu-261017.osm.pbf",
+  "osm_snapshot_sha256": "dcba9384eb5919ae3bf4aeb209fac913b0754133a5f5d4e2acd2b4d5f1b2652e",
+  "clauses_sha256": "c7e2489b4eec0a348fc11fa5ddbf2bc75ddeedff9f0dc4a9fdd491043d91ea88"
+ },
+ "items": [
+  {
+   "id": "T01",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     48
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "051656775896a109ef4ce4a97d9983b5709e823dab1eb36f46af900a9ec042fb"
+  },
+  {
+   "id": "T02",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     31
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "d4ef529167b2ecd261723cd7cb983a771738798a82ebccda9f0e6511db58dd4c"
+  },
+  {
+   "id": "T03",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "吉兆营清真寺"
+    ],
+    [
+     "净觉寺"
+    ],
+    [
+     "草桥清真寺"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "819879f0213db2eb69eed0f84715a5aadb7a1871b8561f3b1b5aa0248986164f"
+  },
+  {
+   "id": "T04",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     6
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f36f30293eb17151cfc2dd66a9040809843b6ca88eb9ea0e406aa8954566ce35"
+  },
+  {
+   "id": "T05",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     21
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "2dea828a98d0e7190d060b22ceadb2270339b10f22995623cae41bb8fde87691"
+  },
+  {
+   "id": "T06",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     164
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f61af0f2c8470506ca317e36ab74bac6afd793789771b27665c4398e3c00ee3b"
+  },
+  {
+   "id": "T07",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     81
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "05edb728bdaa6f4ecb0e267136bc2fdcb3227767384013c72a23f73ab987eb37"
+  },
+  {
+   "id": "T08",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     8
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "91ca7325b5ab3bf457ee7d7fc75d1777fe5d33fba0017c9ea040d54fa76a43ac"
+  },
+  {
+   "id": "T09",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     2
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "83e0df629d22856549e3a636f4bf605bd8e2cae551b85ce13e7e306c48d38078"
+  },
+  {
+   "id": "T10",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     12
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "c2e78fd22c2994f2156e2a9281dcbad2bed2e3f6497dd71cfd3a86f0cd866f85"
+  },
+  {
+   "id": "T11",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     86
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "b76b3eb648b2573ddbf4d043e94297b2c6e559c9d648d8fdf1fdf122c640c16b"
+  },
+  {
+   "id": "T12",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "总统府"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "133e0cc105ba7a2ca4e89086b72d4d690f09c12384079d4f3d11bf1bb75d51cb"
+  },
+  {
+   "id": "J01",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "中国人民解放军陆军兵种大学南京校区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "893350151a1398933ac2b899079587474572152c55e8c4b3152901750b865838"
+  },
+  {
+   "id": "J02",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "太平天国历史博物馆"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "8663a80c24853a4aa7c00c9d6d478b3bbd6447dd7bd7ecd58db9f2868345f75a"
+  },
+  {
+   "id": "J03",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "东南大学(四牌楼校区)"
+    ],
+    [
+     "东南大学(九龙湖校区)"
+    ],
+    [
+     "东南大学(丁家桥校区)"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "16ac509fde99af95aed2be1486122c49e7fc32ecd7555fa1029cdd6ff65f9f68"
+  },
+  {
+   "id": "J04",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "district",
+    "n"
+   ],
+   "rows": [
+    [
+     "江宁区",
+     556
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "076349ed343e4686206fcd46cc2c832aedc25e90cf5831c3ceee3ef0a728bfd6"
+  },
+  {
+   "id": "J05",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     96
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "b48e963e9e1d1e1aaf21144048ff93f92037033acef70e089e2ead1610ffe2b1"
+  },
+  {
+   "id": "J06",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     132
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "09c632d71c12cde5539ee69f76265286d5fffe372845432e3278ea7f4870e861"
+  },
+  {
+   "id": "J07",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     5
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "b9014207a50f25dbaec1a9977dba4df8f7cf0b66bcbe18c47a6cfeb9c2e54b38"
+  },
+  {
+   "id": "J08",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "dist_m"
+   ],
+   "rows": [
+    [
+     94.5524334
+    ],
+    [
+     133.63776297
+    ],
+    [
+     264.40794167
+    ]
+   ],
+   "order_matters": true,
+   "result_sha256": "64f89f384af13856db37c50b2486cd8748def765d6e248535c58317f8c60679f"
+  },
+  {
+   "id": "J09",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "四脚基督教堂"
+    ],
+    [
+     "荣庄教堂"
+    ],
+    [
+     "基督教堂"
+    ],
+    [
+     "基督教孝陵卫堂"
+    ],
+    [
+     "天主堂"
+    ],
+    [
+     "坝西教堂"
+    ],
+    [
+     "石鼓路天主堂"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "34ba0bf8ebe32a4c7ad8bc242126ebe7c3cea6b4338ddcc194f4712d098aa3c8"
+  },
+  {
+   "id": "J10",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "栖霞区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "00e630f47de78fb7dae0d7ace863c551e626acc59a32818ea93dd4f02e0b6fe5"
+  },
+  {
+   "id": "J11",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     1
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f45c5cf07bf091295818ed528234da7c7c0d19d2bccc9bb9102214947deec509"
+  },
+  {
+   "id": "J12",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     5
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "b9014207a50f25dbaec1a9977dba4df8f7cf0b66bcbe18c47a6cfeb9c2e54b38"
+  },
+  {
+   "id": "C01",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "area_ha"
+   ],
+   "rows": [
+    [
+     10.526815498370864
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "c1037d25faacb941d612bb6c70ee08ed16ee9737e7c4fa18d8b7caf1306342ba"
+  },
+  {
+   "id": "C02",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "perimeter_m"
+   ],
+   "rows": [
+    [
+     1564.5401499226396
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "0bf470d5884ecef77a702a7361c5eb235696909e53b53fb9f196f9648c7a7f3f"
+  },
+  {
+   "id": "C03",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "area_3857_km2",
+    "ratio"
+   ],
+   "rows": [
+    [
+     105.01918327327323,
+     1.396603668623573
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "905a517d57cfb237fdcecef5b91077b3ddcd82a9e56b986305ef696799f86a62"
+  },
+  {
+   "id": "C04",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "km"
+   ],
+   "rows": [
+    [
+     931.7934679046756
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "6140d215cbd254fb5a8abdaa286425f9747ec59a43304f02314131cc843af304"
+  },
+  {
+   "id": "C05",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "km"
+   ],
+   "rows": [
+    [
+     123.35057780794627
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "e9b93beaf7550170a4c51d29f80732d1b3f51fd6e71c8b6d90598b552741ed8c"
+  },
+  {
+   "id": "C06",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "name",
+    "area_ha"
+   ],
+   "rows": [
+    [
+     "春江新城",
+     171.8392508447778
+    ],
+    [
+     "恒大·金碧天下",
+     107.79601939744651
+    ],
+    [
+     "盛江花苑",
+     62.542411180257005
+    ]
+   ],
+   "order_matters": true,
+   "result_sha256": "1d89fc51a81a7ceceeb93cc6c6b7fcdf948627b45f415dfda6d26c5d840c1446"
+  },
+  {
+   "id": "C07",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "km"
+   ],
+   "rows": [
+    [
+     2.983014718528489
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "c47f03a48085443c436642fd443d14ebc99c7f9caaee56dc70043baaa6787cb1"
+  },
+  {
+   "id": "C08",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "km2"
+   ],
+   "rows": [
+    [
+     7.767421378156565
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "b6e79bc7f46deb6754ffd64559c6567b4fd4aed4f978b746649392836b03cfff"
+  },
+  {
+   "id": "C09",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "area_m2"
+   ],
+   "rows": [
+    [
+     78844.5362599045
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "a6e293078ef73e3e3810ae994ecf6add0fcc7a52fb76188b942ec349b50a17ec"
+  },
+  {
+   "id": "C10",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "km"
+   ],
+   "rows": [
+    [
+     13.092578557520001
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "6fb68d72e54de38e2bc69145e1355382d123f5b59006f585b776dbbdf8593757"
+  },
+  {
+   "id": "D01",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_m"
+   ],
+   "rows": [
+    [
+     904.5191671980803
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "0a834820c4754be64bdb60dd2251cbc2c0b2eb6e4b8a51e41ef803a223e2a58a"
+  },
+  {
+   "id": "D02",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_m"
+   ],
+   "rows": [
+    [
+     380.3895279194142
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "29702a1eb1d31a3ad9a48711bef1a249e336021960dcbf47d5cf01d8c9800855"
+  },
+  {
+   "id": "D03",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_m"
+   ],
+   "rows": [
+    [
+     364.196906396483
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "cf880668bbf2aee2f75e2e23fe3191ca31dadd09ea6c4b7bf74d9fc971b844be"
+  },
+  {
+   "id": "D04",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_min"
+   ],
+   "rows": [
+    [
+     16.747899835919984
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "8c1049f75e52c3d02e6a8b3a6ea769262e7594f8b721c310083fe75c15f4fc2d"
+  },
+  {
+   "id": "D05",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_m"
+   ],
+   "rows": [
+    [
+     2097.7751688017415
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "5ef167bc65831bd54d670d973023f182c2e98763dacd8748c14bd395735e1e82"
+  },
+  {
+   "id": "D06",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_min"
+   ],
+   "rows": [
+    [
+     22.214996739981224
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "3aab27acff1100d6ec2775a4f6dd54265e16183b4145bb38f29799fd3d5ba528"
+  },
+  {
+   "id": "D07",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_m"
+   ],
+   "rows": [
+    [
+     603.0753325993338
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "a6eac769d4f45d93a7b4d9adaf4a6b9c1f5e14b4226d0a407d077e2de210456b"
+  },
+  {
+   "id": "D08",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_m"
+   ],
+   "rows": [
+    [
+     2031.330580287249
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "885c00038b77d4595dd4981d02a933f9f35ac05dbaa1e77ad9b69d5696e2cf93"
+  },
+  {
+   "id": "D09",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "area_km2"
+   ],
+   "rows": [
+    [
+     1.4659436454303956
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "e4a87afffd0a56e7d1acdaf350b11bb890e85538c330f4cb86a1d2ee923f426a"
+  },
+  {
+   "id": "D10",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "area_km2"
+   ],
+   "rows": [
+    [
+     0.9968875670387843
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "2b906c737ffbc95044e503909d0d33a8ce82656c0657b4d396f756cf40e4f4a9"
+  },
+  {
+   "id": "D11",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "龙潭中心幼儿园（龙岸分园）"
+    ],
+    [
+     "栖霞区龙潭幼儿园龙岸二园"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "5bd0c8e9737ed81840f1bf4b5091c9c3eafda283d7204548b58a520bd02c32fb"
+  },
+  {
+   "id": "D12",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     8
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "91ca7325b5ab3bf457ee7d7fc75d1777fe5d33fba0017c9ea040d54fa76a43ac"
+  },
+  {
+   "id": "D13",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     4
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "21116a7b144d35594bccc768137fe869ab32b6643122976f0091754b69da8b35"
+  },
+  {
+   "id": "D14",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     3
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "1316c39cbd671a6249957f393ff4c9a989dac092a58d3e4c5537ecf84cd2e2f7"
+  },
+  {
+   "id": "D15",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "name",
+    "walk_m"
+   ],
+   "rows": [
+    [
+     "市中医院",
+     265.08225491753325
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "407c9b080fdc2e75626fa02f035774a41121a113ae9336c69d0b6febedcdeb6d"
+  },
+  {
+   "id": "D16",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     5
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "b9014207a50f25dbaec1a9977dba4df8f7cf0b66bcbe18c47a6cfeb9c2e54b38"
+  },
+  {
+   "id": "E01",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:初中",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     true,
+     "GB50180-2018:C.0.1:初中",
+     1000
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "d163a06653dc57f4e63299c1222e83564559f5f2ca22b5fbb287881249cd6af9"
+  },
+  {
+   "id": "E02",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:初中",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.1:初中",
+     1000
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "9f887912b3047db59cf2e56bd990b53a8e114c1883b47434100e7a306ed0f9e0"
+  },
+  {
+   "id": "E03",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:小学",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     true,
+     "GB50180-2018:C.0.1:小学",
+     500
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "4b80228d86480452d6914eb25c0555a86ffbd57a7e13adb34eee51c2da2d2e56"
+  },
+  {
+   "id": "E04",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:小学",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.1:小学",
+     500
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "c4f228381759de683ecf4f72cffdfb3aa4741021b541a9d95e67f0b6b980ff76"
+  },
+  {
+   "id": "E05",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:幼儿园",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     true,
+     "GB50180-2018:C.0.2:幼儿园",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "fe133f8dba3fd77746e17b763ae81883b608b8a1a6cb57254d7165c3019f1bc9"
+  },
+  {
+   "id": "E06",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:幼儿园",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.2:幼儿园",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "eae1e8c855049ce8a5ae8e56e7c35bf6fbbb1b0a0b9be90bdc22a55dfaa09f5f"
+  },
+  {
+   "id": "E07",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:轨道交通站点",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     true,
+     "GB50180-2018:C.0.1:轨道交通站点",
+     800
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "eebd2684b0662eee606d67e461b67c3889e7511c8c4cf37b68a0b5aed37afe31"
+  },
+  {
+   "id": "E08",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:轨道交通站点",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.1:轨道交通站点",
+     800
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "6b91e6c109ba8be9a217fabf8f926b8e78407e1461b191e6cdf8d3403fffe2c8"
+  },
+  {
+   "id": "E09",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:公交车站",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.1:公交车站",
+     500
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "a18d83e7627d865a9fcdf4e179d8294d2a105f913899c16fae8e6ecf788539a3"
+  },
+  {
+   "id": "E10",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:公交车站",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     true,
+     "GB50180-2018:C.0.1:公交车站",
+     500
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "295c220f1632499535d346f206c5022a596c05de81aea977715442d7ba180f0c"
+  },
+  {
+   "id": "E11",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:卫生服务中心",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     true,
+     "GB50180-2018:C.0.1:卫生服务中心",
+     1000
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "5243fb4bae3c2c5ee9c7a28ba1e4585130d29843aa04830ff388aff8b0ea2847"
+  },
+  {
+   "id": "E12",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:派出所",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     true,
+     "GB50180-2018:C.0.1:派出所",
+     800
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "4f2b410c31eb54ce7b6c9c80f3b00a459d1e1a027f096bfce9907282fb23bfa3"
+  },
+  {
+   "id": "U01",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "U02",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "U03",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "U04",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "U05",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "U06",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "U07",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "U08",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "U09",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "U10",
+   "tier": "unanswerable",
+   "answerable": false
+  }
+ ],
+ "items_sha256": "ddef47a9d2f1f491bcc0d01ff519a3f1ad6b46840df0bc699f78d80f5f2f1474"
+}
