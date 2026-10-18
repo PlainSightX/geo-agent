@@ -1,0 +1,22 @@
+# PostGIS 服务：固定镜像 tag + digest，保证评测时的空间函数行为可复现
+services:
+  db:
+    image: postgis/postgis:16-3.5@sha256:94146ac37bc61e2322f88016056c5920729cb8c64c8542ed590af8fc2abdac07
+    container_name: geo-agent-db
+    environment:
+      POSTGRES_USER: geo_admin
+      POSTGRES_PASSWORD: geo_admin_local_only
+      POSTGRES_DB: geo
+    ports:
+      - "127.0.0.1:55442:5432"
+    volumes:
+      - geo_pgdata:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U geo_admin -d geo"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  geo_pgdata:

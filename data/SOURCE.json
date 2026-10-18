@@ -1,0 +1,20 @@
+{
+  "provider": "Geofabrik GmbH (extract of OpenStreetMap)",
+  "file": "jiangsu-261017.osm.pbf",
+  "url": "https://download.geofabrik.de/asia/china/jiangsu-261017.osm.pbf",
+  "snapshot_date": "2026-10-17",
+  "downloaded_at": "2026-10-18T06:56:00Z",
+  "bytes": 79922112,
+  "md5": "c7311bce04ba44e3cd0adb053a4f6e41",
+  "md5_matches_geofabrik": true,
+  "sha256": "dcba9384eb5919ae3bf4aeb209fac913b0754133a5f5d4e2acd2b4d5f1b2652e",
+  "clip": "bbox 118.32 31.21 119.25 32.63 at read time, then exact clip to OSM relation 2131524 (南京市) in sql/build_tables.sql",
+  "license": "Open Data Commons Open Database License (ODbL) 1.0",
+  "attribution": "© OpenStreetMap contributors",
+  "license_url": "https://www.openstreetmap.org/copyright",
+  "tools": {
+    "gdal_image": "ghcr.io/osgeo/gdal:ubuntu-small-3.10.3@sha256:dab45abca3ca83695d442018692f4f8a0f41955871c57e6101d7f89a92375caa",
+    "postgis_image": "postgis/postgis:16-3.5@sha256:94146ac37bc61e2322f88016056c5920729cb8c64c8542ed590af8fc2abdac07"
+  },
+  "note": "Raw PBF is not committed (data/raw/ is git-ignored). The derived database is a Produced Work / Derivative Database under ODbL; if you publish the database itself, it must be offered under ODbL."
+}
