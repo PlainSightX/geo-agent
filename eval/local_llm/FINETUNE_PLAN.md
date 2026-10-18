@@ -65,7 +65,7 @@ assistant 工具调用渲染为 `<tool_call>\n{"name": …, "arguments": …}\n<
 
 ## 训练配方
 
-改写 `wind-workbench/.local/work-packages/claude-sft/remote/train_lora.py`（保留 causal_flash SDPA、梯度检查点、余弦学习率、梯度累积）：
+改写作者在 wind-workbench 查询规划微调中使用的 LoRA 训练脚本（保留 causal_flash SDPA、梯度检查点、余弦学习率、梯度累积）：
 
 - `encode` 增加 `tools` 参数与多轮支持：整条轨迹一次前向，对**所有** assistant 轮次的 token 计损失（tool 与 user 消息掩码为 -100）；
   `logits_to_keep` 改为从第一个 assistant token 起，而不是只算末尾；
@@ -88,4 +88,4 @@ assistant 工具调用渲染为 `<tool_call>\n{"name": …, "arguments": …}\n<
   据此训练约 **3–3.5 GPU 小时**；先跑 20 步试训实测吞吐与显存，偏差超过 30% 再调整。
 - 评测：本次 9 次 72 题运行并发约 6 分钟；heldout 150 题 × 2 臂 × 3 次 + r2 72 题 × 2 臂 × 3 次，约 0.5 GPU 小时。
 - 合计约 **4–5 GPU 小时**（RTX PRO 6000 96 GB），另留 1 小时余量给一次失败重试。数据生成只用本地 CPU 与数据库，不占 GPU。
-- 磁盘：/root/autodl-tmp 只剩约 42 GB，adapter 约 0.2 GB，训练日志与数据写 /autodl-fs。
+- 磁盘：adapter 约 0.2 GB；训练日志与数据写到数据盘，不占系统盘。
