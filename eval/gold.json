@@ -1,0 +1,1154 @@
+{
+ "frozen_at": "2026-10-18T07:47:22+00:00",
+ "questions_file": "questions.json",
+ "questions_sha256": "c1f7ac5465835843c73098f303224f803fec09d42974231781d02f8fff90118c",
+ "data": {
+  "table_counts": {
+   "districts": 11,
+   "metro_stations": 272,
+   "parks": 495,
+   "pois": 9088,
+   "roads": 32153,
+   "water_areas": 5727,
+   "waterways": 1976
+  },
+  "postgis_version": "3.5.2",
+  "osm_snapshot": "jiangsu-261017.osm.pbf",
+  "osm_snapshot_sha256": "dcba9384eb5919ae3bf4aeb209fac913b0754133a5f5d4e2acd2b4d5f1b2652e"
+ },
+ "items": [
+  {
+   "id": "A01",
+   "tier": "attribute",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     155
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "02892402f2982dd78561fe2a8155ae9761916eebfd350b6143bb7d68154e9ea7"
+  },
+  {
+   "id": "A02",
+   "tier": "attribute",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     19
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "76683af316e142de913bd2763955e5931846155b84e0e80f71f9ee9c905fcf4d"
+  },
+  {
+   "id": "A03",
+   "tier": "attribute",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "南京大学(鼓楼校区)"
+    ],
+    [
+     "南京大学浦口校区"
+    ],
+    [
+     "南京大学(仙林校区)"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "ef82a45951e213d49233937c4e4616e2087a79cf8ac7a7d218f780974bce61d9"
+  },
+  {
+   "id": "A04",
+   "tier": "attribute",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     53
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "93911283be773e5f6d1ecbd78e2e184ab2dfbde7c48d87b89e78612d68b25f48"
+  },
+  {
+   "id": "A05",
+   "tier": "attribute",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     28
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "d7e2dfa1603d69f42f7ee13cfa4ff0a3d3496708b8f12c1ee295d616fb1d1b15"
+  },
+  {
+   "id": "A06",
+   "tier": "attribute",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     226
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "15f17b74e96e58be83b340bf04e9b79d8f79cdf176a3935fa8856b90097e2e78"
+  },
+  {
+   "id": "A07",
+   "tier": "attribute",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     323
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "4830902f50a62178edfb48539bf54cff308f8f994d7849e2cd234438c494dbdc"
+  },
+  {
+   "id": "A08",
+   "tier": "attribute",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "南京云锦博物馆"
+    ],
+    [
+     "南京民间抗日战争博物馆"
+    ],
+    [
+     "南京金箔博物馆"
+    ],
+    [
+     "南京紫金山昆虫博物馆"
+    ],
+    [
+     "南京市民俗博物馆"
+    ],
+    [
+     "南京市雨花石博物馆"
+    ],
+    [
+     "南京大报恩寺遗址博物馆"
+    ],
+    [
+     "南京博物院"
+    ],
+    [
+     "南京古生物博物馆"
+    ],
+    [
+     "南京市不动产档案馆"
+    ],
+    [
+     "南京地质博物馆"
+    ],
+    [
+     "南京市博物馆"
+    ],
+    [
+     "南京明故宫遗址公园"
+    ],
+    [
+     "南京城墙博物馆"
+    ],
+    [
+     "南京雨花石博物馆"
+    ],
+    [
+     "南京雨花茶博物院"
+    ],
+    [
+     "南京生态文明教育馆"
+    ],
+    [
+     "南京博物院南农大分院"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "225db903b3d436fe58fdd2b2aa008853a11fde31730492bfc3bd8a1426897f2b"
+  },
+  {
+   "id": "B01",
+   "tier": "distance",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     32
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "e444aab21cc7864622d95c1e129226198e6b0ce596e8947d6b6ee23d71e721cb"
+  },
+  {
+   "id": "B02",
+   "tier": "distance",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     4
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "21116a7b144d35594bccc768137fe869ab32b6643122976f0091754b69da8b35"
+  },
+  {
+   "id": "B03",
+   "tier": "distance",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     10
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "6c89b370981db437655de4fc9f9b57f9d5ef5bbd11a575e9314f899680918faa"
+  },
+  {
+   "id": "B04",
+   "tier": "distance",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     3
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "1316c39cbd671a6249957f393ff4c9a989dac092a58d3e4c5537ecf84cd2e2f7"
+  },
+  {
+   "id": "B05",
+   "tier": "distance",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     3
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "1316c39cbd671a6249957f393ff4c9a989dac092a58d3e4c5537ecf84cd2e2f7"
+  },
+  {
+   "id": "B06",
+   "tier": "distance",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "中央饭店"
+    ],
+    [
+     "南京圣和府邸豪华精选酒店"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "58e7903c1dc1805b69bdb36b9163efc9200733edf1e29d6e259db1fbd2ad10d9"
+  },
+  {
+   "id": "B07",
+   "tier": "distance",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "大行宫"
+    ],
+    [
+     "浮桥"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "4ea7e46946a552e86f17285d8cbb4349e5d0e14e6fbaa38d09174f058c30d3f3"
+  },
+  {
+   "id": "B08",
+   "tier": "distance",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     75
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "7259d1dde20c993c40eda8c655393e5260dc68da109e637c4f103db2c924b378"
+  },
+  {
+   "id": "B09",
+   "tier": "distance",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "九华山"
+    ],
+    [
+     "南京站"
+    ],
+    [
+     "岗子村"
+    ],
+    [
+     "新模范马路"
+    ],
+    [
+     "玄武门"
+    ],
+    [
+     "白马公园"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "9aafba1371044e7963ff9d478b145c30d69b9a13c45562b554a599ab257abd16"
+  },
+  {
+   "id": "C01",
+   "tier": "nearest",
+   "answerable": true,
+   "columns": [
+    "name",
+    "dist_m"
+   ],
+   "rows": [
+    [
+     "中国工商银行",
+     90.44694202
+    ],
+    [
+     "中国农业银行",
+     102.2115339
+    ],
+    [
+     "招商银行",
+     109.39001969
+    ],
+    [
+     "中国银行",
+     115.28571097
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "161d72f5fe371e7a249159a9b026bca57d212b318cfb6e046bf3c4c67e9040fa"
+  },
+  {
+   "id": "C02",
+   "tier": "nearest",
+   "answerable": true,
+   "columns": [
+    "name",
+    "dist_m"
+   ],
+   "rows": [
+    [
+     "明故宫",
+     585.29503482
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "3298ac184b8a71fee560fd22526d800c1bea4dbba74331e715a29e0858cb4047"
+  },
+  {
+   "id": "C03",
+   "tier": "nearest",
+   "answerable": true,
+   "columns": [
+    "name",
+    "dist_m"
+   ],
+   "rows": [
+    [
+     "南京市江宁区第三人民医院",
+     5632.25295977
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "8adbd6a554920c4ef6670483b1707e680eba90510f133284e94e4270ed3d7f5f"
+  },
+  {
+   "id": "C04",
+   "tier": "nearest",
+   "answerable": true,
+   "columns": [
+    "name",
+    "dist_m"
+   ],
+   "rows": [
+    [
+     "五台山",
+     551.8096666
+    ],
+    [
+     "鼓楼",
+     609.75593133
+    ],
+    [
+     "珠江路",
+     611.01797929
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "ce18543aedd04f646b9a6c48883d4ac97ff1df95a58ccd2b8acb330e1a11e580"
+  },
+  {
+   "id": "C05",
+   "tier": "nearest",
+   "answerable": true,
+   "columns": [
+    "name",
+    "dist_m"
+   ],
+   "rows": [
+    [
+     "中国药科大学(玄武门校区)",
+     798.4766413
+    ],
+    [
+     "东南大学(四牌楼校区)",
+     871.93436798
+    ],
+    [
+     "南京工业大学（丁家桥校区）",
+     876.17170229
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "6e39fe7a6e35289a65a3cad0273f90f66ef51215184be88d93d66d204c586b13"
+  },
+  {
+   "id": "C06",
+   "tier": "nearest",
+   "answerable": true,
+   "columns": [
+    "name",
+    "dist_m"
+   ],
+   "rows": [
+    [
+     "西子苑酒店",
+     466.23559718
+    ],
+    [
+     "必胜客",
+     488.13511826
+    ],
+    [
+     "麦当劳",
+     516.95007414
+    ],
+    [
+     "肯德基",
+     590.34658758
+    ],
+    [
+     "粤鸿和",
+     647.55795402
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "5680fcce20ade8486d4ef94c1d8b963578330013058fb8448f7d275191cf9ae2"
+  },
+  {
+   "id": "C07",
+   "tier": "nearest",
+   "answerable": true,
+   "columns": [
+    "dist_m"
+   ],
+   "rows": [
+    [
+     2382.9893917
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "c7dd67ea6461b42bf2c44260d138ae5ddb775df78f8183e67c0ad62b27df54ca"
+  },
+  {
+   "id": "C08",
+   "tier": "nearest",
+   "answerable": true,
+   "columns": [
+    "name",
+    "dist_m"
+   ],
+   "rows": [
+    [
+     "Ibis",
+     570.39845913
+    ],
+    [
+     "桔子水晶酒店",
+     834.51591843
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "cc84dc65f9f1dde626c4952ee9beeeedd7c37b1554149e3fceea4d4f9985c2a4"
+  },
+  {
+   "id": "D01",
+   "tier": "district",
+   "answerable": true,
+   "columns": [
+    "name",
+    "n"
+   ],
+   "rows": [
+    [
+     "浦口区",
+     15
+    ],
+    [
+     "秦淮区",
+     16
+    ],
+    [
+     "栖霞区",
+     27
+    ],
+    [
+     "高淳区",
+     5
+    ],
+    [
+     "六合区",
+     8
+    ],
+    [
+     "雨花台区",
+     3
+    ],
+    [
+     "鼓楼区",
+     17
+    ],
+    [
+     "江宁区",
+     27
+    ],
+    [
+     "建邺区",
+     15
+    ],
+    [
+     "溧水区",
+     7
+    ],
+    [
+     "玄武区",
+     15
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "63d78233e61d745ea54ac612468b60590b084e10b7875bbac22fbe5883e8732f"
+  },
+  {
+   "id": "D02",
+   "tier": "district",
+   "answerable": true,
+   "columns": [
+    "name",
+    "n"
+   ],
+   "rows": [
+    [
+     "玄武区",
+     14
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "618adc61afe22f19b7aa812cebe29c81bd954472e362ebdce9f02925f0ca4218"
+  },
+  {
+   "id": "D03",
+   "tier": "district",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "高淳区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "b83c134364e44b88486559955e227be4a019fd9253b07f80790d43fa4c4ce7bc"
+  },
+  {
+   "id": "D04",
+   "tier": "district",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     27
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "10415a9a83652a415f18763af3b9ea2b58aa15c708b28ac29069cd5df2b3784e"
+  },
+  {
+   "id": "D05",
+   "tier": "district",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     21
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "2dea828a98d0e7190d060b22ceadb2270339b10f22995623cae41bb8fde87691"
+  },
+  {
+   "id": "D06",
+   "tier": "district",
+   "answerable": true,
+   "columns": [
+    "name",
+    "n"
+   ],
+   "rows": [
+    [
+     "江宁区",
+     59
+    ],
+    [
+     "建邺区",
+     36
+    ],
+    [
+     "栖霞区",
+     33
+    ],
+    [
+     "秦淮区",
+     27
+    ],
+    [
+     "浦口区",
+     26
+    ],
+    [
+     "玄武区",
+     24
+    ],
+    [
+     "鼓楼区",
+     22
+    ],
+    [
+     "雨花台区",
+     20
+    ],
+    [
+     "六合区",
+     13
+    ],
+    [
+     "溧水区",
+     10
+    ],
+    [
+     "高淳区",
+     2
+    ]
+   ],
+   "order_matters": true,
+   "result_sha256": "3d2df443028285fa4d491d0d7c6a178aec4634203440f596b9adcb7b18873d00"
+  },
+  {
+   "id": "D07",
+   "tier": "district",
+   "answerable": true,
+   "columns": [
+    "name",
+    "banks_per_km2"
+   ],
+   "rows": [
+    [
+     "鼓楼区",
+     0.8492634499418932
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "69e555ceec0693c50c02d6569b2a3c69d3bf284cb9d3311a1fa89ca0839c3b6c"
+  },
+  {
+   "id": "D08",
+   "tier": "district",
+   "answerable": true,
+   "columns": [
+    "name",
+    "n"
+   ],
+   "rows": [
+    [
+     "浦口区",
+     100
+    ],
+    [
+     "江宁区",
+     94
+    ],
+    [
+     "栖霞区",
+     83
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "5f8cb722f44a5b5833c801e6f637c0e55950015b1a6d9fbd706c7df67c4d6721"
+  },
+  {
+   "id": "D09",
+   "tier": "district",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "秦淮区"
+    ],
+    [
+     "鼓楼区"
+    ],
+    [
+     "栖霞区"
+    ],
+    [
+     "江宁区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "a54040cff171a99b38aa9b85be243d4576700e2bd07b1625d6d25ffb715de137"
+  },
+  {
+   "id": "D10",
+   "tier": "district",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "浦口区"
+    ],
+    [
+     "六合区"
+    ],
+    [
+     "鼓楼区"
+    ],
+    [
+     "建邺区"
+    ],
+    [
+     "雨花台区"
+    ],
+    [
+     "栖霞区"
+    ],
+    [
+     "江宁区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "55c46f2c53825705606c92c5b00e4728a0f1263ddb684e452d22c6bb7fb82078"
+  },
+  {
+   "id": "E01",
+   "tier": "multistep",
+   "answerable": true,
+   "columns": [
+    "name",
+    "n"
+   ],
+   "rows": [
+    [
+     "新街口",
+     13
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "cf9f6a3ed3138d18c56e7a9a1caca8d8a0275dac6925c03acd7884281818228e"
+  },
+  {
+   "id": "E02",
+   "tier": "multistep",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     5
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "b9014207a50f25dbaec1a9977dba4df8f7cf0b66bcbe18c47a6cfeb9c2e54b38"
+  },
+  {
+   "id": "E03",
+   "tier": "multistep",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     12
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "c2e78fd22c2994f2156e2a9281dcbad2bed2e3f6497dd71cfd3a86f0cd866f85"
+  },
+  {
+   "id": "E04",
+   "tier": "multistep",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     7
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f70d2373fbb9d41b2b230259c1962f5735e7fef9fdc90fa06e7e6202950ef6b9"
+  },
+  {
+   "id": "E05",
+   "tier": "multistep",
+   "answerable": true,
+   "columns": [
+    "name",
+    "n"
+   ],
+   "rows": [
+    [
+     "南京时尚莱迪购物广场",
+     71
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "95624b9a12fcc8ad922d2c9f3fe7f6e268b9bbe8129e3ed71b7fbbe7c66b3718"
+  },
+  {
+   "id": "E06",
+   "tier": "multistep",
+   "answerable": true,
+   "columns": [
+    "km"
+   ],
+   "rows": [
+    [
+     407.48717241733647
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "ddd561b12fcb52904419a3a2626564f243c5debd638c0040e2ec4312237134b0"
+  },
+  {
+   "id": "E07",
+   "tier": "multistep",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "岱山社区医院"
+    ],
+    [
+     "南京梅山医院"
+    ],
+    [
+     "南京市第一医院南院"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "3f2fd5899050f6af3294cd21c79e64678bd44ad1134d8faa17cb087b617bf2b0"
+  },
+  {
+   "id": "E08",
+   "tier": "multistep",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     27
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "10415a9a83652a415f18763af3b9ea2b58aa15c708b28ac29069cd5df2b3784e"
+  },
+  {
+   "id": "E09",
+   "tier": "multistep",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     3
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "1316c39cbd671a6249957f393ff4c9a989dac092a58d3e4c5537ecf84cd2e2f7"
+  },
+  {
+   "id": "F01",
+   "tier": "crs_unit",
+   "answerable": true,
+   "columns": [
+    "km2"
+   ],
+   "rows": [
+    [
+     81.28825956187511
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "6485ee32650ccbcf4b248d7afa286529f8242c69d290facb7bb83e12e5d312cf"
+  },
+  {
+   "id": "F02",
+   "tier": "crs_unit",
+   "answerable": true,
+   "columns": [
+    "ha"
+   ],
+   "rows": [
+    [
+     349.7053791974051
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "49dbea14a6b2d7559cb528662047ef02d8bafa83f4a8f367bdc9031451f6be2d"
+  },
+  {
+   "id": "F03",
+   "tier": "crs_unit",
+   "answerable": true,
+   "columns": [
+    "km"
+   ],
+   "rows": [
+    [
+     21.005861817119396
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f140c6295861a694f6d45c6901d4e655ed5aa7b11dfeea22b2635ddeafff6a69"
+  },
+  {
+   "id": "F04",
+   "tier": "crs_unit",
+   "answerable": true,
+   "columns": [
+    "km"
+   ],
+   "rows": [
+    [
+     8.03882474515
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "fc104f6dd6b6e9e7dd78c1f1f90cef7c35983daea75c078054fab77c232463a7"
+  },
+  {
+   "id": "F05",
+   "tier": "crs_unit",
+   "answerable": true,
+   "columns": [
+    "name",
+    "km2"
+   ],
+   "rows": [
+    [
+     "江宁区",
+     1567.3035047983483
+    ],
+    [
+     "六合区",
+     1481.2778476708052
+    ],
+    [
+     "溧水区",
+     1069.89765467645
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "4c9c1361937f589efe2559a6b0093aec2e83cae39d051ba775b1a8248593f1bb"
+  },
+  {
+   "id": "F06",
+   "tier": "crs_unit",
+   "answerable": true,
+   "columns": [
+    "km2"
+   ],
+   "rows": [
+    [
+     111.2970275668674
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "366b9aade6773089d7c4e030defd7a258b712b2d0db7c21d83e3c156c8244234"
+  },
+  {
+   "id": "F07",
+   "tier": "crs_unit",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     9
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "9712bb578631382f2406ba331ea79e9df9f5279bd90ce4376c04841f408851d8"
+  },
+  {
+   "id": "F08",
+   "tier": "crs_unit",
+   "answerable": true,
+   "columns": [
+    "name",
+    "km"
+   ],
+   "rows": [
+    [
+     "溧水河",
+     30.32394727772625
+    ],
+    [
+     "秦淮河",
+     30.360481857487596
+    ],
+    [
+     "句容河",
+     27.417210109272936
+    ],
+    [
+     "夹江",
+     41.90396881375786
+    ],
+    [
+     "滁河",
+     111.55179112098591
+    ],
+    [
+     "长江",
+     95.31934026099216
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "30645e04dde3d47e6dcf8158b7b06d1972d21d61b129d8e3ee92e33198b94879"
+  },
+  {
+   "id": "U01",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "U02",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "U03",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "U04",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "U05",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "U06",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "U07",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "U08",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "U09",
+   "tier": "unanswerable",
+   "answerable": false
+  }
+ ],
+ "items_sha256": "49f708db9909ced03886c6670bba9aa0883c8a0d78502d70a0036b1ddfe0f02b"
+}

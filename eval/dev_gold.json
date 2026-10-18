@@ -1,0 +1,160 @@
+{
+ "frozen_at": "2026-10-18T07:47:24+00:00",
+ "questions_file": "dev_questions.json",
+ "questions_sha256": "b7a11cd33970623f4ca8bbc806ed20fa1a042bbd8aba34252e5d9d859beaa0e1",
+ "data": {
+  "table_counts": {
+   "districts": 11,
+   "metro_stations": 272,
+   "parks": 495,
+   "pois": 9088,
+   "roads": 32153,
+   "water_areas": 5727,
+   "waterways": 1976
+  },
+  "postgis_version": "3.5.2",
+  "osm_snapshot": "jiangsu-261017.osm.pbf",
+  "osm_snapshot_sha256": "dcba9384eb5919ae3bf4aeb209fac913b0754133a5f5d4e2acd2b4d5f1b2652e"
+ },
+ "items": [
+  {
+   "id": "DV01",
+   "tier": "attribute",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     34
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "25ee9d2903ed7b1f929a4835a860ae38fd6c42cc3b05cdbf7be2203e7e6515dc"
+  },
+  {
+   "id": "DV02",
+   "tier": "distance",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     1
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f45c5cf07bf091295818ed528234da7c7c0d19d2bccc9bb9102214947deec509"
+  },
+  {
+   "id": "DV03",
+   "tier": "nearest",
+   "answerable": true,
+   "columns": [
+    "name",
+    "dist_m"
+   ],
+   "rows": [
+    [
+     "大行宫",
+     371.31749466
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "0bd13efdc556fd049ef3dd89f54ef06e5dc7256ee3fd2075983be64bbbc89939"
+  },
+  {
+   "id": "DV04",
+   "tier": "district",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     37
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "2ab44507f833b0774fc55ddb2abbb12bb148981f6d7233c269d724a85c99a51d"
+  },
+  {
+   "id": "DV05",
+   "tier": "multistep",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     10
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "6c89b370981db437655de4fc9f9b57f9d5ef5bbd11a575e9314f899680918faa"
+  },
+  {
+   "id": "DV06",
+   "tier": "crs_unit",
+   "answerable": true,
+   "columns": [
+    "km2"
+   ],
+   "rows": [
+    [
+     75.19612445009199
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "a965ae267668ca317113db4b4d9f6e6150aca400ed6be632e8cf3558fdbbdb6a"
+  },
+  {
+   "id": "DV07",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "DV08",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "DV09",
+   "tier": "distance",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "上海路"
+    ],
+    [
+     "新街口"
+    ],
+    [
+     "珠江路"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "29cc977e020ca7538a7c70ad99cc4c975b7833b996255a39740a733b51d4c6e2"
+  },
+  {
+   "id": "DV10",
+   "tier": "crs_unit",
+   "answerable": true,
+   "columns": [
+    "km"
+   ],
+   "rows": [
+    [
+     7.490792337406344
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f242b8a042ccf35cce19b5c8fba6a4252a405af83785e8ab6bb5f6f3f13b2834"
+  }
+ ],
+ "items_sha256": "a7eb63a094721287d81376427dac135a3f406b05974617fe037f35fa5ef367da"
+}
