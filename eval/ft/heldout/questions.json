@@ -1,0 +1,3223 @@
+[
+ {
+  "id": "HO-T0001",
+  "tier": "tag",
+  "kind": "tag_sub_list",
+  "question": "可以刷银联卡的果蔬店都叫什么名字？",
+  "gold_sql": "SELECT DISTINCT p.name FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE p.subtype = 'greengrocer' AND g.key = 'payment:unionpay' AND g.value = 'yes' AND p.name IS NOT NULL",
+  "args": {
+   "st": "greengrocer",
+   "key": "payment:unionpay",
+   "value": "yes"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0002",
+  "tier": "tag",
+  "kind": "tag_sub_list",
+  "question": "给出所有可以刷银联卡且有名称的电影院。",
+  "gold_sql": "SELECT DISTINCT p.name FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE p.subtype = 'cinema' AND g.key = 'payment:unionpay' AND g.value = 'yes' AND p.name IS NOT NULL",
+  "args": {
+   "st": "cinema",
+   "key": "payment:unionpay",
+   "value": "yes"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0003",
+  "tier": "tag",
+  "kind": "tag_count",
+  "question": "统计支持微信付款的兴趣点数量。",
+  "gold_sql": "SELECT count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE g.key = 'payment:wechat' AND g.value = 'yes'",
+  "args": {
+   "key": "payment:wechat",
+   "value": "yes"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0004",
+  "tier": "tag",
+  "kind": "tag_district",
+  "question": "栖霞区范围内全面禁烟的点有多少？",
+  "gold_sql": "SELECT count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id JOIN districts d ON ST_Within(p.geom, d.geom) WHERE d.name = '栖霞区' AND g.key = 'smoking' AND g.value = 'no'",
+  "args": {
+   "d": "栖霞区",
+   "key": "smoking",
+   "value": "no"
+  },
+  "ents": [
+   [
+    "districts",
+    "栖霞区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-T0005",
+  "tier": "tag",
+  "kind": "tag_sub_count",
+  "question": "请问珠宝店中位于地下一层的有多少？",
+  "gold_sql": "SELECT count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE p.subtype = 'jewelry' AND g.key = 'level' AND g.value = '-1'",
+  "args": {
+   "st": "jewelry",
+   "key": "level",
+   "value": "-1"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0006",
+  "tier": "tag",
+  "kind": "tag_count",
+  "question": "统计收现金的兴趣点数量。",
+  "gold_sql": "SELECT count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE g.key = 'payment:cash' AND g.value = 'yes'",
+  "args": {
+   "key": "payment:cash",
+   "value": "yes"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0007",
+  "tier": "tag",
+  "kind": "tag_count",
+  "question": "库中标注为可以刷银联卡的点位有几处？",
+  "gold_sql": "SELECT count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE g.key = 'payment:unionpay' AND g.value = 'yes'",
+  "args": {
+   "key": "payment:unionpay",
+   "value": "yes"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0008",
+  "tier": "tag",
+  "kind": "tag_sub_list",
+  "question": "支持微信付款的电影院都叫什么名字？",
+  "gold_sql": "SELECT DISTINCT p.name FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE p.subtype = 'cinema' AND g.key = 'payment:wechat' AND g.value = 'yes' AND p.name IS NOT NULL",
+  "args": {
+   "st": "cinema",
+   "key": "payment:wechat",
+   "value": "yes"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0009",
+  "tier": "tag",
+  "kind": "tag_sub_list",
+  "question": "支持微信付款的果蔬店都叫什么名字？",
+  "gold_sql": "SELECT DISTINCT p.name FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE p.subtype = 'greengrocer' AND g.key = 'payment:wechat' AND g.value = 'yes' AND p.name IS NOT NULL",
+  "args": {
+   "st": "greengrocer",
+   "key": "payment:wechat",
+   "value": "yes"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0010",
+  "tier": "tag",
+  "kind": "tag_sub_count",
+  "question": "请问果蔬店中可以刷银联卡的有多少？",
+  "gold_sql": "SELECT count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE p.subtype = 'greengrocer' AND g.key = 'payment:unionpay' AND g.value = 'yes'",
+  "args": {
+   "st": "greengrocer",
+   "key": "payment:unionpay",
+   "value": "yes"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0011",
+  "tier": "tag",
+  "kind": "tag_sub_count",
+  "question": "支持微信付款的果蔬店共有多少个？",
+  "gold_sql": "SELECT count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE p.subtype = 'greengrocer' AND g.key = 'payment:wechat' AND g.value = 'yes'",
+  "args": {
+   "st": "greengrocer",
+   "key": "payment:wechat",
+   "value": "yes"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0013",
+  "tier": "tag",
+  "kind": "tag_district",
+  "question": "栖霞区范围内没有免下车取餐窗口的点有多少？",
+  "gold_sql": "SELECT count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id JOIN districts d ON ST_Within(p.geom, d.geom) WHERE d.name = '栖霞区' AND g.key = 'drive_through' AND g.value = 'no'",
+  "args": {
+   "d": "栖霞区",
+   "key": "drive_through",
+   "value": "no"
+  },
+  "ents": [
+   [
+    "districts",
+    "栖霞区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-T0014",
+  "tier": "tag",
+  "kind": "tag_top",
+  "question": "所有兴趣点的婴儿护理台情况，哪个取值最多？给出数量。",
+  "gold_sql": "SELECT g.value, count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE g.key = 'changing_table' GROUP BY g.value ORDER BY n DESC LIMIT 1",
+  "margin": {
+   "kind": "gap_count",
+   "sql": "SELECT count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE g.key = 'changing_table' GROUP BY g.value ORDER BY n DESC LIMIT 2"
+  },
+  "args": {
+   "key": "changing_table",
+   "st": null
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0015",
+  "tier": "tag",
+  "kind": "tag_sub_count",
+  "question": "请问青年旅舍中设有隔离吸烟区的有多少？",
+  "gold_sql": "SELECT count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE p.subtype = 'hostel' AND g.key = 'smoking' AND g.value = 'isolated'",
+  "args": {
+   "st": "hostel",
+   "key": "smoking",
+   "value": "isolated"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0016",
+  "tier": "tag",
+  "kind": "tag_count",
+  "question": "统计全面禁烟的兴趣点数量。",
+  "gold_sql": "SELECT count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE g.key = 'smoking' AND g.value = 'no'",
+  "args": {
+   "key": "smoking",
+   "value": "no"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0017",
+  "tier": "tag",
+  "kind": "tag_count",
+  "question": "库中标注为设有隔离吸烟区的点位有几处？",
+  "gold_sql": "SELECT count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE g.key = 'smoking' AND g.value = 'isolated'",
+  "args": {
+   "key": "smoking",
+   "value": "isolated"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0018",
+  "tier": "tag",
+  "kind": "tag_sub_count",
+  "question": "请问电影院中可以刷银联卡的有多少？",
+  "gold_sql": "SELECT count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE p.subtype = 'cinema' AND g.key = 'payment:unionpay' AND g.value = 'yes'",
+  "args": {
+   "st": "cinema",
+   "key": "payment:unionpay",
+   "value": "yes"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0019",
+  "tier": "tag",
+  "kind": "tag_sub_list",
+  "question": "支持微信付款的青年旅舍都叫什么名字？",
+  "gold_sql": "SELECT DISTINCT p.name FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE p.subtype = 'hostel' AND g.key = 'payment:wechat' AND g.value = 'yes' AND p.name IS NOT NULL",
+  "args": {
+   "st": "hostel",
+   "key": "payment:wechat",
+   "value": "yes"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0020",
+  "tier": "tag",
+  "kind": "tag_sub_count",
+  "question": "请问手机店中位于地下一层的有多少？",
+  "gold_sql": "SELECT count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE p.subtype = 'mobile_phone' AND g.key = 'level' AND g.value = '-1'",
+  "args": {
+   "st": "mobile_phone",
+   "key": "level",
+   "value": "-1"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0021",
+  "tier": "tag",
+  "kind": "tag_sub_list",
+  "question": "给出所有收现金且有名称的青年旅舍。",
+  "gold_sql": "SELECT DISTINCT p.name FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE p.subtype = 'hostel' AND g.key = 'payment:cash' AND g.value = 'yes' AND p.name IS NOT NULL",
+  "args": {
+   "st": "hostel",
+   "key": "payment:cash",
+   "value": "yes"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0022",
+  "tier": "tag",
+  "kind": "tag_sub_count",
+  "question": "请问青年旅舍中收现金的有多少？",
+  "gold_sql": "SELECT count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE p.subtype = 'hostel' AND g.key = 'payment:cash' AND g.value = 'yes'",
+  "args": {
+   "st": "hostel",
+   "key": "payment:cash",
+   "value": "yes"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0025",
+  "tier": "tag",
+  "kind": "tag_sub_count",
+  "question": "位于地下一层的百货商店共有多少个？",
+  "gold_sql": "SELECT count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE p.subtype = 'department_store' AND g.key = 'level' AND g.value = '-1'",
+  "args": {
+   "st": "department_store",
+   "key": "level",
+   "value": "-1"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0026",
+  "tier": "tag",
+  "kind": "tag_sub_list",
+  "question": "收现金的电影院都叫什么名字？",
+  "gold_sql": "SELECT DISTINCT p.name FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE p.subtype = 'cinema' AND g.key = 'payment:cash' AND g.value = 'yes' AND p.name IS NOT NULL",
+  "args": {
+   "st": "cinema",
+   "key": "payment:cash",
+   "value": "yes"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0027",
+  "tier": "tag",
+  "kind": "tag_sub_count",
+  "question": "请问青年旅舍中支持微信付款的有多少？",
+  "gold_sql": "SELECT count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE p.subtype = 'hostel' AND g.key = 'payment:wechat' AND g.value = 'yes'",
+  "args": {
+   "st": "hostel",
+   "key": "payment:wechat",
+   "value": "yes"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-T0028",
+  "tier": "tag",
+  "kind": "tag_sub_count",
+  "question": "请问电影院中收现金的有多少？",
+  "gold_sql": "SELECT count(DISTINCT p.id) AS n FROM pois p JOIN poi_tags g ON g.poi_id = p.id WHERE p.subtype = 'cinema' AND g.key = 'payment:cash' AND g.value = 'yes'",
+  "args": {
+   "st": "cinema",
+   "key": "payment:cash",
+   "value": "yes"
+  },
+  "ents": []
+ },
+ {
+  "id": "HO-J0001",
+  "tier": "join",
+  "kind": "sub_in_district",
+  "question": "驾校训练场在栖霞区有多少处？",
+  "gold_sql": "SELECT count(*) AS n FROM pois t JOIN districts d ON ST_Within(t.geom, d.geom) WHERE d.name = '栖霞区' AND t.subtype = 'driver_training'",
+  "args": {
+   "st": "driver_training",
+   "d": "栖霞区",
+   "probe": false
+  },
+  "ents": [
+   [
+    "districts",
+    "栖霞区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0002",
+  "tier": "join",
+  "kind": "place_district",
+  "question": "高科荣境二期小区在哪个区的范围内？",
+  "gold_sql": "SELECT d.name AS district FROM residential_areas t JOIN districts d ON ST_Within(ST_PointOnSurface(t.geom), d.geom) WHERE t.name = '高科荣境二期'",
+  "args": {
+   "layer": "residential_areas",
+   "name": "高科荣境二期",
+   "mention": "高科荣境二期小区"
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "高科荣境二期"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0003",
+  "tier": "join",
+  "kind": "english_name",
+  "question": "把英文名“Jinling Town”换成中文名称，并说明它在哪个区。",
+  "gold_sql": "SELECT p.name, (SELECT d.name FROM districts d WHERE ST_Within(p.geom, d.geom) LIMIT 1) AS district FROM pois p WHERE p.name = '金陵小镇'",
+  "args": {
+   "name": "金陵小镇",
+   "key": "name:en",
+   "value": "Jinling Town"
+  },
+  "ents": [
+   [
+    "pois",
+    "金陵小镇"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0005",
+  "tier": "join",
+  "kind": "alias_district",
+  "question": "人们说的“南京新宁浦八卦洲总站”指哪里？位于哪个行政区？",
+  "gold_sql": "SELECT p.name, (SELECT d.name FROM districts d WHERE ST_Within(p.geom, d.geom) LIMIT 1) AS district FROM pois p WHERE p.name = '八卦洲公交场站'",
+  "args": {
+   "name": "八卦洲公交场站",
+   "key": "old_name",
+   "value": "南京新宁浦八卦洲总站"
+  },
+  "ents": [
+   [
+    "pois",
+    "八卦洲公交场站"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0006",
+  "tier": "join",
+  "kind": "sub_in_district",
+  "question": "位于栖霞区的百货商店数量是多少？",
+  "gold_sql": "SELECT count(*) AS n FROM pois t JOIN districts d ON ST_Within(t.geom, d.geom) WHERE d.name = '栖霞区' AND t.subtype = 'department_store'",
+  "args": {
+   "st": "department_store",
+   "d": "栖霞区",
+   "probe": false
+  },
+  "ents": [
+   [
+    "districts",
+    "栖霞区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0007",
+  "tier": "join",
+  "kind": "count_in_park",
+  "question": "统计位于雨花台风景名胜区内部的兴趣点个数。",
+  "gold_sql": "SELECT count(*) AS n FROM pois t JOIN parks k ON ST_Within(t.geom, k.geom) WHERE k.name = '雨花台风景名胜区'",
+  "args": {
+   "name": "雨花台风景名胜区",
+   "list": true
+  },
+  "ents": [
+   [
+    "parks",
+    "雨花台风景名胜区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0009",
+  "tier": "join",
+  "kind": "alias_district",
+  "question": "人们说的“龙潭社区卫生服务中心”指哪里？位于哪个行政区？",
+  "gold_sql": "SELECT p.name, (SELECT d.name FROM districts d WHERE ST_Within(p.geom, d.geom) LIMIT 1) AS district FROM pois p WHERE p.name = '栖霞区医院龙潭分院'",
+  "args": {
+   "name": "栖霞区医院龙潭分院",
+   "key": "old_name",
+   "value": "龙潭社区卫生服务中心"
+  },
+  "ents": [
+   [
+    "pois",
+    "栖霞区医院龙潭分院"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0010",
+  "tier": "join",
+  "kind": "count_in_park",
+  "question": "麒麟生态中央公园里面一共有几处兴趣点？",
+  "gold_sql": "SELECT count(*) AS n FROM pois t JOIN parks k ON ST_Within(t.geom, k.geom) WHERE k.name = '麒麟生态中央公园'",
+  "args": {
+   "name": "麒麟生态中央公园",
+   "list": false
+  },
+  "ents": [
+   [
+    "parks",
+    "麒麟生态中央公园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0011",
+  "tier": "join",
+  "kind": "place_district",
+  "question": "请问地铁毛纺厂路站所在的区是哪个？",
+  "gold_sql": "SELECT d.name AS district FROM metro_stations t JOIN districts d ON ST_Within(t.geom, d.geom) WHERE t.name = '毛纺厂路'",
+  "args": {
+   "layer": "metro_stations",
+   "name": "毛纺厂路",
+   "mention": "地铁毛纺厂路站"
+  },
+  "ents": [
+   [
+    "metro_stations",
+    "毛纺厂路"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0012",
+  "tier": "join",
+  "kind": "alias_district",
+  "question": "“毗盧庵;毗卢庵”是哪个兴趣点的别称？所在区是？",
+  "gold_sql": "SELECT p.name, (SELECT d.name FROM districts d WHERE ST_Within(p.geom, d.geom) LIMIT 1) AS district FROM pois p WHERE p.name = '毗卢寺'",
+  "args": {
+   "name": "毗卢寺",
+   "key": "old_name",
+   "value": "毗盧庵;毗卢庵"
+  },
+  "ents": [
+   [
+    "pois",
+    "毗卢寺"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0013",
+  "tier": "join",
+  "kind": "place_district",
+  "question": "请问大华云江印月小区所在的区是哪个？",
+  "gold_sql": "SELECT d.name AS district FROM residential_areas t JOIN districts d ON ST_Within(ST_PointOnSurface(t.geom), d.geom) WHERE t.name = '大华云江印月'",
+  "args": {
+   "layer": "residential_areas",
+   "name": "大华云江印月",
+   "mention": "大华云江印月小区"
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "大华云江印月"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0014",
+  "tier": "join",
+  "kind": "count_in_park",
+  "question": "桃湖公园里面一共有几处兴趣点？",
+  "gold_sql": "SELECT count(*) AS n FROM pois t JOIN parks k ON ST_Within(t.geom, k.geom) WHERE k.name = '桃湖公园'",
+  "args": {
+   "name": "桃湖公园",
+   "list": false
+  },
+  "ents": [
+   [
+    "parks",
+    "桃湖公园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0016",
+  "tier": "join",
+  "kind": "within_count",
+  "question": "地铁尧化门站周边直线距离750米内共有多少个消防站？",
+  "gold_sql": "WITH a AS (SELECT ST_Union(geom) AS g FROM metro_stations WHERE name = '尧化门') SELECT count(*) AS n FROM pois t, a WHERE t.subtype = 'fire_station' AND ST_DWithin(t.geom::geography, a.g::geography, 750)",
+  "margin": {
+   "kind": "radius",
+   "threshold": 750,
+   "sql": "WITH a AS (SELECT ST_Union(geom) AS g FROM metro_stations WHERE name = '尧化门') SELECT ST_Distance(t.geom::geography, a.g::geography) FROM pois t, a WHERE t.subtype = 'fire_station' AND ST_DWithin(t.geom::geography, a.g::geography, 2000)"
+  },
+  "args": {
+   "layer": "metro_stations",
+   "name": "尧化门",
+   "mention": "地铁尧化门站",
+   "st": "fire_station",
+   "r": 750,
+   "list": true
+  },
+  "ents": [
+   [
+    "metro_stations",
+    "尧化门"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0017",
+  "tier": "join",
+  "kind": "english_name",
+  "question": "把英文名“Bridge Hotel”换成中文名称，并说明它在哪个区。",
+  "gold_sql": "SELECT p.name, (SELECT d.name FROM districts d WHERE ST_Within(p.geom, d.geom) LIMIT 1) AS district FROM pois p WHERE p.name = '大桥饭店'",
+  "args": {
+   "name": "大桥饭店",
+   "key": "name:en",
+   "value": "Bridge Hotel"
+  },
+  "ents": [
+   [
+    "pois",
+    "大桥饭店"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0018",
+  "tier": "join",
+  "kind": "count_in_park",
+  "question": "南京云幽谷旅游区里面一共有几处兴趣点？",
+  "gold_sql": "SELECT count(*) AS n FROM pois t JOIN parks k ON ST_Within(t.geom, k.geom) WHERE k.name = '南京云幽谷旅游区'",
+  "args": {
+   "name": "南京云幽谷旅游区",
+   "list": false
+  },
+  "ents": [
+   [
+    "parks",
+    "南京云幽谷旅游区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0019",
+  "tier": "join",
+  "kind": "nearest_metro",
+  "question": "以揽月山庄小区面内代表点计，最近地铁站的名称和直线距离（米）是？",
+  "gold_sql": "WITH o AS (SELECT ST_PointOnSurface(geom) AS p FROM residential_areas WHERE name = '揽月山庄') SELECT m.name, ST_Distance(m.geom::geography, o.p::geography) AS dist_m FROM metro_stations m, o ORDER BY dist_m LIMIT 1",
+  "margin": {
+   "kind": "ordered_topk",
+   "k": 1,
+   "sql": "WITH o AS (SELECT ST_PointOnSurface(geom) AS p FROM residential_areas WHERE name = '揽月山庄') SELECT ST_Distance(m.geom::geography, o.p::geography) AS d FROM metro_stations m, o ORDER BY d LIMIT 2"
+  },
+  "args": {
+   "name": "揽月山庄",
+   "mention": "揽月山庄小区"
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "揽月山庄"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0020",
+  "tier": "join",
+  "kind": "english_name",
+  "question": "哪个地方的英文名是“Gome”？请给出中文名和行政区。",
+  "gold_sql": "SELECT p.name, (SELECT d.name FROM districts d WHERE ST_Within(p.geom, d.geom) LIMIT 1) AS district FROM pois p WHERE p.name = '国美电器'",
+  "args": {
+   "name": "国美电器",
+   "key": "name:en",
+   "value": "Gome"
+  },
+  "ents": [
+   [
+    "pois",
+    "国美电器"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0021",
+  "tier": "join",
+  "kind": "alias_district",
+  "question": "“金陵天地”是哪个兴趣点的别称？所在区是？",
+  "gold_sql": "SELECT p.name, (SELECT d.name FROM districts d WHERE ST_Within(p.geom, d.geom) LIMIT 1) AS district FROM pois p WHERE p.name = '南京金陵天地'",
+  "args": {
+   "name": "南京金陵天地",
+   "key": "short_name",
+   "value": "金陵天地"
+  },
+  "ents": [
+   [
+    "pois",
+    "南京金陵天地"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0023",
+  "tier": "join",
+  "kind": "place_district",
+  "question": "请问高家冲地铁站所在的区是哪个？",
+  "gold_sql": "SELECT d.name AS district FROM metro_stations t JOIN districts d ON ST_Within(t.geom, d.geom) WHERE t.name = '高家冲'",
+  "args": {
+   "layer": "metro_stations",
+   "name": "高家冲",
+   "mention": "高家冲地铁站"
+  },
+  "ents": [
+   [
+    "metro_stations",
+    "高家冲"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0024",
+  "tier": "join",
+  "kind": "nearest_metro",
+  "question": "哪个地铁站离麒麟紫荆城-晨光苑小区最近（直线，以小区面内代表点为准）？相距几米？",
+  "gold_sql": "WITH o AS (SELECT ST_PointOnSurface(geom) AS p FROM residential_areas WHERE name = '麒麟紫荆城-晨光苑') SELECT m.name, ST_Distance(m.geom::geography, o.p::geography) AS dist_m FROM metro_stations m, o ORDER BY dist_m LIMIT 1",
+  "margin": {
+   "kind": "ordered_topk",
+   "k": 1,
+   "sql": "WITH o AS (SELECT ST_PointOnSurface(geom) AS p FROM residential_areas WHERE name = '麒麟紫荆城-晨光苑') SELECT ST_Distance(m.geom::geography, o.p::geography) AS d FROM metro_stations m, o ORDER BY d LIMIT 2"
+  },
+  "args": {
+   "name": "麒麟紫荆城-晨光苑",
+   "mention": "麒麟紫荆城-晨光苑小区"
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "麒麟紫荆城-晨光苑"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0026",
+  "tier": "join",
+  "kind": "english_name",
+  "question": "哪个地方的英文名是“Zhougang Busterminal”？请给出中文名和行政区。",
+  "gold_sql": "SELECT p.name, (SELECT d.name FROM districts d WHERE ST_Within(p.geom, d.geom) LIMIT 1) AS district FROM pois p WHERE p.name = '周岗客运站'",
+  "args": {
+   "name": "周岗客运站",
+   "key": "name:en",
+   "value": "Zhougang Busterminal"
+  },
+  "ents": [
+   [
+    "pois",
+    "周岗客运站"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0027",
+  "tier": "join",
+  "kind": "place_district",
+  "question": "锦泉苑小区在哪个区的范围内？",
+  "gold_sql": "SELECT d.name AS district FROM residential_areas t JOIN districts d ON ST_Within(ST_PointOnSurface(t.geom), d.geom) WHERE t.name = '锦泉苑'",
+  "args": {
+   "layer": "residential_areas",
+   "name": "锦泉苑",
+   "mention": "锦泉苑小区"
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "锦泉苑"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0028",
+  "tier": "join",
+  "kind": "english_name",
+  "question": "把英文名“Shopping Fun”换成中文名称，并说明它在哪个区。",
+  "gold_sql": "SELECT p.name, (SELECT d.name FROM districts d WHERE ST_Within(p.geom, d.geom) LIMIT 1) AS district FROM pois p WHERE p.name = '水平方'",
+  "args": {
+   "name": "水平方",
+   "key": "name:en",
+   "value": "Shopping Fun"
+  },
+  "ents": [
+   [
+    "pois",
+    "水平方"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0029",
+  "tier": "join",
+  "kind": "count_in_park",
+  "question": "统计位于浦口滨江湿地公园内部的兴趣点个数。",
+  "gold_sql": "SELECT count(*) AS n FROM pois t JOIN parks k ON ST_Within(t.geom, k.geom) WHERE k.name = '浦口滨江湿地公园'",
+  "args": {
+   "name": "浦口滨江湿地公园",
+   "list": false
+  },
+  "ents": [
+   [
+    "parks",
+    "浦口滨江湿地公园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-J0030",
+  "tier": "join",
+  "kind": "alias_district",
+  "question": "“中国人民解放军国防科技大学气象海洋学院”是哪个兴趣点的别称？所在区是？",
+  "gold_sql": "SELECT p.name, (SELECT d.name FROM districts d WHERE ST_Within(p.geom, d.geom) LIMIT 1) AS district FROM pois p WHERE p.name = '国防科技大学气象海洋学院'",
+  "args": {
+   "name": "国防科技大学气象海洋学院",
+   "key": "official_name",
+   "value": "中国人民解放军国防科技大学气象海洋学院"
+  },
+  "ents": [
+   [
+    "pois",
+    "国防科技大学气象海洋学院"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0001",
+  "tier": "crs",
+  "kind": "water_area_km2",
+  "question": "以平方公里为单位，竹塘坝水库水面多大？",
+  "gold_sql": "SELECT sum(ST_Area(geom::geography)) / 1e6 AS area_km2 FROM water_areas WHERE name = '竹塘坝水库'",
+  "args": {
+   "name": "竹塘坝水库",
+   "probe": false
+  },
+  "ents": [
+   [
+    "water_areas",
+    "竹塘坝水库"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0002",
+  "tier": "crs",
+  "kind": "res_area_m2",
+  "question": "易盛嘉园小区这块用地的面积（平方米）是？",
+  "gold_sql": "SELECT ST_Area(geom::geography) AS area_m2 FROM residential_areas WHERE name = '易盛嘉园'",
+  "args": {
+   "name": "易盛嘉园",
+   "mention": "易盛嘉园小区"
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "易盛嘉园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0003",
+  "tier": "crs",
+  "kind": "waterway_len_km",
+  "question": "以公里计，杨西河全长多少？",
+  "gold_sql": "SELECT sum(ST_Length(geom::geography)) / 1000 AS length_km FROM waterways WHERE name = '杨西河'",
+  "args": {
+   "name": "杨西河",
+   "probe": false
+  },
+  "ents": [
+   [
+    "waterways",
+    "杨西河"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0004",
+  "tier": "crs",
+  "kind": "res_area_m2",
+  "question": "保利中央公园兰台花园西苑小区这块用地的面积（平方米）是？",
+  "gold_sql": "SELECT ST_Area(geom::geography) AS area_m2 FROM residential_areas WHERE name = '保利中央公园兰台花园西苑'",
+  "args": {
+   "name": "保利中央公园兰台花园西苑",
+   "mention": "保利中央公园兰台花园西苑小区"
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "保利中央公园兰台花园西苑"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0005",
+  "tier": "crs",
+  "kind": "res_area_m2",
+  "question": "九月森林小区这块用地的面积（平方米）是？",
+  "gold_sql": "SELECT ST_Area(geom::geography) AS area_m2 FROM residential_areas WHERE name = '九月森林'",
+  "args": {
+   "name": "九月森林",
+   "mention": "九月森林小区"
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "九月森林"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0006",
+  "tier": "crs",
+  "kind": "waterway_len_km",
+  "question": "内秦淮河东段（杨吴城濠）这条水系线的长度有几公里？",
+  "gold_sql": "SELECT sum(ST_Length(geom::geography)) / 1000 AS length_km FROM waterways WHERE name = '内秦淮河东段（杨吴城濠）'",
+  "args": {
+   "name": "内秦淮河东段（杨吴城濠）",
+   "probe": true
+  },
+  "ents": [
+   [
+    "waterways",
+    "内秦淮河东段（杨吴城濠）"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0007",
+  "tier": "crs",
+  "kind": "road_len_in_district",
+  "question": "按栖霞区行政边界裁剪后，兴兴路的长度为多少公里？",
+  "gold_sql": "SELECT sum(ST_Length(ST_Intersection(t.geom, d.geom)::geography)) / 1000 AS len_km FROM roads t JOIN districts d ON ST_Intersects(t.geom, d.geom) WHERE t.name = '兴兴路' AND d.name = '栖霞区'",
+  "args": {
+   "sql": "SELECT sum(ST_Length(ST_Intersection(t.geom, d.geom)::geography)) / 1000 AS len_km FROM roads t JOIN districts d ON ST_Intersects(t.geom, d.geom) WHERE t.name = '兴兴路' AND d.name = '栖霞区'",
+   "road": "兴兴路"
+  },
+  "ents": [
+   [
+    "roads",
+    "兴兴路"
+   ],
+   [
+    "districts",
+    "栖霞区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0008",
+  "tier": "crs",
+  "kind": "res_perimeter_m",
+  "question": "中海原山小区轮廓线的周长（米）为多少？",
+  "gold_sql": "SELECT ST_Perimeter(geom::geography) AS perimeter_m FROM residential_areas WHERE name = '中海原山'",
+  "args": {
+   "name": "中海原山",
+   "mention": "中海原山小区"
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "中海原山"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0009",
+  "tier": "crs",
+  "kind": "park_area_km2",
+  "question": "麒麟生态中央公园的总面积（平方公里）是多少？",
+  "gold_sql": "SELECT sum(ST_Area(geom::geography)) / 1e6 AS area_km2 FROM parks WHERE name = '麒麟生态中央公园'",
+  "args": {
+   "name": "麒麟生态中央公园",
+   "probe": true
+  },
+  "ents": [
+   [
+    "parks",
+    "麒麟生态中央公园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0010",
+  "tier": "crs",
+  "kind": "road_len_in_district",
+  "question": "灵山南路落在栖霞区内的部分总长几公里？",
+  "gold_sql": "SELECT sum(ST_Length(ST_Intersection(t.geom, d.geom)::geography)) / 1000 AS len_km FROM roads t JOIN districts d ON ST_Intersects(t.geom, d.geom) WHERE t.name = '灵山南路' AND d.name = '栖霞区'",
+  "args": {
+   "sql": "SELECT sum(ST_Length(ST_Intersection(t.geom, d.geom)::geography)) / 1000 AS len_km FROM roads t JOIN districts d ON ST_Intersects(t.geom, d.geom) WHERE t.name = '灵山南路' AND d.name = '栖霞区'",
+   "road": "灵山南路"
+  },
+  "ents": [
+   [
+    "roads",
+    "灵山南路"
+   ],
+   [
+    "districts",
+    "栖霞区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0011",
+  "tier": "crs",
+  "kind": "park_area_km2",
+  "question": "滨河公园的总面积（平方公里）是多少？",
+  "gold_sql": "SELECT sum(ST_Area(geom::geography)) / 1e6 AS area_km2 FROM parks WHERE name = '滨河公园'",
+  "args": {
+   "name": "滨河公园",
+   "probe": false
+  },
+  "ents": [
+   [
+    "parks",
+    "滨河公园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0012",
+  "tier": "crs",
+  "kind": "water_area_km2",
+  "question": "以平方公里为单位，苗圃水库水面多大？",
+  "gold_sql": "SELECT sum(ST_Area(geom::geography)) / 1e6 AS area_km2 FROM water_areas WHERE name = '苗圃水库'",
+  "args": {
+   "name": "苗圃水库",
+   "probe": false
+  },
+  "ents": [
+   [
+    "water_areas",
+    "苗圃水库"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0013",
+  "tier": "crs",
+  "kind": "park_area_km2",
+  "question": "用平方公里表示，东山公园有多大？",
+  "gold_sql": "SELECT sum(ST_Area(geom::geography)) / 1e6 AS area_km2 FROM parks WHERE name = '东山公园'",
+  "args": {
+   "name": "东山公园",
+   "probe": false
+  },
+  "ents": [
+   [
+    "parks",
+    "东山公园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0014",
+  "tier": "crs",
+  "kind": "water_area_km2",
+  "question": "以平方公里为单位，落霞湖水面多大？",
+  "gold_sql": "SELECT sum(ST_Area(geom::geography)) / 1e6 AS area_km2 FROM water_areas WHERE name = '落霞湖'",
+  "args": {
+   "name": "落霞湖",
+   "probe": false
+  },
+  "ents": [
+   [
+    "water_areas",
+    "落霞湖"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0015",
+  "tier": "crs",
+  "kind": "res_area_m2",
+  "question": "百家湖别墅花园小区这块用地的面积（平方米）是？",
+  "gold_sql": "SELECT ST_Area(geom::geography) AS area_m2 FROM residential_areas WHERE name = '百家湖别墅花园'",
+  "args": {
+   "name": "百家湖别墅花园",
+   "mention": "百家湖别墅花园小区"
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "百家湖别墅花园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0016",
+  "tier": "crs",
+  "kind": "road_len_in_district",
+  "question": "言和路落在栖霞区内的部分总长几公里？",
+  "gold_sql": "SELECT sum(ST_Length(ST_Intersection(t.geom, d.geom)::geography)) / 1000 AS len_km FROM roads t JOIN districts d ON ST_Intersects(t.geom, d.geom) WHERE t.name = '言和路' AND d.name = '栖霞区'",
+  "args": {
+   "sql": "SELECT sum(ST_Length(ST_Intersection(t.geom, d.geom)::geography)) / 1000 AS len_km FROM roads t JOIN districts d ON ST_Intersects(t.geom, d.geom) WHERE t.name = '言和路' AND d.name = '栖霞区'",
+   "road": "言和路"
+  },
+  "ents": [
+   [
+    "roads",
+    "言和路"
+   ],
+   [
+    "districts",
+    "栖霞区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0017",
+  "tier": "crs",
+  "kind": "waterway_len_km",
+  "question": "黄营河这条水系线的长度有几公里？",
+  "gold_sql": "SELECT sum(ST_Length(geom::geography)) / 1000 AS length_km FROM waterways WHERE name = '黄营河'",
+  "args": {
+   "name": "黄营河",
+   "probe": false
+  },
+  "ents": [
+   [
+    "waterways",
+    "黄营河"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0018",
+  "tier": "crs",
+  "kind": "park_area_km2",
+  "question": "用平方公里表示，平顶山公园有多大？",
+  "gold_sql": "SELECT sum(ST_Area(geom::geography)) / 1e6 AS area_km2 FROM parks WHERE name = '平顶山公园'",
+  "args": {
+   "name": "平顶山公园",
+   "probe": false
+  },
+  "ents": [
+   [
+    "parks",
+    "平顶山公园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0019",
+  "tier": "crs",
+  "kind": "water_area_km2",
+  "question": "贺家山水库的水域面积按平方公里计是多少？",
+  "gold_sql": "SELECT sum(ST_Area(geom::geography)) / 1e6 AS area_km2 FROM water_areas WHERE name = '贺家山水库'",
+  "args": {
+   "name": "贺家山水库",
+   "probe": false
+  },
+  "ents": [
+   [
+    "water_areas",
+    "贺家山水库"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0020",
+  "tier": "crs",
+  "kind": "dist_between_km",
+  "question": "逍遥水母离桃湖公园有多少公里（直线）？",
+  "gold_sql": "WITH a AS (SELECT ST_Union(geom) g FROM pois WHERE name = '逍遥水母'), b AS (SELECT ST_Union(geom) g FROM parks WHERE name = '桃湖公园') SELECT ST_Distance(a.g::geography, b.g::geography) / 1000 AS dist_km FROM a, b",
+  "args": {
+   "a": [
+    "pois",
+    "逍遥水母",
+    "逍遥水母"
+   ],
+   "b": [
+    "parks",
+    "桃湖公园",
+    "桃湖公园"
+   ]
+  },
+  "ents": [
+   [
+    "pois",
+    "逍遥水母"
+   ],
+   [
+    "parks",
+    "桃湖公园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0021",
+  "tier": "crs",
+  "kind": "park_area_ha",
+  "question": "桥北滨江生态公园的占地面积（公顷）是多少？",
+  "gold_sql": "SELECT sum(ST_Area(geom::geography)) / 1e4 AS area_ha FROM parks WHERE name = '桥北滨江生态公园'",
+  "args": {
+   "name": "桥北滨江生态公园"
+  },
+  "ents": [
+   [
+    "parks",
+    "桥北滨江生态公园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0022",
+  "tier": "crs",
+  "kind": "res_perimeter_m",
+  "question": "广汇花园小区轮廓线的周长（米）为多少？",
+  "gold_sql": "SELECT ST_Perimeter(geom::geography) AS perimeter_m FROM residential_areas WHERE name = '广汇花园'",
+  "args": {
+   "name": "广汇花园",
+   "mention": "广汇花园小区"
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "广汇花园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0023",
+  "tier": "crs",
+  "kind": "dist_between_km",
+  "question": "以公里计，龙王大街地铁站与平顶山公园的直线距离？",
+  "gold_sql": "WITH a AS (SELECT ST_Union(geom) g FROM metro_stations WHERE name = '龙王大街'), b AS (SELECT ST_Union(geom) g FROM parks WHERE name = '平顶山公园') SELECT ST_Distance(a.g::geography, b.g::geography) / 1000 AS dist_km FROM a, b",
+  "args": {
+   "a": [
+    "metro_stations",
+    "龙王大街",
+    "龙王大街地铁站"
+   ],
+   "b": [
+    "parks",
+    "平顶山公园",
+    "平顶山公园"
+   ]
+  },
+  "ents": [
+   [
+    "metro_stations",
+    "龙王大街"
+   ],
+   [
+    "parks",
+    "平顶山公园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0024",
+  "tier": "crs",
+  "kind": "dist_between_km",
+  "question": "中山湖地铁站离地铁永初路站有多少公里（直线）？",
+  "gold_sql": "WITH a AS (SELECT ST_Union(geom) g FROM metro_stations WHERE name = '中山湖'), b AS (SELECT ST_Union(geom) g FROM metro_stations WHERE name = '永初路') SELECT ST_Distance(a.g::geography, b.g::geography) / 1000 AS dist_km FROM a, b",
+  "args": {
+   "a": [
+    "metro_stations",
+    "中山湖",
+    "中山湖地铁站"
+   ],
+   "b": [
+    "metro_stations",
+    "永初路",
+    "地铁永初路站"
+   ]
+  },
+  "ents": [
+   [
+    "metro_stations",
+    "中山湖"
+   ],
+   [
+    "metro_stations",
+    "永初路"
+   ]
+  ]
+ },
+ {
+  "id": "HO-C0025",
+  "tier": "crs",
+  "kind": "road_len_in_district",
+  "question": "南京定淮门长江隧道落在浦口区内的部分总长几公里？",
+  "gold_sql": "SELECT sum(ST_Length(ST_Intersection(t.geom, d.geom)::geography)) / 1000 AS len_km FROM roads t JOIN districts d ON ST_Intersects(t.geom, d.geom) WHERE t.name = '南京定淮门长江隧道' AND d.name = '浦口区'",
+  "args": {
+   "sql": "SELECT sum(ST_Length(ST_Intersection(t.geom, d.geom)::geography)) / 1000 AS len_km FROM roads t JOIN districts d ON ST_Intersects(t.geom, d.geom) WHERE t.name = '南京定淮门长江隧道' AND d.name = '浦口区'",
+   "road": "南京定淮门长江隧道"
+  },
+  "ents": [
+   [
+    "roads",
+    "南京定淮门长江隧道"
+   ],
+   [
+    "districts",
+    "浦口区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0001",
+  "tier": "route",
+  "kind": "route_m",
+  "question": "步行路网上地铁中山湖站与海乐城之间最短距离几米？",
+  "gold_sql": "SELECT walk_m FROM (WITH a_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '中山湖' ORDER BY t.id LIMIT 1), a AS (SELECT p.pt, v.id AS vid FROM a_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), b_p AS (SELECT t.geom AS pt FROM pois t WHERE t.name = '海乐城' ORDER BY t.id LIMIT 1), b AS (SELECT p.pt, v.id AS vid FROM b_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v) SELECT max(agg_cost) AS walk_m, max(agg_cost) / 80.0 AS walk_min FROM pgr_dijkstra('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM a), (SELECT vid FROM b), false)) q",
+  "args": {
+   "o": [
+    "metro_stations",
+    "中山湖",
+    "地铁中山湖站"
+   ],
+   "d": [
+    "pois",
+    "海乐城",
+    "海乐城"
+   ]
+  },
+  "ents": [
+   [
+    "metro_stations",
+    "中山湖"
+   ],
+   [
+    "pois",
+    "海乐城"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0002",
+  "tier": "route",
+  "kind": "route_m",
+  "question": "步行路网上仙鹤茗苑小区与仙鹤门地铁站之间最短距离几米？",
+  "gold_sql": "SELECT walk_m FROM (WITH a_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '仙鹤茗苑' ORDER BY t.id LIMIT 1), a AS (SELECT p.pt, v.id AS vid FROM a_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), b_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '仙鹤门' ORDER BY t.id LIMIT 1), b AS (SELECT p.pt, v.id AS vid FROM b_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v) SELECT max(agg_cost) AS walk_m, max(agg_cost) / 80.0 AS walk_min FROM pgr_dijkstra('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM a), (SELECT vid FROM b), false)) q",
+  "args": {
+   "o": [
+    "residential_areas",
+    "仙鹤茗苑",
+    "仙鹤茗苑小区"
+   ],
+   "d": [
+    "metro_stations",
+    "仙鹤门",
+    "仙鹤门地铁站"
+   ]
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "仙鹤茗苑"
+   ],
+   [
+    "metro_stations",
+    "仙鹤门"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0003",
+  "tier": "route",
+  "kind": "iso_area",
+  "question": "从尧化门地铁站出发步行 13 分钟、沿路网可达路段做 50 m 缓冲，合并后的面积（平方公里）是？速度 4.8 km/h。",
+  "gold_sql": "WITH o_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '尧化门' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1040.0, false)), e AS (SELECT e.geom FROM walk_edges e JOIN reach r1 ON r1.node = e.source JOIN reach r2 ON r2.node = e.target) SELECT ST_Area(ST_Transform(ST_Union(ST_Buffer(ST_Simplify(ST_Transform(geom, 32650), 2), 50, 'quad_segs=2')), 4326)::geography) / 1e6 AS area_km2 FROM e",
+  "args": {
+   "o": [
+    "metro_stations",
+    "尧化门",
+    "尧化门地铁站"
+   ],
+   "t": 13
+  },
+  "ents": [
+   [
+    "metro_stations",
+    "尧化门"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0004",
+  "tier": "route",
+  "kind": "reach_nearest",
+  "question": "天正天御溪岸A区小区的 11 分钟步行范围（4.8 km/h，路网）内，网络距离最近的有名称剧院及距离（米）？",
+  "gold_sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '天正天御溪岸A区' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 880.0, false)), fac AS (SELECT t.id, t.name, t.geom AS pt FROM pois t WHERE t.subtype = 'theatre' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 880.0)), snapped AS (SELECT f.id, f.name, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT s.id, s.name, r.agg_cost AS walk_m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT name, walk_m FROM hit ORDER BY walk_m, id LIMIT 1",
+  "margin": [
+   {
+    "kind": "ordered_topk",
+    "k": 1,
+    "sql": "SELECT walk_m FROM (WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '天正天御溪岸A区' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 880.0, false)), fac AS (SELECT t.id, t.name, t.geom AS pt FROM pois t WHERE t.subtype = 'theatre' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 880.0)), snapped AS (SELECT f.id, f.name, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT s.id, s.name, r.agg_cost AS walk_m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT name, walk_m FROM hit ORDER BY walk_m, id) q ORDER BY walk_m LIMIT 2",
+    "rel": 0.01
+   },
+   {
+    "kind": "radius",
+    "threshold": 880.0,
+    "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '天正天御溪岸A区' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 2260.0, false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.subtype = 'theatre' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 2260.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+   }
+  ],
+  "args": {
+   "o": [
+    "residential_areas",
+    "天正天御溪岸A区",
+    "天正天御溪岸A区小区"
+   ],
+   "st": "theatre",
+   "t": 11
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "天正天御溪岸A区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0005",
+  "tier": "route",
+  "kind": "reach_list",
+  "question": "按 4.8 km/h 沿路网，工程学院家属区小区在 17 分钟以内能到达哪些有名称的青年旅舍？给出网络距离（米）。",
+  "gold_sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '工程学院家属区' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1360.0, false)), fac AS (SELECT t.id, t.name, t.geom AS pt FROM pois t WHERE t.subtype = 'hostel' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 1360.0)), snapped AS (SELECT f.id, f.name, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT s.id, s.name, r.agg_cost AS walk_m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT name, walk_m FROM hit ORDER BY walk_m, id",
+  "margin": {
+   "kind": "radius",
+   "threshold": 1360.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '工程学院家属区' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 3220.0, false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.subtype = 'hostel' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 3220.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "max_rows": 10,
+  "args": {
+   "o": [
+    "residential_areas",
+    "工程学院家属区",
+    "工程学院家属区小区"
+   ],
+   "st": "hostel",
+   "t": 17
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "工程学院家属区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0007",
+  "tier": "route",
+  "kind": "route_m",
+  "question": "步行路网上燕归苑小区与悦客假日酒店之间最短距离几米？",
+  "gold_sql": "SELECT walk_m FROM (WITH a_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '燕归苑' ORDER BY t.id LIMIT 1), a AS (SELECT p.pt, v.id AS vid FROM a_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), b_p AS (SELECT t.geom AS pt FROM pois t WHERE t.name = '悦客假日酒店' ORDER BY t.id LIMIT 1), b AS (SELECT p.pt, v.id AS vid FROM b_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v) SELECT max(agg_cost) AS walk_m, max(agg_cost) / 80.0 AS walk_min FROM pgr_dijkstra('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM a), (SELECT vid FROM b), false)) q",
+  "args": {
+   "o": [
+    "residential_areas",
+    "燕归苑",
+    "燕归苑小区"
+   ],
+   "d": [
+    "pois",
+    "悦客假日酒店",
+    "悦客假日酒店"
+   ]
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "燕归苑"
+   ],
+   [
+    "pois",
+    "悦客假日酒店"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0008",
+  "tier": "route",
+  "kind": "reach_nearest",
+  "question": "按 4.8 km/h 沿路网，万寿地铁站在 13 分钟内能走到的最近的有名称消防站是哪个，路程多少米？",
+  "gold_sql": "WITH o_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '万寿' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1040.0, false)), fac AS (SELECT t.id, t.name, t.geom AS pt FROM pois t WHERE t.subtype = 'fire_station' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 1040.0)), snapped AS (SELECT f.id, f.name, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT s.id, s.name, r.agg_cost AS walk_m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT name, walk_m FROM hit ORDER BY walk_m, id LIMIT 1",
+  "margin": [
+   {
+    "kind": "ordered_topk",
+    "k": 1,
+    "sql": "SELECT walk_m FROM (WITH o_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '万寿' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1040.0, false)), fac AS (SELECT t.id, t.name, t.geom AS pt FROM pois t WHERE t.subtype = 'fire_station' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 1040.0)), snapped AS (SELECT f.id, f.name, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT s.id, s.name, r.agg_cost AS walk_m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT name, walk_m FROM hit ORDER BY walk_m, id) q ORDER BY walk_m LIMIT 2",
+    "rel": 0.01
+   },
+   {
+    "kind": "radius",
+    "threshold": 1040.0,
+    "sql": "WITH o_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '万寿' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 2580.0, false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.subtype = 'fire_station' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 2580.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+   }
+  ],
+  "args": {
+   "o": [
+    "metro_stations",
+    "万寿",
+    "万寿地铁站"
+   ],
+   "st": "fire_station",
+   "t": 13
+  },
+  "ents": [
+   [
+    "metro_stations",
+    "万寿"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0009",
+  "tier": "route",
+  "kind": "iso_area",
+  "question": "从地铁仙鹤门站出发步行 13 分钟、沿路网可达路段做 50 m 缓冲，合并后的面积（平方公里）是？速度 4.8 km/h。",
+  "gold_sql": "WITH o_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '仙鹤门' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1040.0, false)), e AS (SELECT e.geom FROM walk_edges e JOIN reach r1 ON r1.node = e.source JOIN reach r2 ON r2.node = e.target) SELECT ST_Area(ST_Transform(ST_Union(ST_Buffer(ST_Simplify(ST_Transform(geom, 32650), 2), 50, 'quad_segs=2')), 4326)::geography) / 1e6 AS area_km2 FROM e",
+  "args": {
+   "o": [
+    "metro_stations",
+    "仙鹤门",
+    "地铁仙鹤门站"
+   ],
+   "t": 13
+  },
+  "ents": [
+   [
+    "metro_stations",
+    "仙鹤门"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0011",
+  "tier": "route",
+  "kind": "route_m",
+  "question": "步行路网上盈家春天花园小区与宏运大道地铁站之间最短距离几米？",
+  "gold_sql": "SELECT walk_m FROM (WITH a_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '盈家春天花园' ORDER BY t.id LIMIT 1), a AS (SELECT p.pt, v.id AS vid FROM a_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), b_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '宏运大道' ORDER BY t.id LIMIT 1), b AS (SELECT p.pt, v.id AS vid FROM b_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v) SELECT max(agg_cost) AS walk_m, max(agg_cost) / 80.0 AS walk_min FROM pgr_dijkstra('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM a), (SELECT vid FROM b), false)) q",
+  "args": {
+   "o": [
+    "residential_areas",
+    "盈家春天花园",
+    "盈家春天花园小区"
+   ],
+   "d": [
+    "metro_stations",
+    "宏运大道",
+    "宏运大道地铁站"
+   ]
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "盈家春天花园"
+   ],
+   [
+    "metro_stations",
+    "宏运大道"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0012",
+  "tier": "route",
+  "kind": "route_m",
+  "question": "沿步行网络从定坊和苑B区小区到贾西地铁站，最短步行路程（米）是？",
+  "gold_sql": "SELECT walk_m FROM (WITH a_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '定坊和苑B区' ORDER BY t.id LIMIT 1), a AS (SELECT p.pt, v.id AS vid FROM a_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), b_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '贾西' ORDER BY t.id LIMIT 1), b AS (SELECT p.pt, v.id AS vid FROM b_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v) SELECT max(agg_cost) AS walk_m, max(agg_cost) / 80.0 AS walk_min FROM pgr_dijkstra('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM a), (SELECT vid FROM b), false)) q",
+  "args": {
+   "o": [
+    "residential_areas",
+    "定坊和苑B区",
+    "定坊和苑B区小区"
+   ],
+   "d": [
+    "metro_stations",
+    "贾西",
+    "贾西地铁站"
+   ]
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "定坊和苑B区"
+   ],
+   [
+    "metro_stations",
+    "贾西"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0013",
+  "tier": "route",
+  "kind": "route_m",
+  "question": "沿步行网络从白露新寓小区到张府园地铁站，最短步行路程（米）是？",
+  "gold_sql": "SELECT walk_m FROM (WITH a_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '白露新寓' ORDER BY t.id LIMIT 1), a AS (SELECT p.pt, v.id AS vid FROM a_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), b_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '张府园' ORDER BY t.id LIMIT 1), b AS (SELECT p.pt, v.id AS vid FROM b_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v) SELECT max(agg_cost) AS walk_m, max(agg_cost) / 80.0 AS walk_min FROM pgr_dijkstra('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM a), (SELECT vid FROM b), false)) q",
+  "args": {
+   "o": [
+    "residential_areas",
+    "白露新寓",
+    "白露新寓小区"
+   ],
+   "d": [
+    "metro_stations",
+    "张府园",
+    "张府园地铁站"
+   ]
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "白露新寓"
+   ],
+   [
+    "metro_stations",
+    "张府园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0014",
+  "tier": "route",
+  "kind": "reach_nearest",
+  "question": "按 4.8 km/h 沿路网，地铁万寿站在 9 分钟内能走到的最近的有名称电影院是哪个，路程多少米？",
+  "gold_sql": "WITH o_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '万寿' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 720.0, false)), fac AS (SELECT t.id, t.name, t.geom AS pt FROM pois t WHERE t.subtype = 'cinema' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 720.0)), snapped AS (SELECT f.id, f.name, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT s.id, s.name, r.agg_cost AS walk_m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT name, walk_m FROM hit ORDER BY walk_m, id LIMIT 1",
+  "margin": [
+   {
+    "kind": "ordered_topk",
+    "k": 1,
+    "sql": "SELECT walk_m FROM (WITH o_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '万寿' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 720.0, false)), fac AS (SELECT t.id, t.name, t.geom AS pt FROM pois t WHERE t.subtype = 'cinema' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 720.0)), snapped AS (SELECT f.id, f.name, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT s.id, s.name, r.agg_cost AS walk_m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT name, walk_m FROM hit ORDER BY walk_m, id) q ORDER BY walk_m LIMIT 2",
+    "rel": 0.01
+   },
+   {
+    "kind": "radius",
+    "threshold": 720.0,
+    "sql": "WITH o_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '万寿' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1940.0, false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.subtype = 'cinema' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 1940.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+   }
+  ],
+  "args": {
+   "o": [
+    "metro_stations",
+    "万寿",
+    "地铁万寿站"
+   ],
+   "st": "cinema",
+   "t": 9
+  },
+  "ents": [
+   [
+    "metro_stations",
+    "万寿"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0015",
+  "tier": "route",
+  "kind": "route_min",
+  "question": "以 4.8 km/h 沿步行网络，金科博翠花园小区到万寿地铁站大约走几分钟？",
+  "gold_sql": "SELECT walk_min FROM (WITH a_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '金科博翠花园' ORDER BY t.id LIMIT 1), a AS (SELECT p.pt, v.id AS vid FROM a_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), b_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '万寿' ORDER BY t.id LIMIT 1), b AS (SELECT p.pt, v.id AS vid FROM b_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v) SELECT max(agg_cost) AS walk_m, max(agg_cost) / 80.0 AS walk_min FROM pgr_dijkstra('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM a), (SELECT vid FROM b), false)) q",
+  "args": {
+   "o": [
+    "residential_areas",
+    "金科博翠花园",
+    "金科博翠花园小区"
+   ],
+   "d": [
+    "metro_stations",
+    "万寿",
+    "万寿地铁站"
+   ]
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "金科博翠花园"
+   ],
+   [
+    "metro_stations",
+    "万寿"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0016",
+  "tier": "route",
+  "kind": "reach_nearest",
+  "question": "按 4.8 km/h 沿路网，民国中央电台遗址在 17 分钟内能走到的最近的有名称百货商店是哪个，路程多少米？",
+  "gold_sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name = '民国中央电台遗址' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1360.0, false)), fac AS (SELECT t.id, t.name, t.geom AS pt FROM pois t WHERE t.subtype = 'department_store' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 1360.0)), snapped AS (SELECT f.id, f.name, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT s.id, s.name, r.agg_cost AS walk_m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT name, walk_m FROM hit ORDER BY walk_m, id LIMIT 1",
+  "margin": [
+   {
+    "kind": "ordered_topk",
+    "k": 1,
+    "sql": "SELECT walk_m FROM (WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name = '民国中央电台遗址' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1360.0, false)), fac AS (SELECT t.id, t.name, t.geom AS pt FROM pois t WHERE t.subtype = 'department_store' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 1360.0)), snapped AS (SELECT f.id, f.name, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT s.id, s.name, r.agg_cost AS walk_m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT name, walk_m FROM hit ORDER BY walk_m, id) q ORDER BY walk_m LIMIT 2",
+    "rel": 0.01
+   },
+   {
+    "kind": "radius",
+    "threshold": 1360.0,
+    "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name = '民国中央电台遗址' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 3220.0, false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.subtype = 'department_store' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 3220.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+   }
+  ],
+  "args": {
+   "o": [
+    "parks",
+    "民国中央电台遗址",
+    "民国中央电台遗址"
+   ],
+   "st": "department_store",
+   "t": 17
+  },
+  "ents": [
+   [
+    "parks",
+    "民国中央电台遗址"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0017",
+  "tier": "route",
+  "kind": "route_min",
+  "question": "以 4.8 km/h 沿步行网络，地铁幕府西路站到大桥饭店大约走几分钟？",
+  "gold_sql": "SELECT walk_min FROM (WITH a_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '幕府西路' ORDER BY t.id LIMIT 1), a AS (SELECT p.pt, v.id AS vid FROM a_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), b_p AS (SELECT t.geom AS pt FROM pois t WHERE t.name = '大桥饭店' ORDER BY t.id LIMIT 1), b AS (SELECT p.pt, v.id AS vid FROM b_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v) SELECT max(agg_cost) AS walk_m, max(agg_cost) / 80.0 AS walk_min FROM pgr_dijkstra('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM a), (SELECT vid FROM b), false)) q",
+  "args": {
+   "o": [
+    "metro_stations",
+    "幕府西路",
+    "地铁幕府西路站"
+   ],
+   "d": [
+    "pois",
+    "大桥饭店",
+    "大桥饭店"
+   ]
+  },
+  "ents": [
+   [
+    "metro_stations",
+    "幕府西路"
+   ],
+   [
+    "pois",
+    "大桥饭店"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0018",
+  "tier": "route",
+  "kind": "reach_count",
+  "question": "按 4.8 km/h，尧顺佳园小区沿路网步行 9 分钟以内可到的果蔬店数量？",
+  "gold_sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '尧顺佳园' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 720.0, false)), fac AS (SELECT t.id, t.name, t.geom AS pt FROM pois t WHERE t.subtype = 'greengrocer' AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 720.0)), snapped AS (SELECT f.id, f.name, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT s.id, s.name, r.agg_cost AS walk_m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT count(*) AS n FROM hit",
+  "margin": {
+   "kind": "radius",
+   "threshold": 720.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '尧顺佳园' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1940.0, false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.subtype = 'greengrocer' AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 1940.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "args": {
+   "o": [
+    "residential_areas",
+    "尧顺佳园",
+    "尧顺佳园小区"
+   ],
+   "st": "greengrocer",
+   "t": 9,
+   "list": false
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "尧顺佳园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0020",
+  "tier": "route",
+  "kind": "iso_area",
+  "question": "以 4.8 km/h 计，幸庄北苑小区的 7 分钟步行等时圈（路段 50 m 缓冲口径）面积为多少平方公里？",
+  "gold_sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '幸庄北苑' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 560.0, false)), e AS (SELECT e.geom FROM walk_edges e JOIN reach r1 ON r1.node = e.source JOIN reach r2 ON r2.node = e.target) SELECT ST_Area(ST_Transform(ST_Union(ST_Buffer(ST_Simplify(ST_Transform(geom, 32650), 2), 50, 'quad_segs=2')), 4326)::geography) / 1e6 AS area_km2 FROM e",
+  "args": {
+   "o": [
+    "residential_areas",
+    "幸庄北苑",
+    "幸庄北苑小区"
+   ],
+   "t": 7
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "幸庄北苑"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0021",
+  "tier": "route",
+  "kind": "reach_nearest",
+  "question": "按 4.8 km/h 沿路网，紫樾府B区小区在 17 分钟内能走到的最近的有名称果蔬店是哪个，路程多少米？",
+  "gold_sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '紫樾府B区' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1360.0, false)), fac AS (SELECT t.id, t.name, t.geom AS pt FROM pois t WHERE t.subtype = 'greengrocer' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 1360.0)), snapped AS (SELECT f.id, f.name, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT s.id, s.name, r.agg_cost AS walk_m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT name, walk_m FROM hit ORDER BY walk_m, id LIMIT 1",
+  "margin": [
+   {
+    "kind": "ordered_topk",
+    "k": 1,
+    "sql": "SELECT walk_m FROM (WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '紫樾府B区' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1360.0, false)), fac AS (SELECT t.id, t.name, t.geom AS pt FROM pois t WHERE t.subtype = 'greengrocer' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 1360.0)), snapped AS (SELECT f.id, f.name, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT s.id, s.name, r.agg_cost AS walk_m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT name, walk_m FROM hit ORDER BY walk_m, id) q ORDER BY walk_m LIMIT 2",
+    "rel": 0.01
+   },
+   {
+    "kind": "radius",
+    "threshold": 1360.0,
+    "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '紫樾府B区' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 3220.0, false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.subtype = 'greengrocer' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 3220.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+   }
+  ],
+  "args": {
+   "o": [
+    "residential_areas",
+    "紫樾府B区",
+    "紫樾府B区小区"
+   ],
+   "st": "greengrocer",
+   "t": 17
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "紫樾府B区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0022",
+  "tier": "route",
+  "kind": "route_min",
+  "question": "以 4.8 km/h 沿步行网络，地铁泉都大街站到地铁汤山站大约走几分钟？",
+  "gold_sql": "SELECT walk_min FROM (WITH a_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '泉都大街' ORDER BY t.id LIMIT 1), a AS (SELECT p.pt, v.id AS vid FROM a_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), b_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '汤山' ORDER BY t.id LIMIT 1), b AS (SELECT p.pt, v.id AS vid FROM b_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v) SELECT max(agg_cost) AS walk_m, max(agg_cost) / 80.0 AS walk_min FROM pgr_dijkstra('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM a), (SELECT vid FROM b), false)) q",
+  "args": {
+   "o": [
+    "metro_stations",
+    "泉都大街",
+    "地铁泉都大街站"
+   ],
+   "d": [
+    "metro_stations",
+    "汤山",
+    "地铁汤山站"
+   ]
+  },
+  "ents": [
+   [
+    "metro_stations",
+    "泉都大街"
+   ],
+   [
+    "metro_stations",
+    "汤山"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0023",
+  "tier": "route",
+  "kind": "route_m",
+  "question": "沿步行网络从荣昌花园小区到中山湖地铁站，最短步行路程（米）是？",
+  "gold_sql": "SELECT walk_m FROM (WITH a_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '荣昌花园' ORDER BY t.id LIMIT 1), a AS (SELECT p.pt, v.id AS vid FROM a_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), b_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '中山湖' ORDER BY t.id LIMIT 1), b AS (SELECT p.pt, v.id AS vid FROM b_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v) SELECT max(agg_cost) AS walk_m, max(agg_cost) / 80.0 AS walk_min FROM pgr_dijkstra('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM a), (SELECT vid FROM b), false)) q",
+  "args": {
+   "o": [
+    "residential_areas",
+    "荣昌花园",
+    "荣昌花园小区"
+   ],
+   "d": [
+    "metro_stations",
+    "中山湖",
+    "中山湖地铁站"
+   ]
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "荣昌花园"
+   ],
+   [
+    "metro_stations",
+    "中山湖"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0024",
+  "tier": "route",
+  "kind": "reach_list",
+  "question": "地铁张府园站的 16 分钟步行可达范围（路网，4.8 km/h）中，所有有名称珠宝店的名称与步行距离（米）？",
+  "gold_sql": "WITH o_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '张府园' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1280.0, false)), fac AS (SELECT t.id, t.name, t.geom AS pt FROM pois t WHERE t.subtype = 'jewelry' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 1280.0)), snapped AS (SELECT f.id, f.name, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT s.id, s.name, r.agg_cost AS walk_m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT name, walk_m FROM hit ORDER BY walk_m, id",
+  "margin": {
+   "kind": "radius",
+   "threshold": 1280.0,
+   "sql": "WITH o_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '张府园' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 3060.0, false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.subtype = 'jewelry' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 3060.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "max_rows": 10,
+  "args": {
+   "o": [
+    "metro_stations",
+    "张府园",
+    "地铁张府园站"
+   ],
+   "st": "jewelry",
+   "t": 16
+  },
+  "ents": [
+   [
+    "metro_stations",
+    "张府园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0025",
+  "tier": "route",
+  "kind": "route_m",
+  "question": "沿步行网络从仁恒江湾城（三期）小区到地铁永初路站，最短步行路程（米）是？",
+  "gold_sql": "SELECT walk_m FROM (WITH a_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '仁恒江湾城（三期）' ORDER BY t.id LIMIT 1), a AS (SELECT p.pt, v.id AS vid FROM a_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), b_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '永初路' ORDER BY t.id LIMIT 1), b AS (SELECT p.pt, v.id AS vid FROM b_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v) SELECT max(agg_cost) AS walk_m, max(agg_cost) / 80.0 AS walk_min FROM pgr_dijkstra('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM a), (SELECT vid FROM b), false)) q",
+  "args": {
+   "o": [
+    "residential_areas",
+    "仁恒江湾城（三期）",
+    "仁恒江湾城（三期）小区"
+   ],
+   "d": [
+    "metro_stations",
+    "永初路",
+    "地铁永初路站"
+   ]
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "仁恒江湾城（三期）"
+   ],
+   [
+    "metro_stations",
+    "永初路"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0026",
+  "tier": "route",
+  "kind": "iso_area",
+  "question": "以 4.8 km/h 计，胜利家园小区的 9 分钟步行等时圈（路段 50 m 缓冲口径）面积为多少平方公里？",
+  "gold_sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '胜利家园小区' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 720.0, false)), e AS (SELECT e.geom FROM walk_edges e JOIN reach r1 ON r1.node = e.source JOIN reach r2 ON r2.node = e.target) SELECT ST_Area(ST_Transform(ST_Union(ST_Buffer(ST_Simplify(ST_Transform(geom, 32650), 2), 50, 'quad_segs=2')), 4326)::geography) / 1e6 AS area_km2 FROM e",
+  "args": {
+   "o": [
+    "residential_areas",
+    "胜利家园小区",
+    "胜利家园小区"
+   ],
+   "t": 9
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "胜利家园小区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0028",
+  "tier": "route",
+  "kind": "reach_list",
+  "question": "地铁五台山站的 9 分钟步行可达范围（路网，4.8 km/h）中，所有有名称青年旅舍的名称与步行距离（米）？",
+  "gold_sql": "WITH o_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '五台山' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 720.0, false)), fac AS (SELECT t.id, t.name, t.geom AS pt FROM pois t WHERE t.subtype = 'hostel' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 720.0)), snapped AS (SELECT f.id, f.name, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT s.id, s.name, r.agg_cost AS walk_m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT name, walk_m FROM hit ORDER BY walk_m, id",
+  "margin": {
+   "kind": "radius",
+   "threshold": 720.0,
+   "sql": "WITH o_p AS (SELECT t.geom AS pt FROM metro_stations t WHERE t.name = '五台山' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1940.0, false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.subtype = 'hostel' AND t.name IS NOT NULL AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 1940.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "max_rows": 10,
+  "args": {
+   "o": [
+    "metro_stations",
+    "五台山",
+    "地铁五台山站"
+   ],
+   "st": "hostel",
+   "t": 9
+  },
+  "ents": [
+   [
+    "metro_stations",
+    "五台山"
+   ]
+  ]
+ },
+ {
+  "id": "HO-D0030",
+  "tier": "route",
+  "kind": "iso_area",
+  "question": "以 4.8 km/h 计，西安门遗址公园的 9 分钟步行等时圈（路段 50 m 缓冲口径）面积为多少平方公里？",
+  "gold_sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name = '西安门遗址公园' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 720.0, false)), e AS (SELECT e.geom FROM walk_edges e JOIN reach r1 ON r1.node = e.source JOIN reach r2 ON r2.node = e.target) SELECT ST_Area(ST_Transform(ST_Union(ST_Buffer(ST_Simplify(ST_Transform(geom, 32650), 2), 50, 'quad_segs=2')), 4326)::geography) / 1e6 AS area_km2 FROM e",
+  "args": {
+   "o": [
+    "parks",
+    "西安门遗址公园",
+    "西安门遗址公园"
+   ],
+   "t": 9
+  },
+  "ents": [
+   [
+    "parks",
+    "西安门遗址公园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0004",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "招商依云郡小区的体育场馆（名称含“体育”的公园）步行可达性是否满足居住区规划设计标准规定的服务半径？注明依据。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.1:体育场馆'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '招商依云郡' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name LIKE '%体育%' AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 1000.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '招商依云郡' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 2500.0, false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name LIKE '%体育%' AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, 2500.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.1:体育场馆",
+  "args": {
+   "res": "招商依云郡",
+   "mention": "招商依云郡小区",
+   "clause": "GB50180-2018:C.0.1:体育场馆",
+   "fac": "体育场馆",
+   "spec": {
+    "layer": "parks",
+    "name_like": "体育"
+   },
+   "qv": 1,
+   "k": 5
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "招商依云郡"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0001",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "检查华菁水苑小区：按标准中体育场馆（名称含“体育”的公园）的服务半径（步行路网距离），结论是符合还是不符合？附条文。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.1:体育场馆'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '华菁水苑' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name LIKE '%体育%' AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 1000.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '华菁水苑' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 2500.0, false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name LIKE '%体育%' AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, 2500.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.1:体育场馆",
+  "args": {
+   "res": "华菁水苑",
+   "mention": "华菁水苑小区",
+   "clause": "GB50180-2018:C.0.1:体育场馆",
+   "fac": "体育场馆",
+   "spec": {
+    "layer": "parks",
+    "name_like": "体育"
+   },
+   "qv": 0,
+   "k": 3
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "华菁水苑"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0006",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "清河雅苑小区能否在标准给定的室外综合健身场地（公园）服务半径内（路网步行）找到设施？请列明条文号。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.2:室外综合健身场地'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '清河雅苑' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 300.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '清河雅苑' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1100.0, false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, 1100.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.2:室外综合健身场地",
+  "args": {
+   "res": "清河雅苑",
+   "mention": "清河雅苑小区",
+   "clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "fac": "室外综合健身场地",
+   "spec": {
+    "layer": "parks"
+   },
+   "qv": 0,
+   "k": 5
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "清河雅苑"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0005",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "根据 GB 50180-2018 对室外综合健身场地（公园）的服务半径要求，评估南塑新村小区是否达标，并写明依据条文。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.2:室外综合健身场地'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '南塑新村' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 300.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '南塑新村' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1100.0, false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, 1100.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.2:室外综合健身场地",
+  "args": {
+   "res": "南塑新村",
+   "mention": "南塑新村小区",
+   "clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "fac": "室外综合健身场地",
+   "spec": {
+    "layer": "parks"
+   },
+   "qv": 1,
+   "k": 5
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "南塑新村"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0003",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "对照 GB 50180-2018 关于社区卫生服务站（名称含“社区卫生服务”的设施）服务半径的条文，通宇·林景御园小区沿路网步行是否达到要求？请写出条文号。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.2:社区卫生服务站'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '通宇·林景御园' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.name LIKE '%社区卫生服务%' AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 300.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '通宇·林景御园' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1100.0, false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.name LIKE '%社区卫生服务%' AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 1100.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.2:社区卫生服务站",
+  "args": {
+   "res": "通宇·林景御园",
+   "mention": "通宇·林景御园小区",
+   "clause": "GB50180-2018:C.0.2:社区卫生服务站",
+   "fac": "社区卫生服务站",
+   "spec": {
+    "layer": "pois",
+    "name_like": "社区卫生服务"
+   },
+   "qv": 1,
+   "k": 5
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "通宇·林景御园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0007",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "以《城市居住区规划设计标准》社区卫生服务站（名称含“社区卫生服务”的设施）服务半径衡量，花港·幸富城牡丹园小区是否满足？需给出引用条文。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.2:社区卫生服务站'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '花港·幸富城牡丹园' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.name LIKE '%社区卫生服务%' AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 300.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '花港·幸富城牡丹园' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1100.0, false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.name LIKE '%社区卫生服务%' AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 1100.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.2:社区卫生服务站",
+  "args": {
+   "res": "花港·幸富城牡丹园",
+   "mention": "花港·幸富城牡丹园小区",
+   "clause": "GB50180-2018:C.0.2:社区卫生服务站",
+   "fac": "社区卫生服务站",
+   "spec": {
+    "layer": "pois",
+    "name_like": "社区卫生服务"
+   },
+   "qv": 2,
+   "k": 5
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "花港·幸富城牡丹园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0008",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "天虹山庄小区的体育场馆（名称含“体育”的公园）步行可达性是否满足居住区规划设计标准规定的服务半径？注明依据。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.1:体育场馆'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '天虹山庄' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name LIKE '%体育%' AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 1000.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '天虹山庄' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 2500.0, false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name LIKE '%体育%' AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, 2500.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.1:体育场馆",
+  "args": {
+   "res": "天虹山庄",
+   "mention": "天虹山庄小区",
+   "clause": "GB50180-2018:C.0.1:体育场馆",
+   "fac": "体育场馆",
+   "spec": {
+    "layer": "parks",
+    "name_like": "体育"
+   },
+   "qv": 0,
+   "k": 5
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "天虹山庄"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0002",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "招商方山里花园小区能否在标准给定的体育场馆（名称含“体育”的公园）服务半径内（路网步行）找到设施？请列明条文号。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.1:体育场馆'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '招商方山里花园' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name LIKE '%体育%' AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 1000.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '招商方山里花园' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 2500.0, false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name LIKE '%体育%' AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, 2500.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.1:体育场馆",
+  "args": {
+   "res": "招商方山里花园",
+   "mention": "招商方山里花园小区",
+   "clause": "GB50180-2018:C.0.1:体育场馆",
+   "fac": "体育场馆",
+   "spec": {
+    "layer": "parks",
+    "name_like": "体育"
+   },
+   "qv": 0,
+   "k": 5
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "招商方山里花园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0011",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "碧桂园保利礼樾云居小区的室外综合健身场地（公园）步行可达性是否满足居住区规划设计标准规定的服务半径？注明依据。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.2:室外综合健身场地'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '碧桂园保利礼樾云居' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 300.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '碧桂园保利礼樾云居' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1100.0, false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, 1100.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.2:室外综合健身场地",
+  "args": {
+   "res": "碧桂园保利礼樾云居",
+   "mention": "碧桂园保利礼樾云居小区",
+   "clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "fac": "室外综合健身场地",
+   "spec": {
+    "layer": "parks"
+   },
+   "qv": 2,
+   "k": 3
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "碧桂园保利礼樾云居"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0009",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "山水方舟小区一带：室外综合健身场地（公园）的步行网络距离是否落在规划标准的服务半径之内？给出条文。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.2:室外综合健身场地'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '山水方舟' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 300.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '山水方舟' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1100.0, false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, 1100.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.2:室外综合健身场地",
+  "args": {
+   "res": "山水方舟",
+   "mention": "山水方舟小区",
+   "clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "fac": "室外综合健身场地",
+   "spec": {
+    "layer": "parks"
+   },
+   "qv": 0,
+   "k": 5
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "山水方舟"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0013",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "检查九都荟F区小区：按标准中社区卫生服务站（名称含“社区卫生服务”的设施）的服务半径（步行路网距离），结论是符合还是不符合？附条文。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.2:社区卫生服务站'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '九都荟F区' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.name LIKE '%社区卫生服务%' AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 300.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '九都荟F区' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1100.0, false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.name LIKE '%社区卫生服务%' AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 1100.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.2:社区卫生服务站",
+  "args": {
+   "res": "九都荟F区",
+   "mention": "九都荟F区小区",
+   "clause": "GB50180-2018:C.0.2:社区卫生服务站",
+   "fac": "社区卫生服务站",
+   "spec": {
+    "layer": "pois",
+    "name_like": "社区卫生服务"
+   },
+   "qv": 2,
+   "k": 5
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "九都荟F区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0036",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "仙居华庭小区的社区卫生服务站（名称含“社区卫生服务”的设施）步行可达性是否满足居住区规划设计标准规定的服务半径？注明依据。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.2:社区卫生服务站'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '仙居华庭' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.name LIKE '%社区卫生服务%' AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 300.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '仙居华庭' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1100.0, false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.name LIKE '%社区卫生服务%' AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 1100.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.2:社区卫生服务站",
+  "args": {
+   "res": "仙居华庭",
+   "mention": "仙居华庭小区",
+   "clause": "GB50180-2018:C.0.2:社区卫生服务站",
+   "fac": "社区卫生服务站",
+   "spec": {
+    "layer": "pois",
+    "name_like": "社区卫生服务"
+   },
+   "qv": 2,
+   "k": 5
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "仙居华庭"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0010",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "中海原山小区能否在标准给定的体育场馆（名称含“体育”的公园）服务半径内（路网步行）找到设施？请列明条文号。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.1:体育场馆'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '中海原山' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name LIKE '%体育%' AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 1000.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '中海原山' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 2500.0, false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name LIKE '%体育%' AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, 2500.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.1:体育场馆",
+  "args": {
+   "res": "中海原山",
+   "mention": "中海原山小区",
+   "clause": "GB50180-2018:C.0.1:体育场馆",
+   "fac": "体育场馆",
+   "spec": {
+    "layer": "parks",
+    "name_like": "体育"
+   },
+   "qv": 2,
+   "k": 5
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "中海原山"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0016",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "世茂梦享家小区能否在标准给定的体育场馆（名称含“体育”的公园）服务半径内（路网步行）找到设施？请列明条文号。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.1:体育场馆'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '世茂梦享家' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name LIKE '%体育%' AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 1000.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '世茂梦享家' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 2500.0, false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name LIKE '%体育%' AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, 2500.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.1:体育场馆",
+  "args": {
+   "res": "世茂梦享家",
+   "mention": "世茂梦享家小区",
+   "clause": "GB50180-2018:C.0.1:体育场馆",
+   "fac": "体育场馆",
+   "spec": {
+    "layer": "parks",
+    "name_like": "体育"
+   },
+   "qv": 2,
+   "k": 5
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "世茂梦享家"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0012",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "检查花语城南苑(荣城南苑)小区：按标准中室外综合健身场地（公园）的服务半径（步行路网距离），结论是符合还是不符合？附条文。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.2:室外综合健身场地'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '花语城南苑(荣城南苑)' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 300.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '花语城南苑(荣城南苑)' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1100.0, false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, 1100.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.2:室外综合健身场地",
+  "args": {
+   "res": "花语城南苑(荣城南苑)",
+   "mention": "花语城南苑(荣城南苑)小区",
+   "clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "fac": "室外综合健身场地",
+   "spec": {
+    "layer": "parks"
+   },
+   "qv": 2,
+   "k": 3
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "花语城南苑(荣城南苑)"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0017",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "金尧花园小区的室外综合健身场地（公园）步行可达性是否满足居住区规划设计标准规定的服务半径？注明依据。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.2:室外综合健身场地'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '金尧花园' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 300.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '金尧花园' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1100.0, false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, 1100.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.2:室外综合健身场地",
+  "args": {
+   "res": "金尧花园",
+   "mention": "金尧花园小区",
+   "clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "fac": "室外综合健身场地",
+   "spec": {
+    "layer": "parks"
+   },
+   "qv": 2,
+   "k": 3
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "金尧花园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0014",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "依云溪谷小区能否在标准给定的社区卫生服务站（名称含“社区卫生服务”的设施）服务半径内（路网步行）找到设施？请列明条文号。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.2:社区卫生服务站'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '依云溪谷' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.name LIKE '%社区卫生服务%' AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 300.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '依云溪谷' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1100.0, false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.name LIKE '%社区卫生服务%' AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 1100.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.2:社区卫生服务站",
+  "args": {
+   "res": "依云溪谷",
+   "mention": "依云溪谷小区",
+   "clause": "GB50180-2018:C.0.2:社区卫生服务站",
+   "fac": "社区卫生服务站",
+   "spec": {
+    "layer": "pois",
+    "name_like": "社区卫生服务"
+   },
+   "qv": 2,
+   "k": 5
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "依云溪谷"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0015",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "以《城市居住区规划设计标准》体育场馆（名称含“体育”的公园）服务半径衡量，荣昌花园小区是否满足？需给出引用条文。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.1:体育场馆'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '荣昌花园' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name LIKE '%体育%' AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 1000.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '荣昌花园' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 2500.0, false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name LIKE '%体育%' AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, 2500.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.1:体育场馆",
+  "args": {
+   "res": "荣昌花园",
+   "mention": "荣昌花园小区",
+   "clause": "GB50180-2018:C.0.1:体育场馆",
+   "fac": "体育场馆",
+   "spec": {
+    "layer": "parks",
+    "name_like": "体育"
+   },
+   "qv": 1,
+   "k": 5
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "荣昌花园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0019",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "对照 GB 50180-2018 关于室外综合健身场地（公园）服务半径的条文，保利·紫晶山小区沿路网步行是否达到要求？请写出条文号。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.2:室外综合健身场地'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '保利·紫晶山' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 300.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '保利·紫晶山' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1100.0, false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, 1100.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.2:室外综合健身场地",
+  "args": {
+   "res": "保利·紫晶山",
+   "mention": "保利·紫晶山小区",
+   "clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "fac": "室外综合健身场地",
+   "spec": {
+    "layer": "parks"
+   },
+   "qv": 0,
+   "k": 3
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "保利·紫晶山"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0018",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "对照 GB 50180-2018 关于室外综合健身场地（公园）服务半径的条文，万欣翠园小区沿路网步行是否达到要求？请写出条文号。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.2:室外综合健身场地'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '万欣翠园' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 300.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '万欣翠园' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1100.0, false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, 1100.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.2:室外综合健身场地",
+  "args": {
+   "res": "万欣翠园",
+   "mention": "万欣翠园小区",
+   "clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "fac": "室外综合健身场地",
+   "spec": {
+    "layer": "parks"
+   },
+   "qv": 1,
+   "k": 5
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "万欣翠园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0024",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "根据 GB 50180-2018 对社区卫生服务站（名称含“社区卫生服务”的设施）的服务半径要求，评估弘阳·旭日爱上城第六区小区是否达标，并写明依据条文。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.2:社区卫生服务站'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '弘阳·旭日爱上城第六区' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.name LIKE '%社区卫生服务%' AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 300.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '弘阳·旭日爱上城第六区' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1100.0, false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.name LIKE '%社区卫生服务%' AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 1100.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.2:社区卫生服务站",
+  "args": {
+   "res": "弘阳·旭日爱上城第六区",
+   "mention": "弘阳·旭日爱上城第六区小区",
+   "clause": "GB50180-2018:C.0.2:社区卫生服务站",
+   "fac": "社区卫生服务站",
+   "spec": {
+    "layer": "pois",
+    "name_like": "社区卫生服务"
+   },
+   "qv": 0,
+   "k": 3
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "弘阳·旭日爱上城第六区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0022",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "太平花苑南苑小区能否在标准给定的体育场馆（名称含“体育”的公园）服务半径内（路网步行）找到设施？请列明条文号。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.1:体育场馆'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '太平花苑南苑' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name LIKE '%体育%' AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 1000.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '太平花苑南苑' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 2500.0, false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE t.name LIKE '%体育%' AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, 2500.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.1:体育场馆",
+  "args": {
+   "res": "太平花苑南苑",
+   "mention": "太平花苑南苑小区",
+   "clause": "GB50180-2018:C.0.1:体育场馆",
+   "fac": "体育场馆",
+   "spec": {
+    "layer": "parks",
+    "name_like": "体育"
+   },
+   "qv": 1,
+   "k": 5
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "太平花苑南苑"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0021",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "对照 GB 50180-2018 关于室外综合健身场地（公园）服务半径的条文，白露新寓小区沿路网步行是否达到要求？请写出条文号。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.2:室外综合健身场地'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '白露新寓' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 300.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '白露新寓' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1100.0, false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, 1100.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.2:室外综合健身场地",
+  "args": {
+   "res": "白露新寓",
+   "mention": "白露新寓小区",
+   "clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "fac": "室外综合健身场地",
+   "spec": {
+    "layer": "parks"
+   },
+   "qv": 2,
+   "k": 5
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "白露新寓"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0020",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "新城璞樾·钟山小区能否在标准给定的室外综合健身场地（公园）服务半径内（路网步行）找到设施？请列明条文号。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.2:室外综合健身场地'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '新城璞樾·钟山' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 300.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '新城璞樾·钟山' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1100.0, false)), fac AS (SELECT t.id, ST_PointOnSurface(t.geom) AS pt FROM parks t WHERE TRUE AND ST_DWithin(ST_PointOnSurface(t.geom)::geography, (SELECT pt FROM o)::geography, 1100.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.2:室外综合健身场地",
+  "args": {
+   "res": "新城璞樾·钟山",
+   "mention": "新城璞樾·钟山小区",
+   "clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "fac": "室外综合健身场地",
+   "spec": {
+    "layer": "parks"
+   },
+   "qv": 2,
+   "k": 3
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "新城璞樾·钟山"
+   ]
+  ]
+ },
+ {
+  "id": "HO-E0025",
+  "tier": "compliance",
+  "kind": "compliance",
+  "question": "根据 GB 50180-2018 对社区卫生服务站（名称含“社区卫生服务”的设施）的服务半径要求，评估雅居乐滨江绿湾小区是否达标，并写明依据条文。",
+  "gold_sql": "WITH cl AS (SELECT clause_id, max_radius_m AS r FROM standard_clauses WHERE clause_id = 'GB50180-2018:C.0.2:社区卫生服务站'), o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '雅居乐滨江绿湾' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), (SELECT r FROM cl), false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.name LIKE '%社区卫生服务%' AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, (SELECT r FROM cl))), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v), hit AS (SELECT min(r.agg_cost) AS m FROM snapped s JOIN reach r ON r.node = s.vid) SELECT (hit.m IS NOT NULL) AS compliant, cl.clause_id, cl.r AS radius_m FROM hit, cl",
+  "margin": {
+   "kind": "radius",
+   "threshold": 300.0,
+   "sql": "WITH o_p AS (SELECT ST_PointOnSurface(t.geom) AS pt FROM residential_areas t WHERE t.name = '雅居乐滨江绿湾' ORDER BY t.id LIMIT 1), o AS (SELECT p.pt, v.id AS vid FROM o_p p CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> p.pt LIMIT 1) v), reach AS (SELECT node, agg_cost FROM pgr_drivingDistance('SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges', (SELECT vid FROM o), 1100.0, false)), fac AS (SELECT t.id, t.geom AS pt FROM pois t WHERE t.name LIKE '%社区卫生服务%' AND ST_DWithin(t.geom::geography, (SELECT pt FROM o)::geography, 1100.0)), snapped AS (SELECT f.id, v.id AS vid FROM fac f CROSS JOIN LATERAL (SELECT id FROM walk_vertices WHERE in_main ORDER BY geom <-> f.pt LIMIT 1) v) SELECT r.agg_cost AS d FROM snapped s JOIN reach r ON r.node = s.vid"
+  },
+  "compliance": "GB50180-2018:C.0.2:社区卫生服务站",
+  "args": {
+   "res": "雅居乐滨江绿湾",
+   "mention": "雅居乐滨江绿湾小区",
+   "clause": "GB50180-2018:C.0.2:社区卫生服务站",
+   "fac": "社区卫生服务站",
+   "spec": {
+    "layer": "pois",
+    "name_like": "社区卫生服务"
+   },
+   "qv": 1,
+   "k": 3
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "雅居乐滨江绿湾"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0001",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "马高路地铁站附近道路晚高峰的拥堵指数是多少？",
+  "gold_sql": null,
+  "args": {
+   "layer": "metro_stations",
+   "name": "马高路",
+   "noun": "交通拥堵",
+   "mode": 1
+  },
+  "ents": [
+   [
+    "metro_stations",
+    "马高路"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0002",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "浦口区去年的碳排放量是多少吨？",
+  "gold_sql": null,
+  "args": {
+   "layer": "districts",
+   "name": "浦口区",
+   "noun": "碳排放",
+   "mode": 0
+  },
+  "ents": [
+   [
+    "districts",
+    "浦口区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0003",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "雨花开发区公交总站的营业执照编号是什么？",
+  "gold_sql": null,
+  "args": {
+   "layer": "pois",
+   "name": "雨花开发区公交总站",
+   "noun": "营业执照",
+   "mode": 1
+  },
+  "ents": [
+   [
+    "pois",
+    "雨花开发区公交总站"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0004",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "栖霞区每天的快递量有多少件？",
+  "gold_sql": null,
+  "args": {
+   "layer": "districts",
+   "name": "栖霞区",
+   "noun": "快递量",
+   "mode": 0
+  },
+  "ents": [
+   [
+    "districts",
+    "栖霞区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0005",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "康桥公寓小区每栋楼有几部电梯？",
+  "gold_sql": null,
+  "args": {
+   "layer": "residential_areas",
+   "name": "康桥公寓",
+   "noun": "电梯数量",
+   "mode": 0
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "康桥公寓"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0006",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "浦东花园小区冬至日的日照时长有几小时？",
+  "gold_sql": null,
+  "args": {
+   "layer": "residential_areas",
+   "name": "浦东花园",
+   "noun": "日照",
+   "mode": 1
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "浦东花园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0007",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "饼干城大营救周边的商铺空置率是多少？",
+  "gold_sql": null,
+  "args": {
+   "layer": "pois",
+   "name": "饼干城大营救",
+   "noun": "商铺空置",
+   "mode": 0
+  },
+  "ents": [
+   [
+    "pois",
+    "饼干城大营救"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0008",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "蓝岸尚城6栋小区冬至日的日照时长有几小时？",
+  "gold_sql": null,
+  "args": {
+   "layer": "residential_areas",
+   "name": "蓝岸尚城6栋",
+   "noun": "日照",
+   "mode": 1
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "蓝岸尚城6栋"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0009",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "朗诗青春街区小区冬至日的日照时长有几小时？",
+  "gold_sql": null,
+  "args": {
+   "layer": "residential_areas",
+   "name": "朗诗青春街区",
+   "noun": "日照",
+   "mode": 1
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "朗诗青春街区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0010",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "富力城小区冬至日的日照时长有几小时？",
+  "gold_sql": null,
+  "args": {
+   "layer": "residential_areas",
+   "name": "富力城",
+   "noun": "日照",
+   "mode": 1
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "富力城"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0011",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "浦口区每天的快递量有多少件？",
+  "gold_sql": null,
+  "args": {
+   "layer": "districts",
+   "name": "浦口区",
+   "noun": "快递量",
+   "mode": 2
+  },
+  "ents": [
+   [
+    "districts",
+    "浦口区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0012",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "仙居花园小区每栋楼有几部电梯？",
+  "gold_sql": null,
+  "args": {
+   "layer": "residential_areas",
+   "name": "仙居花园",
+   "noun": "电梯数量",
+   "mode": 2
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "仙居花园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0013",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "觅秀东园小区冬至日的日照时长有几小时？",
+  "gold_sql": null,
+  "args": {
+   "layer": "residential_areas",
+   "name": "觅秀东园",
+   "noun": "日照",
+   "mode": 0
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "觅秀东园"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0014",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "地铁七桥瓮站附近道路晚高峰的拥堵指数是多少？",
+  "gold_sql": null,
+  "args": {
+   "layer": "metro_stations",
+   "name": "七桥瓮",
+   "noun": "交通拥堵",
+   "mode": 0
+  },
+  "ents": [
+   [
+    "metro_stations",
+    "七桥瓮"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0015",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "南京信息职业技术学院的营业执照编号是什么？",
+  "gold_sql": null,
+  "args": {
+   "layer": "pois",
+   "name": "南京信息职业技术学院",
+   "noun": "营业执照",
+   "mode": 0
+  },
+  "ents": [
+   [
+    "pois",
+    "南京信息职业技术学院"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0016",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "汤泉·邻舍小区冬至日的日照时长有几小时？",
+  "gold_sql": null,
+  "args": {
+   "layer": "residential_areas",
+   "name": "汤泉·邻舍",
+   "noun": "日照",
+   "mode": 0
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "汤泉·邻舍"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0017",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "花旗社区居民委员会的营业执照编号是什么？",
+  "gold_sql": null,
+  "args": {
+   "layer": "pois",
+   "name": "花旗社区居民委员会",
+   "noun": "营业执照",
+   "mode": 1
+  },
+  "ents": [
+   [
+    "pois",
+    "花旗社区居民委员会"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0018",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "栖霞区去年的碳排放量是多少吨？",
+  "gold_sql": null,
+  "args": {
+   "layer": "districts",
+   "name": "栖霞区",
+   "noun": "碳排放",
+   "mode": 1
+  },
+  "ents": [
+   [
+    "districts",
+    "栖霞区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0019",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "幸庄北苑小区每栋楼有几部电梯？",
+  "gold_sql": null,
+  "args": {
+   "layer": "residential_areas",
+   "name": "幸庄北苑",
+   "noun": "电梯数量",
+   "mode": 1
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "幸庄北苑"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0020",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "汤山地铁站附近道路晚高峰的拥堵指数是多少？",
+  "gold_sql": null,
+  "args": {
+   "layer": "metro_stations",
+   "name": "汤山",
+   "noun": "交通拥堵",
+   "mode": 0
+  },
+  "ents": [
+   [
+    "metro_stations",
+    "汤山"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0021",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "南医大·江苏经贸学院地铁站附近道路晚高峰的拥堵指数是多少？",
+  "gold_sql": null,
+  "args": {
+   "layer": "metro_stations",
+   "name": "南医大·江苏经贸学院",
+   "noun": "交通拥堵",
+   "mode": 1
+  },
+  "ents": [
+   [
+    "metro_stations",
+    "南医大·江苏经贸学院"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0022",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "浮圈Ⅰ点的营业执照编号是什么？",
+  "gold_sql": null,
+  "args": {
+   "layer": "pois",
+   "name": "浮圈Ⅰ点",
+   "noun": "营业执照",
+   "mode": 0
+  },
+  "ents": [
+   [
+    "pois",
+    "浮圈Ⅰ点"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0023",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "南京长江之舟逸衡酒店的营业执照编号是什么？",
+  "gold_sql": null,
+  "args": {
+   "layer": "pois",
+   "name": "南京长江之舟逸衡酒店",
+   "noun": "营业执照",
+   "mode": 0
+  },
+  "ents": [
+   [
+    "pois",
+    "南京长江之舟逸衡酒店"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0024",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "雨花台风景名胜区的土壤是什么类型？",
+  "gold_sql": null,
+  "args": {
+   "layer": "parks",
+   "name": "雨花台风景名胜区",
+   "noun": "土壤",
+   "mode": 0
+  },
+  "ents": [
+   [
+    "parks",
+    "雨花台风景名胜区"
+   ]
+  ]
+ },
+ {
+  "id": "HO-U0025",
+  "tier": "unanswerable",
+  "kind": "unanswerable",
+  "question": "白露新寓小区每栋楼有几部电梯？",
+  "gold_sql": null,
+  "args": {
+   "layer": "residential_areas",
+   "name": "白露新寓",
+   "noun": "电梯数量",
+   "mode": 0
+  },
+  "ents": [
+   [
+    "residential_areas",
+    "白露新寓"
+   ]
+  ]
+ }
+]

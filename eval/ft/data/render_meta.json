@@ -1,0 +1,976 @@
+{
+ "system_prompt": "You answer questions about Nanjing (南京) using a PostGIS database built from an OpenStreetMap snapshot.\nConventions of this project (apply them exactly):\n- Distances, areas and lengths must be in meters (geography or a metric CRS); convert to the unit asked\n  (公里 km, 公顷 ha = 1e4 m², 平方公里 km² = 1e6 m²).\n- \"在某区/区内\": point features inside the district polygon (ST_Within); polygon features (小区, parks) by\n  ST_PointOnSurface(geom) inside the district.\n- Brands, religion, opening hours, fees, aliases (alt_name / old_name / short_name), English names (name:en) etc.\n  are raw OSM tags in poi_tags (key, value). \"按品牌标签\" means poi_tags key = 'brand'.\n- Walking questions use the pedestrian network (walk_edges / walk_vertices, pgRouting), not straight-line\n  distance, unless the question says 直线. Walking speed 4.8 km/h = 80 m/min, so N minutes = 80·N network meters.\n  Snap a feature to the nearest walk_vertices row with in_main = true (polygon features via ST_PointOnSurface;\n  if several features share the name, use the one with the smallest id). A facility is reachable when its\n  snapped vertex has network distance <= the limit. Snap distance is not added to the network distance.\n- Isochrone area: edges whose both endpoints are reachable, each ST_Simplify(ST_Transform(geom, 32650), 2) buffered\n  50 m with 'quad_segs=2', unioned, area via geography, in km².\n- School levels: OSM only has amenity=school; 中学/初中 = school whose name contains 中学, 小学 = name contains 小学.\n- Planning standard GB 50180-2018 excerpts are in standard_clauses. For a compliance question (\"按标准…是否…\"):\n  take the service radius from the clause (max_radius_m) as the walking network-distance limit; the residential\n  area complies if at least one such facility is reachable within it. The answer must be one row with columns\n  compliant (boolean), clause_id (the clause used) and radius_m.\n- Return the columns the question asks for; a count as a single number.\n- If the data cannot answer the question (population, traffic, prices, ratings, transit transfers, enrolment,\n  opening statistics, numbers the clauses do not state, etc.), refuse instead of guessing.\n\nYou are a spatial analysis agent. Work in steps:\n1. Plan briefly. Resolve exact feature names with find_entity, category values with distinct_values, and raw tag\n   keys/values with tag_values when unsure.\n2. Prefer the typed tools: walk_route, reachable, isochrone for walking questions; retrieve_standard to find the\n   clause for a standard question; check_compliance to apply a clause to a residential area; the round-1 GIS tools\n   for straight-line questions. Use run_sql for anything else (it accepts pgRouting functions too).\n3. Each tool result has an id like R3. A validator checks every result and tells you when to repair.\n4. Finish with final_answer: result_ref = the id of the result that answers the question (result_rows to keep\n   only some rows, result_as='count' to let the program count rows). The answer template is Chinese and cites\n   values ONLY via placeholders {R3.n}, {R3.rows[0].col} or {R3.rows}; never type numbers. For a standard question\n   also cite the clause id via a placeholder. If the data cannot answer, call final_answer with refuse=true.\n\nSpatial facts and available functions:\n- Every geom column is EPSG:4326 (lon/lat degrees). PostGIS 3.5 is available: ST_Distance/ST_DWithin/ST_Area/\n  ST_Length return degrees on geometry and meters on geography (geom::geography); ST_Transform(geom, 32650)\n  is UTM zone 50N in meters.\n- pgRouting 3.8 is available. Edge query for walking:\n    'SELECT id, source, target, cost_m AS cost, cost_m AS reverse_cost FROM walk_edges'\n  pgr_dijkstra(edges_sql, start_vid, end_vid, directed => false) -> (seq, path_seq, node, edge, cost, agg_cost)\n  pgr_drivingDistance(edges_sql, start_vid, distance, directed => false) -> (seq, depth, start_vid, pred, node, edge,\n    cost, agg_cost) — all vertices within `distance` network meters.\n  To route from a feature, snap it to the nearest walk_vertices row with in_main = true\n  (ORDER BY v.geom <-> point LIMIT 1). Polygon features use ST_PointOnSurface(geom) as their point.\n- Walking speed for this project: 4.8 km/h = 80 m per minute.\n- pgvector 0.8 is available. standard_clauses.embedding <=> query_vector is cosine distance. You cannot compute\n  embeddings in SQL; filter standard_clauses with ordinary predicates (facility, circle_min, title LIKE ...) instead.\n\nDatabase schema:\nTABLE districts (11 rows) -- Nanjing municipal districts (OSM admin_level=6)\n  id integer\n  osm_id bigint\n  name character varying\n  name_en character varying\n  geom geometry(MultiPolygon,4326)\nTABLE pois (9088 rows) -- points of interest from OSM amenity/shop/tourism features; polygons reduced to an interior point\n  id integer\n  osm_type text -- node | way | relation\n  osm_id bigint\n  name character varying\n  category text -- OSM key the feature came from: amenity | shop | tourism\n  subtype character varying -- raw OSM value of that key (English, lower case)\n  cuisine character varying -- raw OSM cuisine tag\n  geom geometry(Point,4326)\nTABLE roads (32153 rows) -- OSM roads for motor vehicles, clipped to the city boundary\n  id integer\n  osm_id bigint\n  name character varying\n  highway character varying -- raw OSM highway value\n  ref character varying\n  oneway character varying\n  geom geometry(MultiLineString,4326)\nTABLE waterways (1976 rows) -- OSM linear waterways\n  id integer\n  osm_id bigint\n  name character varying\n  waterway character varying -- raw OSM waterway value\n  geom geometry(MultiLineString,4326)\nTABLE water_areas (5727 rows) -- OSM natural=water polygons\n  id integer\n  osm_id bigint\n  name character varying\n  water_type character varying -- raw OSM water value\n  geom geometry(MultiPolygon,4326)\nTABLE parks (495 rows) -- OSM leisure=park polygons\n  id integer\n  osm_id bigint\n  name character varying\n  geom geometry(MultiPolygon,4326)\nTABLE metro_stations (272 rows) -- metro/light-rail stations, one row per station name\n  id integer\n  name character varying\n  station_type text -- subway | light_rail\n  osm_node_count integer -- number of OSM station nodes merged into this row\n  geom geometry(Point,4326)\nTABLE poi_tags (16734 rows) -- all remaining raw OSM tags of pois, one row per (poi, key)\n  poi_id integer -- references pois.id\n  key text -- raw OSM tag key, e.g. brand, operator, opening_hours, name:en\n  value text -- raw OSM tag value\nTABLE residential_areas (1995 rows) -- named OSM landuse=residential polygons (housing estates / 小区)\n  id integer\n  osm_id bigint\n  name character varying\n  geom geometry(MultiPolygon,4326)\nTABLE bus_stops (4250 rows) -- OSM highway=bus_stop points (not merged; one stop often has two rows)\n  id integer\n  osm_id bigint\n  name character varying\n  geom geometry(Point,4326)\nTABLE walk_edges (118304 rows) -- pedestrian network edges for pgRouting (undirected)\n  id bigint\n  source bigint -- walk_vertices.id\n  target bigint -- walk_vertices.id\n  osm_id bigint\n  highway character varying -- raw OSM highway value of the way\n  name character varying\n  cost_m double precision -- edge length in meters\n  geom geometry(LineString,4326)\nTABLE walk_vertices (87970 rows) -- pedestrian network vertices\n  id bigint\n  geom geometry(Point,4326)\n  component bigint -- connected component id\n  in_main boolean -- true if the vertex is in the largest connected component\nTABLE standard_clauses (31 rows) -- excerpts of the planning standard GB 50180-2018 with embeddings\n  clause_id text -- citable clause id\n  standard text\n  section text\n  title text\n  body text\n  facility text -- facility the clause is about (Chinese), null for general clauses\n  circle_min integer -- life-circle level in minutes (5/10/15) the clause belongs to\n  max_radius_m integer -- service radius upper bound in meters stated by the clause\n  walk_m_min integer -- walking distance lower bound in meters (table 3.0.4)\n  walk_m_max integer -- walking distance upper bound in meters (table 3.0.4)\n  strength text -- definition | should | should_not_exceed\n  page integer\n  source_url text\n  embedding vector(512) -- vector(512), BAAI/bge-small-zh-v1.5, L2-normalised",
+ "tools": [
+  {
+   "type": "function",
+   "function": {
+    "name": "find_entity",
+    "description": "Fuzzy-find features by name or alias (alt_name/old_name/short_name/name:en); returns layer, exact name, category, district and how it matched.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "name": {
+       "type": "string"
+      },
+      "layer": {
+       "type": "string",
+       "enum": [
+        "pois",
+        "metro_stations",
+        "districts",
+        "water_areas",
+        "parks",
+        "waterways",
+        "roads",
+        "residential_areas",
+        "bus_stops"
+       ]
+      }
+     },
+     "required": [
+      "name"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "tag_values",
+    "description": "Raw OSM tags of pois. Without key: the 60 most common tag keys. With key: values and counts (optionally filtered by substring `like`).",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "key": {
+       "type": "string"
+      },
+      "like": {
+       "type": "string"
+      }
+     },
+     "required": [],
+     "additionalProperties": false
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "distinct_values",
+    "description": "List category values with counts for a layer (pois.subtype, waterways.waterway, ...).",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "layer": {
+       "type": "string",
+       "enum": [
+        "pois",
+        "metro_stations",
+        "districts",
+        "water_areas",
+        "parks",
+        "waterways",
+        "roads"
+       ]
+      },
+      "prefix": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "layer"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "within_distance",
+    "description": "Features of target within radius_m meters of the anchor (geography distance). count_only=true returns a single count n.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "anchor": {
+       "properties": {
+        "layer": {
+         "description": "layer holding the reference feature",
+         "enum": [
+          "pois",
+          "metro_stations",
+          "districts",
+          "water_areas",
+          "parks",
+          "waterways",
+          "roads"
+         ],
+         "type": "string"
+        },
+        "name": {
+         "description": "exact feature name, e.g. 新街口 or 南京博物院",
+         "type": "string"
+        }
+       },
+       "required": [
+        "layer",
+        "name"
+       ],
+       "type": "object"
+      },
+      "target": {
+       "properties": {
+        "layer": {
+         "description": "layer to search",
+         "enum": [
+          "pois",
+          "metro_stations",
+          "districts",
+          "water_areas",
+          "parks",
+          "waterways",
+          "roads"
+         ],
+         "type": "string"
+        },
+        "subtypes": {
+         "anyOf": [
+          {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "description": "category values (pois.subtype, waterways.waterway, ...), e.g. ['bank']"
+        },
+        "name_like": {
+         "anyOf": [
+          {
+           "type": "string"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "description": "optional substring filter on name"
+        },
+        "named_only": {
+         "default": false,
+         "description": "only features with a non-null name",
+         "type": "boolean"
+        },
+        "district": {
+         "anyOf": [
+          {
+           "type": "string"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "description": "restrict to features within this district, e.g. 鼓楼区"
+        }
+       },
+       "required": [
+        "layer"
+       ],
+       "type": "object"
+      },
+      "radius_m": {
+       "type": "number"
+      },
+      "count_only": {
+       "type": "boolean"
+      }
+     },
+     "required": [
+      "anchor",
+      "target",
+      "radius_m"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "nearest_k",
+    "description": "k nearest target features to the anchor with distance in meters.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "anchor": {
+       "properties": {
+        "layer": {
+         "description": "layer holding the reference feature",
+         "enum": [
+          "pois",
+          "metro_stations",
+          "districts",
+          "water_areas",
+          "parks",
+          "waterways",
+          "roads"
+         ],
+         "type": "string"
+        },
+        "name": {
+         "description": "exact feature name, e.g. 新街口 or 南京博物院",
+         "type": "string"
+        }
+       },
+       "required": [
+        "layer",
+        "name"
+       ],
+       "type": "object"
+      },
+      "target": {
+       "properties": {
+        "layer": {
+         "description": "layer to search",
+         "enum": [
+          "pois",
+          "metro_stations",
+          "districts",
+          "water_areas",
+          "parks",
+          "waterways",
+          "roads"
+         ],
+         "type": "string"
+        },
+        "subtypes": {
+         "anyOf": [
+          {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "description": "category values (pois.subtype, waterways.waterway, ...), e.g. ['bank']"
+        },
+        "name_like": {
+         "anyOf": [
+          {
+           "type": "string"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "description": "optional substring filter on name"
+        },
+        "named_only": {
+         "default": false,
+         "description": "only features with a non-null name",
+         "type": "boolean"
+        },
+        "district": {
+         "anyOf": [
+          {
+           "type": "string"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "description": "restrict to features within this district, e.g. 鼓楼区"
+        }
+       },
+       "required": [
+        "layer"
+       ],
+       "type": "object"
+      },
+      "k": {
+       "type": "integer"
+      }
+     },
+     "required": [
+      "anchor",
+      "target",
+      "k"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "count_by_district",
+    "description": "Count point features per district (ST_Within), with per_km2 density and area_km2.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "target": {
+       "properties": {
+        "layer": {
+         "description": "layer to search",
+         "enum": [
+          "pois",
+          "metro_stations",
+          "districts",
+          "water_areas",
+          "parks",
+          "waterways",
+          "roads"
+         ],
+         "type": "string"
+        },
+        "subtypes": {
+         "anyOf": [
+          {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "description": "category values (pois.subtype, waterways.waterway, ...), e.g. ['bank']"
+        },
+        "name_like": {
+         "anyOf": [
+          {
+           "type": "string"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "description": "optional substring filter on name"
+        },
+        "named_only": {
+         "default": false,
+         "description": "only features with a non-null name",
+         "type": "boolean"
+        },
+        "district": {
+         "anyOf": [
+          {
+           "type": "string"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "description": "restrict to features within this district, e.g. 鼓楼区"
+        }
+       },
+       "required": [
+        "layer"
+       ],
+       "type": "object"
+      }
+     },
+     "required": [
+      "target"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "measure",
+    "description": "Area in km2 (polygon layers) or length in km (line layers) of the named feature(s), summed.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "layer": {
+       "type": "string",
+       "enum": [
+        "pois",
+        "metro_stations",
+        "districts",
+        "water_areas",
+        "parks",
+        "waterways",
+        "roads"
+       ]
+      },
+      "name": {
+       "type": "string"
+      },
+      "metric": {
+       "type": "string",
+       "enum": [
+        "area_km2",
+        "length_km"
+       ]
+      }
+     },
+     "required": [
+      "layer",
+      "name",
+      "metric"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "spatial_relation",
+    "description": "Features of left_layer that intersect/touch/are within/contain the anchor feature.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "left_layer": {
+       "type": "string",
+       "enum": [
+        "pois",
+        "metro_stations",
+        "districts",
+        "water_areas",
+        "parks",
+        "waterways",
+        "roads"
+       ]
+      },
+      "relation": {
+       "type": "string",
+       "enum": [
+        "intersects",
+        "touches",
+        "within",
+        "contains"
+       ]
+      },
+      "right": {
+       "properties": {
+        "layer": {
+         "description": "layer holding the reference feature",
+         "enum": [
+          "pois",
+          "metro_stations",
+          "districts",
+          "water_areas",
+          "parks",
+          "waterways",
+          "roads"
+         ],
+         "type": "string"
+        },
+        "name": {
+         "description": "exact feature name, e.g. 新街口 or 南京博物院",
+         "type": "string"
+        }
+       },
+       "required": [
+        "layer",
+        "name"
+       ],
+       "type": "object"
+      }
+     },
+     "required": [
+      "left_layer",
+      "relation",
+      "right"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "distance_between",
+    "description": "Shortest distance in meters and km between two named features.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "a": {
+       "properties": {
+        "layer": {
+         "description": "layer holding the reference feature",
+         "enum": [
+          "pois",
+          "metro_stations",
+          "districts",
+          "water_areas",
+          "parks",
+          "waterways",
+          "roads"
+         ],
+         "type": "string"
+        },
+        "name": {
+         "description": "exact feature name, e.g. 新街口 or 南京博物院",
+         "type": "string"
+        }
+       },
+       "required": [
+        "layer",
+        "name"
+       ],
+       "type": "object"
+      },
+      "b": {
+       "properties": {
+        "layer": {
+         "description": "layer holding the reference feature",
+         "enum": [
+          "pois",
+          "metro_stations",
+          "districts",
+          "water_areas",
+          "parks",
+          "waterways",
+          "roads"
+         ],
+         "type": "string"
+        },
+        "name": {
+         "description": "exact feature name, e.g. 新街口 or 南京博物院",
+         "type": "string"
+        }
+       },
+       "required": [
+        "layer",
+        "name"
+       ],
+       "type": "object"
+      }
+     },
+     "required": [
+      "a",
+      "b"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "walk_route",
+    "description": "Shortest walking path on the pedestrian network between two named features: walk_m (network meters), walk_min (at 4.8 km/h), straight_m, snap distances, GeoJSON line.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "a": {
+       "properties": {
+        "layer": {
+         "description": "layer of the start/end feature",
+         "enum": [
+          "pois",
+          "metro_stations",
+          "residential_areas",
+          "parks",
+          "bus_stops",
+          "districts"
+         ],
+         "type": "string"
+        },
+        "name": {
+         "description": "exact feature name",
+         "type": "string"
+        }
+       },
+       "required": [
+        "layer",
+        "name"
+       ],
+       "type": "object"
+      },
+      "b": {
+       "properties": {
+        "layer": {
+         "description": "layer of the start/end feature",
+         "enum": [
+          "pois",
+          "metro_stations",
+          "residential_areas",
+          "parks",
+          "bus_stops",
+          "districts"
+         ],
+         "type": "string"
+        },
+        "name": {
+         "description": "exact feature name",
+         "type": "string"
+        }
+       },
+       "required": [
+        "layer",
+        "name"
+       ],
+       "type": "object"
+      }
+     },
+     "required": [
+      "a",
+      "b"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "isochrone",
+    "description": "Walking isochrone: area_km2 of the 50 m buffer around edges reachable within `minutes` (4.8 km/h), GeoJSON polygon.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "origin": {
+       "properties": {
+        "layer": {
+         "description": "layer of the start/end feature",
+         "enum": [
+          "pois",
+          "metro_stations",
+          "residential_areas",
+          "parks",
+          "bus_stops",
+          "districts"
+         ],
+         "type": "string"
+        },
+        "name": {
+         "description": "exact feature name",
+         "type": "string"
+        }
+       },
+       "required": [
+        "layer",
+        "name"
+       ],
+       "type": "object"
+      },
+      "minutes": {
+       "type": "number"
+      }
+     },
+     "required": [
+      "origin",
+      "minutes"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "reachable",
+    "description": "Target features reachable within `minutes` of walking (network distance <= 80 m/min * minutes), sorted by walk_m. count_only=true returns n.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "origin": {
+       "properties": {
+        "layer": {
+         "description": "layer of the start/end feature",
+         "enum": [
+          "pois",
+          "metro_stations",
+          "residential_areas",
+          "parks",
+          "bus_stops",
+          "districts"
+         ],
+         "type": "string"
+        },
+        "name": {
+         "description": "exact feature name",
+         "type": "string"
+        }
+       },
+       "required": [
+        "layer",
+        "name"
+       ],
+       "type": "object"
+      },
+      "target": {
+       "description": "第二轮目标过滤：图层增加 residential_areas、bus_stops（第一轮 TargetFilter 的 JSON schema 保持不变）。",
+       "properties": {
+        "layer": {
+         "description": "layer to search",
+         "enum": [
+          "pois",
+          "metro_stations",
+          "districts",
+          "water_areas",
+          "parks",
+          "waterways",
+          "roads",
+          "residential_areas",
+          "bus_stops"
+         ],
+         "type": "string"
+        },
+        "subtypes": {
+         "anyOf": [
+          {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "description": "category values (pois.subtype, waterways.waterway, ...), e.g. ['bank']"
+        },
+        "name_like": {
+         "anyOf": [
+          {
+           "type": "string"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "description": "optional substring filter on name"
+        },
+        "named_only": {
+         "default": false,
+         "description": "only features with a non-null name",
+         "type": "boolean"
+        },
+        "district": {
+         "anyOf": [
+          {
+           "type": "string"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "description": "restrict to features within this district, e.g. 鼓楼区"
+        }
+       },
+       "required": [
+        "layer"
+       ],
+       "type": "object"
+      },
+      "minutes": {
+       "type": "number"
+      },
+      "count_only": {
+       "type": "boolean"
+      }
+     },
+     "required": [
+      "origin",
+      "target",
+      "minutes"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "retrieve_standard",
+    "description": "Semantic search over GB 50180-2018 clause excerpts (local embedding model). Returns clause_id, title, facility, circle_min, max_radius_m, walk_m_min/max, score and body text.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "query": {
+       "type": "string"
+      },
+      "k": {
+       "type": "integer"
+      }
+     },
+     "required": [
+      "query"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "check_compliance",
+    "description": "Apply a clause to a residential area: the program reads max_radius_m from the clause and checks whether a target facility is reachable on the walking network within it. Returns compliant, clause_id, radius_m, nearest_walk_m, nearest_name.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "residential": {
+       "type": "string"
+      },
+      "clause_id": {
+       "type": "string"
+      },
+      "target": {
+       "description": "第二轮目标过滤：图层增加 residential_areas、bus_stops（第一轮 TargetFilter 的 JSON schema 保持不变）。",
+       "properties": {
+        "layer": {
+         "description": "layer to search",
+         "enum": [
+          "pois",
+          "metro_stations",
+          "districts",
+          "water_areas",
+          "parks",
+          "waterways",
+          "roads",
+          "residential_areas",
+          "bus_stops"
+         ],
+         "type": "string"
+        },
+        "subtypes": {
+         "anyOf": [
+          {
+           "items": {
+            "type": "string"
+           },
+           "type": "array"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "description": "category values (pois.subtype, waterways.waterway, ...), e.g. ['bank']"
+        },
+        "name_like": {
+         "anyOf": [
+          {
+           "type": "string"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "description": "optional substring filter on name"
+        },
+        "named_only": {
+         "default": false,
+         "description": "only features with a non-null name",
+         "type": "boolean"
+        },
+        "district": {
+         "anyOf": [
+          {
+           "type": "string"
+          },
+          {
+           "type": "null"
+          }
+         ],
+         "default": null,
+         "description": "restrict to features within this district, e.g. 鼓楼区"
+        }
+       },
+       "required": [
+        "layer"
+       ],
+       "type": "object"
+      }
+     },
+     "required": [
+      "residential",
+      "clause_id",
+      "target"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "run_sql",
+    "description": "Run one read-only PostGIS/pgRouting SELECT (max 200 rows, 5 s). Add ST_AsGeoJSON(geom) AS geojson to show features on the map.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "sql": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "sql"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  {
+   "type": "function",
+   "function": {
+    "name": "final_answer",
+    "description": "Finish. result_ref is the result id (e.g. R3) whose rows answer the question. If only some rows answer it (e.g. the top 1 of a nearest_k list, or one district of count_by_district), set result_rows to those 0-based row indexes, e.g. [0]. If the question asks 'how many' and the result lists the matching features, set result_as='count' (the program counts the rows). answer uses placeholders {R3.n}, {R3.count}, {R3.rows[0].col}, {R3.rows}; never type numbers. Set refuse=true when the data cannot answer.",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "result_ref": {
+       "type": "string"
+      },
+      "result_rows": {
+       "type": "array",
+       "items": {
+        "type": "integer"
+       }
+      },
+      "result_as": {
+       "type": "string",
+       "enum": [
+        "rows",
+        "count"
+       ]
+      },
+      "answer": {
+       "type": "string"
+      },
+      "refuse": {
+       "type": "boolean"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "answer"
+     ],
+     "additionalProperties": false
+    }
+   }
+  }
+ ],
+ "system_prompt_sha256": "53235d339c5d1f6090c1bd4fe7032b37b55f26fd061f92d8a2abb4eb7fced5b3",
+ "tools_sha256": "9438b9b427537e6e531275caa84f4aaa20f965e6e98a4ebe02fe5d1af985c91f"
+}

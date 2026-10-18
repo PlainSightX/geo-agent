@@ -1,0 +1,2215 @@
+{
+ "frozen_at": "2026-10-18T14:06:41+00:00",
+ "questions_file": "ft/heldout/questions.json",
+ "questions_sha256": "16be7e4a8d8abdcdeca0a0f1513b7c8927539ffa6ab76e02f38b52a254c1eefc",
+ "data": {
+  "table_counts": {
+   "districts": 11,
+   "pois": 9088,
+   "metro_stations": 272,
+   "parks": 495,
+   "residential_areas": 1995,
+   "bus_stops": 4250,
+   "poi_tags": 16734,
+   "walk_edges": 118304,
+   "walk_vertices": 87970,
+   "standard_clauses": 31
+  },
+  "walk_network": {
+   "edges": 118304,
+   "vertices": 87970,
+   "total_km": 21203.6,
+   "components": 1088,
+   "main_vertex_share": 0.9444,
+   "main_length_share": 0.9728
+  },
+  "postgis_version": "3.5.2",
+  "pgrouting_version": "3.8.0",
+  "pgvector_version": "0.8.6",
+  "osm_snapshot": "jiangsu-261017.osm.pbf",
+  "osm_snapshot_sha256": "dcba9384eb5919ae3bf4aeb209fac913b0754133a5f5d4e2acd2b4d5f1b2652e",
+  "clauses_sha256": "c7e2489b4eec0a348fc11fa5ddbf2bc75ddeedff9f0dc4a9fdd491043d91ea88"
+ },
+ "items": [
+  {
+   "id": "HO-T0001",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "果之鲜"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "5315633927484121342e7174cd93275a41cf7c19c50c94638cd3c419ffc04b3a"
+  },
+  {
+   "id": "HO-T0002",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "大华大戏院"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "62a0fdc99b554a5815f6e024246ee32692ebac6c7751c1813710d0015528c2c5"
+  },
+  {
+   "id": "HO-T0003",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     83
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "e02e27574c433343d6529d1140606afcc846a7e10b20dbeea7855218c38150d0"
+  },
+  {
+   "id": "HO-T0004",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     1
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f45c5cf07bf091295818ed528234da7c7c0d19d2bccc9bb9102214947deec509"
+  },
+  {
+   "id": "HO-T0005",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     2
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "83e0df629d22856549e3a636f4bf605bd8e2cae551b85ce13e7e306c48d38078"
+  },
+  {
+   "id": "HO-T0006",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     75
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "7259d1dde20c993c40eda8c655393e5260dc68da109e637c4f103db2c924b378"
+  },
+  {
+   "id": "HO-T0007",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     58
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "e3d8d796a149fdc789a564122f7252e3ac889d8c966cd49e43fe93d57025c52f"
+  },
+  {
+   "id": "HO-T0008",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "大华大戏院"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "62a0fdc99b554a5815f6e024246ee32692ebac6c7751c1813710d0015528c2c5"
+  },
+  {
+   "id": "HO-T0009",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "果之鲜"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "5315633927484121342e7174cd93275a41cf7c19c50c94638cd3c419ffc04b3a"
+  },
+  {
+   "id": "HO-T0010",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     1
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f45c5cf07bf091295818ed528234da7c7c0d19d2bccc9bb9102214947deec509"
+  },
+  {
+   "id": "HO-T0011",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     1
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f45c5cf07bf091295818ed528234da7c7c0d19d2bccc9bb9102214947deec509"
+  },
+  {
+   "id": "HO-T0013",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     2
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "83e0df629d22856549e3a636f4bf605bd8e2cae551b85ce13e7e306c48d38078"
+  },
+  {
+   "id": "HO-T0014",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "value",
+    "n"
+   ],
+   "rows": [
+    [
+     "yes",
+     11
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "0bbe18208067c6bb058fbd7b7c8dd5f190886a0fa18b503ff9b44a3550e95f77"
+  },
+  {
+   "id": "HO-T0015",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     2
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "83e0df629d22856549e3a636f4bf605bd8e2cae551b85ce13e7e306c48d38078"
+  },
+  {
+   "id": "HO-T0016",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     18
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "aa92285c857e49899812c5f615f6f80a9797cce03b36e2b185f7888c176a5852"
+  },
+  {
+   "id": "HO-T0017",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     6
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f36f30293eb17151cfc2dd66a9040809843b6ca88eb9ea0e406aa8954566ce35"
+  },
+  {
+   "id": "HO-T0018",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     1
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f45c5cf07bf091295818ed528234da7c7c0d19d2bccc9bb9102214947deec509"
+  },
+  {
+   "id": "HO-T0019",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "山林悦民宿"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "5f894605658175bb4f314bc2ab49007fb5e157909a2c6338a65e06a191013bf3"
+  },
+  {
+   "id": "HO-T0020",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     2
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "83e0df629d22856549e3a636f4bf605bd8e2cae551b85ce13e7e306c48d38078"
+  },
+  {
+   "id": "HO-T0021",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "山林悦民宿"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "5f894605658175bb4f314bc2ab49007fb5e157909a2c6338a65e06a191013bf3"
+  },
+  {
+   "id": "HO-T0022",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     1
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f45c5cf07bf091295818ed528234da7c7c0d19d2bccc9bb9102214947deec509"
+  },
+  {
+   "id": "HO-T0025",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     1
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f45c5cf07bf091295818ed528234da7c7c0d19d2bccc9bb9102214947deec509"
+  },
+  {
+   "id": "HO-T0026",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "name"
+   ],
+   "rows": [
+    [
+     "大华大戏院"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "62a0fdc99b554a5815f6e024246ee32692ebac6c7751c1813710d0015528c2c5"
+  },
+  {
+   "id": "HO-T0027",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     1
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f45c5cf07bf091295818ed528234da7c7c0d19d2bccc9bb9102214947deec509"
+  },
+  {
+   "id": "HO-T0028",
+   "tier": "tag",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     1
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f45c5cf07bf091295818ed528234da7c7c0d19d2bccc9bb9102214947deec509"
+  },
+  {
+   "id": "HO-J0001",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     10
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "6c89b370981db437655de4fc9f9b57f9d5ef5bbd11a575e9314f899680918faa"
+  },
+  {
+   "id": "HO-J0002",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "district"
+   ],
+   "rows": [
+    [
+     "栖霞区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "9615a4c819230b6ac58f8a9672274aeb4e7bd2f8a0b6897416c08f2dcfa4c8d7"
+  },
+  {
+   "id": "HO-J0003",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "name",
+    "district"
+   ],
+   "rows": [
+    [
+     "金陵小镇",
+     "江宁区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "d99720d67576688dfd254ae4ba50f34c328debce9a18f271c00afbcc2818a125"
+  },
+  {
+   "id": "HO-J0005",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "name",
+    "district"
+   ],
+   "rows": [
+    [
+     "八卦洲公交场站",
+     "栖霞区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "00d8082185d39928c9e367a75c325d5fa882ee6f9d3c186160b0c553afa344e1"
+  },
+  {
+   "id": "HO-J0006",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     3
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "1316c39cbd671a6249957f393ff4c9a989dac092a58d3e4c5537ecf84cd2e2f7"
+  },
+  {
+   "id": "HO-J0007",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     28
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "d7e2dfa1603d69f42f7ee13cfa4ff0a3d3496708b8f12c1ee295d616fb1d1b15"
+  },
+  {
+   "id": "HO-J0009",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "name",
+    "district"
+   ],
+   "rows": [
+    [
+     "栖霞区医院龙潭分院",
+     "栖霞区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "eb96516663005c34b4687d11b7ddf9cd0ea1b88d72cdbc8bd67ea17244c6db3e"
+  },
+  {
+   "id": "HO-J0010",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     3
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "1316c39cbd671a6249957f393ff4c9a989dac092a58d3e4c5537ecf84cd2e2f7"
+  },
+  {
+   "id": "HO-J0011",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "district"
+   ],
+   "rows": [
+    [
+     "浦口区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "ba98579a274616ec3a4dfcabf1f22023c9132125891b68ee6ef979c838739d2f"
+  },
+  {
+   "id": "HO-J0012",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "name",
+    "district"
+   ],
+   "rows": [
+    [
+     "毗卢寺",
+     "玄武区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "14f56554223386b5f558a15c7621cff279072b22b90520e49c0e7f4291aebf86"
+  },
+  {
+   "id": "HO-J0013",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "district"
+   ],
+   "rows": [
+    [
+     "浦口区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "ba98579a274616ec3a4dfcabf1f22023c9132125891b68ee6ef979c838739d2f"
+  },
+  {
+   "id": "HO-J0014",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     6
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f36f30293eb17151cfc2dd66a9040809843b6ca88eb9ea0e406aa8954566ce35"
+  },
+  {
+   "id": "HO-J0016",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     2
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "83e0df629d22856549e3a636f4bf605bd8e2cae551b85ce13e7e306c48d38078"
+  },
+  {
+   "id": "HO-J0017",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "name",
+    "district"
+   ],
+   "rows": [
+    [
+     "大桥饭店",
+     "鼓楼区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "0bb63ff28ef17f3447df4d87b86d793eb9324ed16ca879bd0c897425702b2a95"
+  },
+  {
+   "id": "HO-J0018",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     4
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "21116a7b144d35594bccc768137fe869ab32b6643122976f0091754b69da8b35"
+  },
+  {
+   "id": "HO-J0019",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "name",
+    "dist_m"
+   ],
+   "rows": [
+    [
+     "龙华路",
+     1375.7652017
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "9446e01dc88c19b3d19cd4729f52d870f92b6953d9a7b1a280102b5ce385ee1c"
+  },
+  {
+   "id": "HO-J0020",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "name",
+    "district"
+   ],
+   "rows": [
+    [
+     "国美电器",
+     "秦淮区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "9d083b6fbadb10da578c00354cecfd28874793b14c0c3468a2153e565340dac8"
+  },
+  {
+   "id": "HO-J0021",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "name",
+    "district"
+   ],
+   "rows": [
+    [
+     "南京金陵天地",
+     "建邺区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "aa44aa594e200349f2bfc4f2bd63cea1c00802d830d4c8a55fd0c8d01c200c7b"
+  },
+  {
+   "id": "HO-J0023",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "district"
+   ],
+   "rows": [
+    [
+     "浦口区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "ba98579a274616ec3a4dfcabf1f22023c9132125891b68ee6ef979c838739d2f"
+  },
+  {
+   "id": "HO-J0024",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "name",
+    "dist_m"
+   ],
+   "rows": [
+    [
+     "北湾营街",
+     601.08065467
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "cdfc5094368e877390823018fddce0b663772d9b10ec4e5db3820231d3bfa92c"
+  },
+  {
+   "id": "HO-J0026",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "name",
+    "district"
+   ],
+   "rows": [
+    [
+     "周岗客运站",
+     "江宁区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "456306965857134fa71634304096cb2d5d34dffa0c6c85087335f967b80811c4"
+  },
+  {
+   "id": "HO-J0027",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "district"
+   ],
+   "rows": [
+    [
+     "江宁区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "baca2ef95181d0d5e71bb7d88a66c869612fcbd20da877d56ad4c265842e2831"
+  },
+  {
+   "id": "HO-J0028",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "name",
+    "district"
+   ],
+   "rows": [
+    [
+     "水平方",
+     "秦淮区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "ab5ce1abf6e0b206e4b6523fc6b7fe199524c5ef0af94f3d12a48eb640d8edbe"
+  },
+  {
+   "id": "HO-J0029",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     3
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "1316c39cbd671a6249957f393ff4c9a989dac092a58d3e4c5537ecf84cd2e2f7"
+  },
+  {
+   "id": "HO-J0030",
+   "tier": "join",
+   "answerable": true,
+   "columns": [
+    "name",
+    "district"
+   ],
+   "rows": [
+    [
+     "国防科技大学气象海洋学院",
+     "江宁区"
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f4f09496ee05d3845ffc3dbe007db017d9f66fa69e508caf65f6af494d799d17"
+  },
+  {
+   "id": "HO-C0001",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "area_km2"
+   ],
+   "rows": [
+    [
+     0.029272812860465607
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "380927dac698cac175a4ce2ef2ace86ea23d399c668cd9fd49e30b52826503d6"
+  },
+  {
+   "id": "HO-C0002",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "area_m2"
+   ],
+   "rows": [
+    [
+     29292.630487186834
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "9474d85ddd27d712f94b6d84a49be02f7e25d60c06f926478aa8fa316d0d3833"
+  },
+  {
+   "id": "HO-C0003",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "length_km"
+   ],
+   "rows": [
+    [
+     0.7227951884818072
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "c90b563ae73db2d1d47173e4e77787de9dde49d385d9395d0558f2317716b710"
+  },
+  {
+   "id": "HO-C0004",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "area_m2"
+   ],
+   "rows": [
+    [
+     42666.83722648397
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "db45bf26fb5f88122efab4ac1a168b825a37ef024d42a20d34e1919556f621d4"
+  },
+  {
+   "id": "HO-C0005",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "area_m2"
+   ],
+   "rows": [
+    [
+     290624.625969097
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "e75e1cb1c0aa52a976fe9cd69170dd2382a6eafe47205444ef7c998fea700af9"
+  },
+  {
+   "id": "HO-C0006",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "length_km"
+   ],
+   "rows": [
+    [
+     3.665421584112585
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "74dfaca5511a5541f523065cf30b5cb4e48a2cfc83ad174929ebcb9d912a18f2"
+  },
+  {
+   "id": "HO-C0007",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "len_km"
+   ],
+   "rows": [
+    [
+     1.0312099141626359
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "375d66d14893c90ed425efbc5f1c634393d0e2869ecea4ee04b8e6a4609a3f28"
+  },
+  {
+   "id": "HO-C0008",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "perimeter_m"
+   ],
+   "rows": [
+    [
+     1034.3397944539315
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "cb7d2d1aa6d273a5d54465142b235d0965112931b425513294feb762030a2465"
+  },
+  {
+   "id": "HO-C0009",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "area_km2"
+   ],
+   "rows": [
+    [
+     0.8653409115276253
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "53f826f4e668f8b486284cb4bd6234ce2d77c418ef808a547f9d119c20fd36c6"
+  },
+  {
+   "id": "HO-C0010",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "len_km"
+   ],
+   "rows": [
+    [
+     1.1877370315605689
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "a615b36c5f7bf6c8c578981348d87e15d6d355dabca511febecb698a3f163fbe"
+  },
+  {
+   "id": "HO-C0011",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "area_km2"
+   ],
+   "rows": [
+    [
+     0.083619611475382
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "a3cf70ed97e1ac10be99a8eeab9a5cc2e53a69f7a50112f2a62e570a5d4a0242"
+  },
+  {
+   "id": "HO-C0012",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "area_km2"
+   ],
+   "rows": [
+    [
+     0.15170747068518958
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "66e410ea5a632cc1eb639a2341707935e1cd9386b2a202b62eb4aa9ae0968e6d"
+  },
+  {
+   "id": "HO-C0013",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "area_km2"
+   ],
+   "rows": [
+    [
+     0.05632450704078376
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "d12116f26a8134a5e300ed0a092976c86ae0f12f9c6afb62dc9bd04772e55c89"
+  },
+  {
+   "id": "HO-C0014",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "area_km2"
+   ],
+   "rows": [
+    [
+     0.013652162207762011
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "49fc4cfc7b34d6e9d72a91db5ebe9a6a0dfa41bfd68bebefffd8689512500651"
+  },
+  {
+   "id": "HO-C0015",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "area_m2"
+   ],
+   "rows": [
+    [
+     75882.01937970798
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "7ad1decb5cbf30d3ed9f0a69c88cdfc1981519461972d9795ddb176a99ba4fee"
+  },
+  {
+   "id": "HO-C0016",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "len_km"
+   ],
+   "rows": [
+    [
+     1.0062901952064804
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "e7ba8249255173a4ad7e5ec45e7116381523596de0b798fafb7c445611214930"
+  },
+  {
+   "id": "HO-C0017",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "length_km"
+   ],
+   "rows": [
+    [
+     2.7914967181167656
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "675be077f4071999fa68761fe4503f21478c3abe9d1940fd09a54e05965a93ca"
+  },
+  {
+   "id": "HO-C0018",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "area_km2"
+   ],
+   "rows": [
+    [
+     0.06381830179306865
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f160f4ccdce28b271b4653fb391527795b808a21431e4652e0373697180c97dd"
+  },
+  {
+   "id": "HO-C0019",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "area_km2"
+   ],
+   "rows": [
+    [
+     0.08764650210449984
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "ec65feef859193aec897ef01e55c336dbee1b68746cb73b5f6c84a5700548101"
+  },
+  {
+   "id": "HO-C0020",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "dist_km"
+   ],
+   "rows": [
+    [
+     24.77395866463
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "4e1a5a5614c0f82c0138930e3bc20b85a7b3d09adfe8a0df0ae7215fd746e5d0"
+  },
+  {
+   "id": "HO-C0021",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "area_ha"
+   ],
+   "rows": [
+    [
+     33.86094150184076
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "3222678f6370814e4346545f05ede6a7232fb486aa0b4187c3185ab42436cd6c"
+  },
+  {
+   "id": "HO-C0022",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "perimeter_m"
+   ],
+   "rows": [
+    [
+     916.387986259431
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "a514fd07bf0048ae11ffcde9988e84a982cfb4f19dbdabc1d28681b073676ad8"
+  },
+  {
+   "id": "HO-C0023",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "dist_km"
+   ],
+   "rows": [
+    [
+     29.79914107428
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "4341830a1432a189ecccc3e8a24db57a5fc75ddcd992a1c0c854799618148f8e"
+  },
+  {
+   "id": "HO-C0024",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "dist_km"
+   ],
+   "rows": [
+    [
+     48.07219638477
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "732bab6d9bef455406d68c0ccc6406a7ce5f0945fbaaa7fd66796b0620365fdc"
+  },
+  {
+   "id": "HO-C0025",
+   "tier": "crs",
+   "answerable": true,
+   "columns": [
+    "len_km"
+   ],
+   "rows": [
+    [
+     7.5702447973541185
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "70d8dab9cc51e7d43775539dcce0f4041a533ac51bbc389f6b9b4ac2b80c0f2d"
+  },
+  {
+   "id": "HO-D0001",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_m"
+   ],
+   "rows": [
+    [
+     2389.6948935050214
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "c3adef3381978ac01ae58fd0101b0032efc121d8879112f887589d5a3cddfb3a"
+  },
+  {
+   "id": "HO-D0002",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_m"
+   ],
+   "rows": [
+    [
+     945.5572616644986
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "1daf3a388a2b2e2ec67dfae31f3bfdb963590298f1ea1d600934178da84f810b"
+  },
+  {
+   "id": "HO-D0003",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "area_km2"
+   ],
+   "rows": [
+    [
+     1.7777399389147333
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "21cfcc4b37755ce4a4a915a8b2525f78ebc83a335ce3442d668941efb950e64d"
+  },
+  {
+   "id": "HO-D0004",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "name",
+    "walk_m"
+   ],
+   "rows": [
+    [
+     "影院",
+     407.25413643224647
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "3d1aecfe371f82199c78174fd8adbe5a74478c2b56d7b66cd0aba1473803d10d"
+  },
+  {
+   "id": "HO-D0005",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "name",
+    "walk_m"
+   ],
+   "rows": [
+    [
+     "煤气公司宿舍",
+     425.6027035941156
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "793f2168844d64f82d2a1a9e7aa5e5ada1b782631242d3345f9ef7d9979d3ec1"
+  },
+  {
+   "id": "HO-D0007",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_m"
+   ],
+   "rows": [
+    [
+     2372.317799249772
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "43a38bab22275554bb0e57371a0d86aefdaa8d787507ecaaf4326dbda827294c"
+  },
+  {
+   "id": "HO-D0008",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "name",
+    "walk_m"
+   ],
+   "rows": [
+    [
+     "迈化路消防救援站",
+     630.2117690203172
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "84497b009e476749802f223d5c49454e95f650cfc13047e9d966e09adaa5316d"
+  },
+  {
+   "id": "HO-D0009",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "area_km2"
+   ],
+   "rows": [
+    [
+     0.4810927264779178
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "d1f458cfe7a877421f504857fb803312cc2640aa7b15842ba8ee7837a3cffcec"
+  },
+  {
+   "id": "HO-D0011",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_m"
+   ],
+   "rows": [
+    [
+     2204.2909534167125
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "14b3585c7d158c9b2b4172740470cceb885f6c544f0333cd20f903a4d65b087b"
+  },
+  {
+   "id": "HO-D0012",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_m"
+   ],
+   "rows": [
+    [
+     2700.606139836601
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "4baa3628408b88b9cf968f2311f58b2d6b0ac4d95279252118d565d9cf8c73b7"
+  },
+  {
+   "id": "HO-D0013",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_m"
+   ],
+   "rows": [
+    [
+     3558.8698989046325
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "b98d4584d7832048adece13d679e5ebf412260ed1627b32bf611639470e0b0cc"
+  },
+  {
+   "id": "HO-D0014",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "name",
+    "walk_m"
+   ],
+   "rows": [
+    [
+     "新华国际影城",
+     512.6949424108436
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "3e27197e6d9f3e21a29b151ee5f6eb2e399b4ae8d0cb508d654dc355f285481b"
+  },
+  {
+   "id": "HO-D0015",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_min"
+   ],
+   "rows": [
+    [
+     33.658778385763775
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "d6e25e865c5692b382eeedaa76ec4f5486d95f7b6698429fb91da668d9ab3f95"
+  },
+  {
+   "id": "HO-D0016",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "name",
+    "walk_m"
+   ],
+   "rows": [
+    [
+     "南京河西万达广场",
+     1157.8056246149768
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "68dea4e76f4cbf0a9e265a4c973cd634d17c8f21b98a84ade737a0012a91b5fb"
+  },
+  {
+   "id": "HO-D0017",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_min"
+   ],
+   "rows": [
+    [
+     33.75221777167048
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "52b6cd2e25f271c20b75f48a98bbad9eaa8ed9a1cd11800a0e0c2cd613cc148f"
+  },
+  {
+   "id": "HO-D0018",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "n"
+   ],
+   "rows": [
+    [
+     3
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "1316c39cbd671a6249957f393ff4c9a989dac092a58d3e4c5537ecf84cd2e2f7"
+  },
+  {
+   "id": "HO-D0020",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "area_km2"
+   ],
+   "rows": [
+    [
+     0.12318581189050351
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f5c3303b8a49937c1282cd0bdb9e814c9895df9adf635914fb124e3a72aff3b1"
+  },
+  {
+   "id": "HO-D0021",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "name",
+    "walk_m"
+   ],
+   "rows": [
+    [
+     "西牛鲜生",
+     337.5085302351408
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "0f045707746b935cb71f866261df6132d415e962326ebd2877c167903380925e"
+  },
+  {
+   "id": "HO-D0022",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_min"
+   ],
+   "rows": [
+    [
+     28.1381132261662
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "45a7f3afdffa7664c821a1865b819df63797c41d52796a862b1a2818dc736277"
+  },
+  {
+   "id": "HO-D0023",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_m"
+   ],
+   "rows": [
+    [
+     2262.448372289096
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "6d3cfe3ceac4b83f0eae7bd9414ac678739ea1da70a5260d9cec19ca3dea8f01"
+  },
+  {
+   "id": "HO-D0024",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "name",
+    "walk_m"
+   ],
+   "rows": [
+    [
+     "apm",
+     826.4189472157844
+    ],
+    [
+     "周生生",
+     935.8329453195864
+    ],
+    [
+     "周大生",
+     1203.8009750213434
+    ],
+    [
+     "Leysen 1885",
+     1203.8009750213434
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "4edfaf1a4ae0131ed2af94a934c218cf0ea4b87058c3a1f28d76d34f6ac8acb6"
+  },
+  {
+   "id": "HO-D0025",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "walk_m"
+   ],
+   "rows": [
+    [
+     2831.0024175966805
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "2c5a83920c3962b7fd83fcce4d9faa42c43982f751448903e29fccdf9ae18b48"
+  },
+  {
+   "id": "HO-D0026",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "area_km2"
+   ],
+   "rows": [
+    [
+     0.5661530573887447
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "5579abfab2957c917e677bcd31fb582a8859cb2db060a8bb95d8d5b9a2b7c266"
+  },
+  {
+   "id": "HO-D0028",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "name",
+    "walk_m"
+   ],
+   "rows": [
+    [
+     "南京国际青年旅舍",
+     540.2502510512053
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "c48f96541d0fe71660d1f3dbf69c6deb17f8abf4ed4449ae50d78d4d27771166"
+  },
+  {
+   "id": "HO-D0030",
+   "tier": "route",
+   "answerable": true,
+   "columns": [
+    "area_km2"
+   ],
+   "rows": [
+    [
+     0.6262512603637612
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "23bb7c4d9232ffad0a9aeca77e43f29e767a10d373870fca10ed2f845214218d"
+  },
+  {
+   "id": "HO-E0004",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:体育场馆",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.1:体育场馆",
+     1000
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "0a6391e1c3f76229a72ba8778b928aa1b2e58963bdbc0916ed6061ed3696f106"
+  },
+  {
+   "id": "HO-E0001",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:体育场馆",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     true,
+     "GB50180-2018:C.0.1:体育场馆",
+     1000
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "e0adfb9fdadb29f6a6d10320372e8017be432d6f145cad27357ce4a8a6dcbac2"
+  },
+  {
+   "id": "HO-E0006",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.2:室外综合健身场地",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f02a96656b87a894f50c045865432070e165d57b442b3be98d908b35f68d63b9"
+  },
+  {
+   "id": "HO-E0005",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     true,
+     "GB50180-2018:C.0.2:室外综合健身场地",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "2c4be0255be364854ca82ffe4f11188d6800ac1379f20b92d8c9d0d38d409694"
+  },
+  {
+   "id": "HO-E0003",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:社区卫生服务站",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.2:社区卫生服务站",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "3b0b711f8811c6a542c5cca734144a584931af4d6a98339180c924a5e849ed18"
+  },
+  {
+   "id": "HO-E0007",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:社区卫生服务站",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     true,
+     "GB50180-2018:C.0.2:社区卫生服务站",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "70d7a767fca4dac4a107f31b976abfb7e60c39b318a1f2fc870e5fcfd129a27b"
+  },
+  {
+   "id": "HO-E0008",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:体育场馆",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.1:体育场馆",
+     1000
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "0a6391e1c3f76229a72ba8778b928aa1b2e58963bdbc0916ed6061ed3696f106"
+  },
+  {
+   "id": "HO-E0002",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:体育场馆",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     true,
+     "GB50180-2018:C.0.1:体育场馆",
+     1000
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "e0adfb9fdadb29f6a6d10320372e8017be432d6f145cad27357ce4a8a6dcbac2"
+  },
+  {
+   "id": "HO-E0011",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.2:室外综合健身场地",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f02a96656b87a894f50c045865432070e165d57b442b3be98d908b35f68d63b9"
+  },
+  {
+   "id": "HO-E0009",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     true,
+     "GB50180-2018:C.0.2:室外综合健身场地",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "2c4be0255be364854ca82ffe4f11188d6800ac1379f20b92d8c9d0d38d409694"
+  },
+  {
+   "id": "HO-E0013",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:社区卫生服务站",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.2:社区卫生服务站",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "3b0b711f8811c6a542c5cca734144a584931af4d6a98339180c924a5e849ed18"
+  },
+  {
+   "id": "HO-E0036",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:社区卫生服务站",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     true,
+     "GB50180-2018:C.0.2:社区卫生服务站",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "70d7a767fca4dac4a107f31b976abfb7e60c39b318a1f2fc870e5fcfd129a27b"
+  },
+  {
+   "id": "HO-E0010",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:体育场馆",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.1:体育场馆",
+     1000
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "0a6391e1c3f76229a72ba8778b928aa1b2e58963bdbc0916ed6061ed3696f106"
+  },
+  {
+   "id": "HO-E0016",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:体育场馆",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     true,
+     "GB50180-2018:C.0.1:体育场馆",
+     1000
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "e0adfb9fdadb29f6a6d10320372e8017be432d6f145cad27357ce4a8a6dcbac2"
+  },
+  {
+   "id": "HO-E0012",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.2:室外综合健身场地",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f02a96656b87a894f50c045865432070e165d57b442b3be98d908b35f68d63b9"
+  },
+  {
+   "id": "HO-E0017",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     true,
+     "GB50180-2018:C.0.2:室外综合健身场地",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "2c4be0255be364854ca82ffe4f11188d6800ac1379f20b92d8c9d0d38d409694"
+  },
+  {
+   "id": "HO-E0014",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:社区卫生服务站",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.2:社区卫生服务站",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "3b0b711f8811c6a542c5cca734144a584931af4d6a98339180c924a5e849ed18"
+  },
+  {
+   "id": "HO-E0015",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:体育场馆",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.1:体育场馆",
+     1000
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "0a6391e1c3f76229a72ba8778b928aa1b2e58963bdbc0916ed6061ed3696f106"
+  },
+  {
+   "id": "HO-E0019",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.2:室外综合健身场地",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f02a96656b87a894f50c045865432070e165d57b442b3be98d908b35f68d63b9"
+  },
+  {
+   "id": "HO-E0018",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     true,
+     "GB50180-2018:C.0.2:室外综合健身场地",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "2c4be0255be364854ca82ffe4f11188d6800ac1379f20b92d8c9d0d38d409694"
+  },
+  {
+   "id": "HO-E0024",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:社区卫生服务站",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.2:社区卫生服务站",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "3b0b711f8811c6a542c5cca734144a584931af4d6a98339180c924a5e849ed18"
+  },
+  {
+   "id": "HO-E0022",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.1:体育场馆",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.1:体育场馆",
+     1000
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "0a6391e1c3f76229a72ba8778b928aa1b2e58963bdbc0916ed6061ed3696f106"
+  },
+  {
+   "id": "HO-E0021",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.2:室外综合健身场地",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "f02a96656b87a894f50c045865432070e165d57b442b3be98d908b35f68d63b9"
+  },
+  {
+   "id": "HO-E0020",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:室外综合健身场地",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     true,
+     "GB50180-2018:C.0.2:室外综合健身场地",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "2c4be0255be364854ca82ffe4f11188d6800ac1379f20b92d8c9d0d38d409694"
+  },
+  {
+   "id": "HO-E0025",
+   "tier": "compliance",
+   "answerable": true,
+   "compliance_clause": "GB50180-2018:C.0.2:社区卫生服务站",
+   "columns": [
+    "compliant",
+    "clause_id",
+    "radius_m"
+   ],
+   "rows": [
+    [
+     false,
+     "GB50180-2018:C.0.2:社区卫生服务站",
+     300
+    ]
+   ],
+   "order_matters": false,
+   "result_sha256": "3b0b711f8811c6a542c5cca734144a584931af4d6a98339180c924a5e849ed18"
+  },
+  {
+   "id": "HO-U0001",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0002",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0003",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0004",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0005",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0006",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0007",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0008",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0009",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0010",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0011",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0012",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0013",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0014",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0015",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0016",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0017",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0018",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0019",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0020",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0021",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0022",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0023",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0024",
+   "tier": "unanswerable",
+   "answerable": false
+  },
+  {
+   "id": "HO-U0025",
+   "tier": "unanswerable",
+   "answerable": false
+  }
+ ],
+ "items_sha256": "65b2da3a5b81adfc2beae3fc00f83353cb50dec000ce016cf53f300dbdb3e66e"
+}
