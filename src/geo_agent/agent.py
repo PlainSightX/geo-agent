@@ -193,6 +193,8 @@ class AgentRun:
     latency_s: float = 0.0
     raw_sqls: list[dict[str, Any]] = field(default_factory=list)  # 每条模型写的 SQL 及其是否有效
     bound: BoundAnswer | None = None
+    # 本次运行产生的全部工具结果（地图兜底渲染用；评测只看 final_result）
+    all_results: dict[str, QueryResult] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         d = {
@@ -416,6 +418,7 @@ class GeoAgent:
             return json.dumps({"error": f"bad arguments: {err}"}, ensure_ascii=False)
         ref = f"R{len(results) + 1}"
         results[ref] = res
+        run.all_results[ref] = res
         step.ref, step.sql, step.rows = ref, res.sql, len(res.rows)
         # 自省工具（find_entity/distinct_values）的空结果是正常信息，不消耗修复额度
         if name not in ("find_entity", "distinct_values"):
@@ -504,4 +507,13 @@ class GeoAgent:
 
     @staticmethod
     def geojson(run: AgentRun) -> dict[str, Any]:
-        return to_feature_collection(run.final_result)
+        """优先渲染最终结果；若最终结果没有几何列，退回到最近一个带 geojson 的工具结果，并在 map_source 中注明。"""
+        fc = to_feature_collection(run.final_result)
+        fc["map_source"] = run.result_ref
+        if not fc["features"] and run.status == "answered":
+            for ref in reversed(list(run.all_results)):
+                alt = to_feature_collection(run.all_results[ref])
+                if alt["features"]:
+                    alt["map_source"] = ref
+                    return alt
+        return fc

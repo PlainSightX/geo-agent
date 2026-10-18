@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>geo-agent · 南京空间问答</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<style>
+  body { margin: 0; font: 14px/1.5 system-ui, "Microsoft YaHei", sans-serif; display: grid;
+         grid-template-columns: 380px 1fr; height: 100vh; }
+  aside { padding: 14px; overflow: auto; border-right: 1px solid #ddd; }
+  #map { height: 100vh; }
+  form { display: flex; gap: 6px; }
+  input { flex: 1; padding: 6px 8px; font: inherit; }
+  button { padding: 6px 12px; font: inherit; }
+  .answer { margin: 12px 0; padding: 10px; background: #f3f6fa; border-radius: 4px; }
+  .meta { color: #555; font-size: 12px; }
+  table { border-collapse: collapse; width: 100%; font-size: 12px; }
+  td, th { border: 1px solid #ddd; padding: 2px 4px; text-align: left; }
+  details { margin-top: 10px; font-size: 12px; }
+  pre { white-space: pre-wrap; word-break: break-all; background: #fafafa; padding: 6px; }
+</style>
+</head>
+<body>
+<aside>
+  <h2 style="margin:0 0 8px">南京空间问答</h2>
+  <form id="f">
+    <label for="q" class="meta" style="position:absolute;left:-9999px">问题</label>
+    <input id="q" name="q" value="离新街口地铁站最近的 4 家银行是哪些？" aria-label="问题">
+    <button type="submit">提问</button>
+  </form>
+  <div id="out" aria-live="polite"></div>
+  <p class="meta">数据 © OpenStreetMap contributors（ODbL）。答案中的数字由程序从查询结果填入。</p>
+</aside>
+<div id="map" role="region" aria-label="结果地图"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+// 地图初始化：中心为南京市区；底图为 OSM 官方瓦片（需署名）
+const map = L.map("map").setView([32.05, 118.79], 12);
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 19, attribution: "&copy; OpenStreetMap contributors"
+}).addTo(map);
+let layer = null;
+
+// 文本转义：结果中的名称来自 OSM，属于外部数据，插入 DOM 前必须转义
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+function render(data) {
+  const rows = data.rows.slice(0, 30).map(r => "<tr>" + r.map(v => `<td>${esc(typeof v === "number" ? +v.toFixed(2) : v)}</td>`).join("") + "</tr>").join("");
+  const steps = data.steps.map(s => `${esc(s.tool)} ${s.rows ?? ""}${s.problems.length ? " ⚠ " + esc(s.problems.join("; ")) : ""}`).join("\n");
+  const sqls = data.steps.filter(s => s.sql).map(s => esc(s.sql)).join("\n\n");
+  document.getElementById("out").innerHTML = `
+    <div class="answer">${esc(data.answer)}</div>
+    <div class="meta">地图图层来自结果 ${esc(data.geojson.map_source ?? "-")} · 状态 ${esc(data.status)} · 模型调用 ${data.model_calls} 次 · ${data.latency_s}s · $${data.cost_usd}</div>
+    ${data.columns.length ? `<table><thead><tr>${data.columns.map(c => `<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table>` : ""}
+    <details><summary>工具调用</summary><pre>${steps}</pre></details>
+    <details><summary>执行的 SQL</summary><pre>${sqls}</pre></details>`;
+  if (layer) map.removeLayer(layer);
+  if (data.geojson.features.length) {
+    layer = L.geoJSON(data.geojson, {
+      pointToLayer: (f, ll) => L.circleMarker(ll, { radius: 7, color: "#c0392b", weight: 2, fillOpacity: 0.7 }),
+      style: { color: "#2471a3", weight: 2, fillOpacity: 0.15 },
+      onEachFeature: (f, l) => l.bindTooltip(esc(f.properties.name ?? f.properties.district ?? ""), { permanent: data.geojson.features.length <= 12 })
+    }).addTo(map);
+    map.fitBounds(layer.getBounds(), { padding: [40, 40], maxZoom: 16 });
+  }
+}
+
+document.getElementById("f").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const out = document.getElementById("out");
+  out.textContent = "查询中…";
+  try {
+    const r = await fetch("/ask", { method: "POST", headers: { "Content-Type": "application/json" },
+                                   body: JSON.stringify({ question: document.getElementById("q").value }) });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    render(await r.json());
+  } catch (err) { out.textContent = "请求失败：" + err.message; }
+});
+
+// 支持 /?q=问题 直接提问（便于分享链接与无头浏览器截图）
+const preset = new URLSearchParams(location.search).get("q");
+if (preset) {
+  document.getElementById("q").value = preset;
+  document.getElementById("f").requestSubmit();
+}
+</script>
+</body>
+</html>
