@@ -1,0 +1,1206 @@
+{
+ "baseline": [
+  {
+   "id": "T01",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T02",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T03",
+   "tier": "tag",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有清真寺的直接数据，但可以查询具有宗教标签的POI。需要检查poi_tags表中是否有'宗教'或'信仰'相关的标签。如果存在，可以进一步筛选。但根据现有数据，无法直接获取清真寺名称。请检查数据库中是否存在相关标签。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "T04",
+   "tier": "tag",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有营业时间数据，无法回答此问题。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "T05",
+   "tier": "tag",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有记录公共厕所的费用信息，无法判断哪些是免费的。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "T06",
+   "tier": "tag",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有关于快餐店是否支持外带的信息。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "T07",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T08",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T09",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T10",
+   "tier": "tag",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): UndefinedTable: missing FROM-clause entry for table \"poi_tags\"",
+   "failure": "exec_error"
+  },
+  {
+   "id": "T11",
+   "tier": "tag",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有支付宝付款信息。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "T12",
+   "tier": "tag",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): UndefinedColumn: column \"name_en\" does not exist",
+   "failure": "exec_error"
+  },
+  {
+   "id": "J01",
+   "tier": "join",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有包含学校名称与简称的对应关系，无法查询。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "J02",
+   "tier": "join",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有关于瞻园的博物馆信息。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "J03",
+   "tier": "join",
+   "status": "answered",
+   "correct": false,
+   "reason": "row count 0 != gold 3",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "J04",
+   "tier": "join",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有小区名称的字段，无法统计名称小区的数量。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "J05",
+   "tier": "join",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有公交站点的步行网络数据，无法计算公交站点的可达性。",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "false_refusal"
+  },
+  {
+   "id": "J06",
+   "tier": "join",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): UndefinedTable: missing FROM-clause entry for table \"districts\"",
+   "failure": "exec_error"
+  },
+  {
+   "id": "J07",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J08",
+   "tier": "join",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有麦当劳的门店数据，无法查询。",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "false_refusal"
+  },
+  {
+   "id": "J09",
+   "tier": "join",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有存储宗教场所的denomination标签。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "J10",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J11",
+   "tier": "join",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有公交站点的记录，只有公交站台的记录。问题要求的是公交站点，而数据库中只有bus_stops表，可能包含多个站点记录。需要确认是否bus_stops表中的记录代表公交站点。如果问题中的公交站点指的是bus_stops表中的记录，则可以继续查询。否则，无法回答。",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "false_refusal"
+  },
+  {
+   "id": "J12",
+   "tier": "join",
+   "status": "error",
+   "correct": false,
+   "reason": "no result (error): TokenError: Error tokenizing ' OR category = 'healthcare' AND subtype = 'dentis'",
+   "failure": "error"
+  },
+  {
+   "id": "C01",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C02",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C03",
+   "tier": "crs",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): Web 墨卡托投影是面积不可测的投影，直接量算结果不可靠。应使用地理坐标（EPSG:4326）或等积投影进行面积计算。",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "false_refusal"
+  },
+  {
+   "id": "C04",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "C05",
+   "tier": "crs",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'km'",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "C06",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C07",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C08",
+   "tier": "crs",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): UndefinedTable: missing FROM-clause entry for table \"districts\"",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "exec_error"
+  },
+  {
+   "id": "C09",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C10",
+   "tier": "crs",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): AmbiguousColumn: column reference \"geom\" is ambiguous",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "exec_error"
+  },
+  {
+   "id": "D01",
+   "tier": "route",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): DatatypeMismatch: argument of WHERE must be type boolean, not type double precision",
+   "failure": "exec_error"
+  },
+  {
+   "id": "D02",
+   "tier": "route",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): UndefinedColumn: column \"name\" does not exist",
+   "failure": "exec_error"
+  },
+  {
+   "id": "D03",
+   "tier": "route",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): UndefinedFunction: function st_transform(geography, integer) does not exist",
+   "failure": "exec_error"
+  },
+  {
+   "id": "D04",
+   "tier": "route",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): DatatypeMismatch: argument of WHERE must be type boolean, not type double precision",
+   "failure": "exec_error"
+  },
+  {
+   "id": "D05",
+   "tier": "route",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): UndefinedColumn: column \"geom\" does not exist",
+   "failure": "exec_error"
+  },
+  {
+   "id": "D06",
+   "tier": "route",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): DatatypeMismatch: argument of WHERE must be type boolean, not type double precision",
+   "failure": "exec_error"
+  },
+  {
+   "id": "D07",
+   "tier": "route",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): UndefinedColumn: column \"geom\" does not exist",
+   "failure": "exec_error"
+  },
+  {
+   "id": "D08",
+   "tier": "route",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): UndefinedColumn: column \"name\" does not exist",
+   "failure": "exec_error"
+  },
+  {
+   "id": "D09",
+   "tier": "route",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有新街口地铁站的点数据，无法进行步行可达性分析。需要地铁站的坐标或相关POI数据。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "D10",
+   "tier": "route",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有地铁站的步行网络数据，无法计算步行可达范围。需要地铁站的坐标和步行网络数据。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "D11",
+   "tier": "route",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有幼儿园的设施数据。需要查询pois表中category为amenity且subtype为school的记录，但数据库中没有相关数据。请检查数据是否完整。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "D12",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D13",
+   "tier": "route",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有公交站点的步行网络数据，无法计算步行5分钟内的公交站点数量。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "D14",
+   "tier": "route",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): DatatypeMismatch: argument of WHERE must be type boolean, not type double precision",
+   "failure": "exec_error"
+  },
+  {
+   "id": "D15",
+   "tier": "route",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有地铁站的步行网络数据，无法计算步行距离。需要使用pgRouting的步行网络进行计算。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "D16",
+   "tier": "route",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有咖啡馆的分类数据，无法查询。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E01",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有南湾营融康苑小区的数据。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E02",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有百水芊城小区的记录。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E03",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有小学相关数据，无法判断是否满足服务半径要求。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E04",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有锁金四村小区的直接数据，无法查询该小区沿路网步行范围内的小学。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E05",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有幼儿园相关数据，无法判断覆盖情况。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E06",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有幼儿园相关数据，无法判断是否被覆盖。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E07",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有轨道交通站点的相关数据。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E08",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有地铁站信息，无法判断银城东苑小区是否在地铁站服务范围内。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E09",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有公交站的步行路网数据，无法判断公交站覆盖情况。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E10",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有公交站信息，无法判断湖景花园小区是否满足公交车站服务半径要求。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E11",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有青秀城小区的数据。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E12",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据中没有包含 police 类型的 POI 信息，无法判断是否覆盖。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "U01",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U02",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U03",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U04",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U05",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U06",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U07",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U08",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U09",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U10",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  }
+ ],
+ "agent": [
+  {
+   "id": "T01",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T02",
+   "tier": "tag",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "T03",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "row count 2 != gold 3",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T04",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T05",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T06",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T07",
+   "tier": "tag",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "T08",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T09",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T10",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T11",
+   "tier": "tag",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "T12",
+   "tier": "tag",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "J01",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J02",
+   "tier": "join",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "J03",
+   "tier": "join",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "J04",
+   "tier": "join",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "J05",
+   "tier": "join",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "no_answer"
+  },
+  {
+   "id": "J06",
+   "tier": "join",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "J07",
+   "tier": "join",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "J08",
+   "tier": "join",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'dist_m'",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "J09",
+   "tier": "join",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 没有找到标注为天主教（denomination=catholic）的宗教场所。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "J10",
+   "tier": "join",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "J11",
+   "tier": "join",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "no_answer"
+  },
+  {
+   "id": "J12",
+   "tier": "join",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "C01",
+   "tier": "crs",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'area_ha'",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "C02",
+   "tier": "crs",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "no_answer"
+  },
+  {
+   "id": "C03",
+   "tier": "crs",
+   "status": "answered",
+   "correct": false,
+   "reason": "pred has 1 columns, gold needs 2",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "C04",
+   "tier": "crs",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'km'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "C05",
+   "tier": "crs",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'km'",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "C06",
+   "tier": "crs",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "no_answer"
+  },
+  {
+   "id": "C07",
+   "tier": "crs",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "no_answer"
+  },
+  {
+   "id": "C08",
+   "tier": "crs",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "no_answer"
+  },
+  {
+   "id": "C09",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C10",
+   "tier": "crs",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "no_answer"
+  },
+  {
+   "id": "D01",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D02",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D03",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D04",
+   "tier": "route",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "D05",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D06",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'walk_min'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D07",
+   "tier": "route",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "D08",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D09",
+   "tier": "route",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "D10",
+   "tier": "route",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "D11",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "row count 1 != gold 2",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D12",
+   "tier": "route",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "D13",
+   "tier": "route",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "D14",
+   "tier": "route",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "D15",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D16",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "E01",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 根据《城市居住区规划设计标准》GB 50180-2018，初中服务半径不宜大于1000米。经查询数据库，南湾营融康苑小区在系统中不存在，因此无法判断其是否符合初中服务半径要求。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E02",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": false,
+   "reason": "clause id GB50180-2018:C.0.1:初中 not cited (cited: [])",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "E03",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": false,
+   "reason": "clause id GB50180-2018:C.0.1:小学 not cited (cited: [])",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "E04",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": false,
+   "reason": "clause id GB50180-2018:C.0.1:小学 not cited (cited: [])",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "E05",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": false,
+   "reason": "conclusion False != gold True",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "E06",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据中无名为'香格里拉花园小区'的住宅区，无法判断覆盖情况",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E07",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": false,
+   "reason": "clause id GB50180-2018:C.0.1:轨道交通站点 not cited (cited: [])",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "E08",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E09",
+   "tier": "compliance",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "E10",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据中未找到名为“湖景花园小区”的住宅区，无法判断其是否符合公交站点服务半径要求。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E11",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": false,
+   "reason": "clause id GB50180-2018:C.0.1:卫生服务中心 not cited (cited: [])",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "E12",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": false,
+   "reason": "conclusion False != gold True",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "U01",
+   "tier": "unanswerable",
+   "status": "answered",
+   "correct": false,
+   "reason": "should refuse, got answered",
+   "failure": "answered_unanswerable"
+  },
+  {
+   "id": "U02",
+   "tier": "unanswerable",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "should refuse, got no_answer",
+   "failure": "answered_unanswerable"
+  },
+  {
+   "id": "U03",
+   "tier": "unanswerable",
+   "status": "answered",
+   "correct": false,
+   "reason": "should refuse, got answered",
+   "failure": "answered_unanswerable"
+  },
+  {
+   "id": "U04",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U05",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U06",
+   "tier": "unanswerable",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "should refuse, got no_answer",
+   "failure": "answered_unanswerable"
+  },
+  {
+   "id": "U07",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U08",
+   "tier": "unanswerable",
+   "status": "answered",
+   "correct": false,
+   "reason": "should refuse, got answered",
+   "failure": "answered_unanswerable"
+  },
+  {
+   "id": "U09",
+   "tier": "unanswerable",
+   "status": "answered",
+   "correct": false,
+   "reason": "should refuse, got answered",
+   "failure": "answered_unanswerable"
+  },
+  {
+   "id": "U10",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  }
+ ]
+}

@@ -1,0 +1,148 @@
+{
+ "set": "test",
+ "gold_frozen_at": "2026-10-18T09:49:44+00:00",
+ "questions_sha256": "857a519312f587f36f051975ade9f231c072f3120dd0d669d5ab5dcebae11aa6",
+ "runs": {
+  "diag_qwen3-8b_textlog": {
+   "agent": {
+    "overall": {
+     "k": 15,
+     "n": 72,
+     "p": 0.2083,
+     "ci95": [
+      0.1305,
+      0.3157
+     ]
+    },
+    "by_tier": {
+     "compliance": {
+      "k": 0,
+      "n": 12,
+      "p": 0.0,
+      "ci95": [
+       0.0,
+       0.2425
+      ]
+     },
+     "crs": {
+      "k": 1,
+      "n": 10,
+      "p": 0.1,
+      "ci95": [
+       0.0179,
+       0.4042
+      ]
+     },
+     "join": {
+      "k": 1,
+      "n": 12,
+      "p": 0.0833,
+      "ci95": [
+       0.0149,
+       0.3539
+      ]
+     },
+     "route": {
+      "k": 3,
+      "n": 16,
+      "p": 0.1875,
+      "ci95": [
+       0.0659,
+       0.4301
+      ]
+     },
+     "tag": {
+      "k": 4,
+      "n": 12,
+      "p": 0.3333,
+      "ci95": [
+       0.1381,
+       0.6094
+      ]
+     },
+     "unanswerable": {
+      "k": 6,
+      "n": 10,
+      "p": 0.6,
+      "ci95": [
+       0.3127,
+       0.8318
+      ]
+     }
+    },
+    "valid_sql_rate": {
+     "k": 13,
+     "n": 17,
+     "p": 0.7647,
+     "ci95": [
+      0.5274,
+      0.9044
+     ]
+    },
+    "unit_error_rate": {
+     "k": 1,
+     "n": 12,
+     "p": 0.0833,
+     "ci95": [
+      0.0149,
+      0.3539
+     ]
+    },
+    "failures": {
+     "no_answer": 30,
+     "wrong_result": 14,
+     "false_refusal": 9,
+     "answered_unanswerable": 4
+    },
+    "calls_per_question": 6.93,
+    "tokens_in": 3333814,
+    "tokens_out": 22623,
+    "cost_usd": 1.0273,
+    "cost_per_question_usd": 0.01427,
+    "latency_s_median": 9.2,
+    "latency_s_p90": 13.24,
+    "reruns": []
+   }
+  }
+ },
+ "pooled": {
+  "agent": {
+   "runs": [
+    "diag_qwen3-8b_textlog"
+   ],
+   "per_run_accuracy": [
+    0.2083
+   ],
+   "mean_accuracy": 0.2083,
+   "sd_accuracy": 0.0,
+   "pooled": {
+    "k": 15,
+    "n": 72,
+    "p": 0.2083,
+    "ci95": [
+     0.1305,
+     0.3157
+    ]
+   },
+   "by_tier_mean": {
+    "compliance": 0.0,
+    "crs": 0.1,
+    "join": 0.0833,
+    "route": 0.1875,
+    "tag": 0.3333,
+    "unanswerable": 0.6
+   },
+   "question_level_agreement": {
+    "k": 72,
+    "n": 72,
+    "p": 1.0,
+    "ci95": [
+     0.9493,
+     1.0
+    ]
+   },
+   "cost_usd_total": 1.0273
+  }
+ },
+ "paired_run1": {}
+}

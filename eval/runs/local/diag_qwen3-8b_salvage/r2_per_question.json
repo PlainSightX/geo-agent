@@ -1,0 +1,1206 @@
+{
+ "agent": [
+  {
+   "id": "T01",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T02",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T03",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T04",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T05",
+   "tier": "tag",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): The data does not provide information on public toilets or their count. I cannot answer the question with the available data.",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "T06",
+   "tier": "tag",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 无法确定支持外带的快餐店数量。请提供更具体的信息或检查数据源。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "T07",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T08",
+   "tier": "tag",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 无法确定鼓楼区有多少家肯德基（按品牌标签）",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "T09",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T10",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T11",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T12",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J01",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J02",
+   "tier": "join",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'name'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "J03",
+   "tier": "join",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "J04",
+   "tier": "join",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 没有找到任何具有名称的小区（居住用地）。因此，无法确定哪个区的有名称小区数量最多。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "J05",
+   "tier": "join",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "no_answer"
+  },
+  {
+   "id": "J06",
+   "tier": "join",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "J07",
+   "tier": "join",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "J08",
+   "tier": "join",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "no_answer"
+  },
+  {
+   "id": "J09",
+   "tier": "join",
+   "status": "answered",
+   "correct": false,
+   "reason": "row count 1 != gold 7",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "J10",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J11",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "J12",
+   "tier": "join",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "C01",
+   "tier": "crs",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 小区“东方城”的占地面积信息无法通过当前数据获取。",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "false_refusal"
+  },
+  {
+   "id": "C02",
+   "tier": "crs",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'perimeter_m'",
+   "unit_scope": true,
+   "unit_error": true,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "C03",
+   "tier": "crs",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "no_answer"
+  },
+  {
+   "id": "C04",
+   "tier": "crs",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "C05",
+   "tier": "crs",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'km'",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "C06",
+   "tier": "crs",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 由于数据库中没有提供小区的面积数据，无法确定面积最大的3个有名称小区。",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "false_refusal"
+  },
+  {
+   "id": "C07",
+   "tier": "crs",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'km'",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "C08",
+   "tier": "crs",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'km2'",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "C09",
+   "tier": "crs",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'area_m2'",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "C10",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "D01",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D02",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D03",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D04",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'walk_min'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D05",
+   "tier": "route",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 无法找到'马群地铁站'或'百水芊城小区'的精确名称以进行步行距离计算。请检查名称或提供更多详细信息。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "D06",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D07",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D08",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'walk_m'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D09",
+   "tier": "route",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "D10",
+   "tier": "route",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 无法找到名为 '鼓楼地铁站' 的地铁站。请确认名称是否正确或尝试其他方法。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "D11",
+   "tier": "route",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "D12",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D13",
+   "tier": "route",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 无法找到名为 '银城东苑小区' 的住宅区。请确认名称是否正确或尝试其他方法。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "D14",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D15",
+   "tier": "route",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "D16",
+   "tier": "route",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "E01",
+   "tier": "compliance",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "E02",
+   "tier": "compliance",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "E03",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 无法找到 '龙岸花园幸福苑小区' 在 residential_areas 表中，因此无法检查其是否符合小学服务半径的规定。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E04",
+   "tier": "compliance",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "E05",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": false,
+   "reason": "clause id GB50180-2018:C.0.2:幼儿园 not cited (cited: [])",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "E06",
+   "tier": "compliance",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "E07",
+   "tier": "compliance",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "E08",
+   "tier": "compliance",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "E09",
+   "tier": "compliance",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "E10",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 湖景花园小区不在 residential_areas 表中，无法检查其是否符合公交站点服务半径要求。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E11",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 青秀城小区未在数据中找到，无法确认其沿路网步行范围内是否有医院。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E12",
+   "tier": "compliance",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "U01",
+   "tier": "unanswerable",
+   "status": "answered",
+   "correct": false,
+   "reason": "should refuse, got answered",
+   "failure": "answered_unanswerable"
+  },
+  {
+   "id": "U02",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U03",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U04",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U05",
+   "tier": "unanswerable",
+   "status": "answered",
+   "correct": false,
+   "reason": "should refuse, got answered",
+   "failure": "answered_unanswerable"
+  },
+  {
+   "id": "U06",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U07",
+   "tier": "unanswerable",
+   "status": "answered",
+   "correct": false,
+   "reason": "should refuse, got answered",
+   "failure": "answered_unanswerable"
+  },
+  {
+   "id": "U08",
+   "tier": "unanswerable",
+   "status": "answered",
+   "correct": false,
+   "reason": "should refuse, got answered",
+   "failure": "answered_unanswerable"
+  },
+  {
+   "id": "U09",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U10",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  }
+ ],
+ "ablation": [
+  {
+   "id": "T01",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T02",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T03",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T04",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T05",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T06",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T07",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T08",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T09",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T10",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T11",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T12",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J01",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J02",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J03",
+   "tier": "join",
+   "status": "answered",
+   "correct": false,
+   "reason": "row count 1 != gold 3",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "J04",
+   "tier": "join",
+   "status": "answered",
+   "correct": false,
+   "reason": "pred has 1 columns, gold needs 2",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "J05",
+   "tier": "join",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "J06",
+   "tier": "join",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "J07",
+   "tier": "join",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "J08",
+   "tier": "join",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 无法找到名为“新街口地铁站”的实体。请尝试其他方法或检查名称是否正确。",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "false_refusal"
+  },
+  {
+   "id": "J09",
+   "tier": "join",
+   "status": "answered",
+   "correct": false,
+   "reason": "row count 1 != gold 7",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "J10",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J11",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "J12",
+   "tier": "join",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "C01",
+   "tier": "crs",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'area_ha'",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "C02",
+   "tier": "crs",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 无法获取边界周长数据，因为该信息未在支持的线层中记录。",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "false_refusal"
+  },
+  {
+   "id": "C03",
+   "tier": "crs",
+   "status": "answered",
+   "correct": false,
+   "reason": "pred has 1 columns, gold needs 2",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "C04",
+   "tier": "crs",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 步行路网中，人行道（highway=footway）的总长度无法确定，因为数据中没有找到相关记录。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "C05",
+   "tier": "crs",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'km'",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "C06",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C07",
+   "tier": "crs",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'km'",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "C08",
+   "tier": "crs",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'km2'",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "C09",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C10",
+   "tier": "crs",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'km'",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D01",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'walk_m'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D02",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'walk_m'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D03",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'walk_m'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D04",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'walk_min'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D05",
+   "tier": "route",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 无法找到百水芊城小区或马群地铁站的相关信息。请确认名称是否正确，或尝试使用其他方式查找。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "D06",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'walk_min'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D07",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'walk_m'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D08",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'walk_m'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D09",
+   "tier": "route",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "D10",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D11",
+   "tier": "route",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 找不到名为“龙岸花园幸福苑小区”的实体。请确认名称是否正确，或尝试使用其他工具进行搜索。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "D12",
+   "tier": "route",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "D13",
+   "tier": "route",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "D14",
+   "tier": "route",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "D15",
+   "tier": "route",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "D16",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "E01",
+   "tier": "compliance",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "E02",
+   "tier": "compliance",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "E03",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 根据查询结果，龙岸花园幸福苑小区位于栖霞区，附近有一所名为下坝小学的小学。然而，由于没有找到符合 GB 50180-2018 关于小学服务半径的具体规定的信息，无法确定该小区是否满足步行路网服务半径的要求。建议进一步查询相关规划标准或联系当地规划部门获取详细信息。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E04",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": false,
+   "reason": "no boolean conclusion column",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "E05",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 无法确定大发·燕澜湾西区小区沿步行路网是否有幼儿园覆盖。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E06",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 无法找到符合 GB 50180-2018 幼儿园服务半径标准的条款，因此无法判断香格里拉花园小区是否被幼儿园覆盖。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E07",
+   "tier": "compliance",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "E08",
+   "tier": "compliance",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "E09",
+   "tier": "compliance",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "E10",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据库中没有明确的公交站服务半径数据，无法确定湖景花园小区是否满足要求。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E11",
+   "tier": "compliance",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): 数据中没有明确的卫生服务中心（社区医院）服务半径信息，因此无法确定青秀城小区沿路网步行范围内是否有医院。",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "E12",
+   "tier": "compliance",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): ",
+   "failure": "no_answer"
+  },
+  {
+   "id": "U01",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U02",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U03",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U04",
+   "tier": "unanswerable",
+   "status": "answered",
+   "correct": false,
+   "reason": "should refuse, got answered",
+   "failure": "answered_unanswerable"
+  },
+  {
+   "id": "U05",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U06",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U07",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U08",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U09",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U10",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  }
+ ]
+}

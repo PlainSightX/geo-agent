@@ -1,0 +1,1261 @@
+{
+ "systems": {
+  "deepseek:baseline": {
+   "runs": 3,
+   "run1": {
+    "k": 51,
+    "n": 72,
+    "p": 0.7083,
+    "ci95": [
+     59.5,
+     80.1
+    ]
+   },
+   "per_run_accuracy": [
+    0.7083,
+    0.75,
+    0.7222
+   ],
+   "mean": 0.7269,
+   "pooled": {
+    "k": 157,
+    "n": 216,
+    "p": 0.7269,
+    "ci95": [
+     66.4,
+     78.2
+    ]
+   },
+   "by_tier_pooled": {
+    "compliance": {
+     "k": 25,
+     "n": 36,
+     "p": 0.6944,
+     "ci95": [
+      53.1,
+      82.0
+     ]
+    },
+    "crs": {
+     "k": 22,
+     "n": 30,
+     "p": 0.7333,
+     "ci95": [
+      55.6,
+      85.8
+     ]
+    },
+    "join": {
+     "k": 28,
+     "n": 36,
+     "p": 0.7778,
+     "ci95": [
+      61.9,
+      88.3
+     ]
+    },
+    "route": {
+     "k": 17,
+     "n": 48,
+     "p": 0.3542,
+     "ci95": [
+      23.4,
+      49.6
+     ]
+    },
+    "tag": {
+     "k": 35,
+     "n": 36,
+     "p": 0.9722,
+     "ci95": [
+      85.8,
+      99.5
+     ]
+    },
+    "unanswerable": {
+     "k": 30,
+     "n": 30,
+     "p": 1.0,
+     "ci95": [
+      88.6,
+      100.0
+     ]
+    }
+   },
+   "cost_run1": {
+    "calls_per_q": 1.0,
+    "repairs_per_q": 0.0,
+    "prompt_tokens_per_q": 1963,
+    "completion_tokens_per_q": 164,
+    "latency_median_s": 1.3,
+    "latency_p90_s": 2.42,
+    "no_answer": 0,
+    "refused": 11
+   },
+   "cost_all_runs": {
+    "calls_per_q": 1.0,
+    "repairs_per_q": 0.0,
+    "prompt_tokens_per_q": 1963,
+    "completion_tokens_per_q": 164,
+    "latency_median_s": 1.22,
+    "latency_p90_s": 2.46,
+    "no_answer": 0,
+    "refused": 32
+   }
+  },
+  "deepseek:agent": {
+   "runs": 3,
+   "run1": {
+    "k": 68,
+    "n": 72,
+    "p": 0.9444,
+    "ci95": [
+     86.6,
+     97.8
+    ]
+   },
+   "per_run_accuracy": [
+    0.9444,
+    0.9306,
+    0.9444
+   ],
+   "mean": 0.9398,
+   "pooled": {
+    "k": 203,
+    "n": 216,
+    "p": 0.9398,
+    "ci95": [
+     90.0,
+     96.4
+    ]
+   },
+   "by_tier_pooled": {
+    "compliance": {
+     "k": 36,
+     "n": 36,
+     "p": 1.0,
+     "ci95": [
+      90.4,
+      100.0
+     ]
+    },
+    "crs": {
+     "k": 28,
+     "n": 30,
+     "p": 0.9333,
+     "ci95": [
+      78.7,
+      98.2
+     ]
+    },
+    "join": {
+     "k": 36,
+     "n": 36,
+     "p": 1.0,
+     "ci95": [
+      90.4,
+      100.0
+     ]
+    },
+    "route": {
+     "k": 46,
+     "n": 48,
+     "p": 0.9583,
+     "ci95": [
+      86.0,
+      98.8
+     ]
+    },
+    "tag": {
+     "k": 27,
+     "n": 36,
+     "p": 0.75,
+     "ci95": [
+      58.9,
+      86.2
+     ]
+    },
+    "unanswerable": {
+     "k": 30,
+     "n": 30,
+     "p": 1.0,
+     "ci95": [
+      88.6,
+      100.0
+     ]
+    }
+   },
+   "cost_run1": {
+    "calls_per_q": 3.06,
+    "repairs_per_q": 0.19,
+    "prompt_tokens_per_q": 20591,
+    "completion_tokens_per_q": 405,
+    "latency_median_s": 3.6,
+    "latency_p90_s": 5.6,
+    "no_answer": 0,
+    "refused": 10
+   },
+   "cost_all_runs": {
+    "calls_per_q": 3.01,
+    "repairs_per_q": 0.16,
+    "prompt_tokens_per_q": 20166,
+    "completion_tokens_per_q": 389,
+    "latency_median_s": 3.11,
+    "latency_p90_s": 5.6,
+    "no_answer": 0,
+    "refused": 32
+   }
+  },
+  "deepseek:ablation": {
+   "runs": 3,
+   "run1": {
+    "k": 62,
+    "n": 72,
+    "p": 0.8611,
+    "ci95": [
+     76.3,
+     92.3
+    ]
+   },
+   "per_run_accuracy": [
+    0.8611,
+    0.8611,
+    0.8889
+   ],
+   "mean": 0.8704,
+   "pooled": {
+    "k": 188,
+    "n": 216,
+    "p": 0.8704,
+    "ci95": [
+     81.9,
+     90.9
+    ]
+   },
+   "by_tier_pooled": {
+    "compliance": {
+     "k": 23,
+     "n": 36,
+     "p": 0.6389,
+     "ci95": [
+      47.6,
+      77.5
+     ]
+    },
+    "crs": {
+     "k": 27,
+     "n": 30,
+     "p": 0.9,
+     "ci95": [
+      74.4,
+      96.5
+     ]
+    },
+    "join": {
+     "k": 36,
+     "n": 36,
+     "p": 1.0,
+     "ci95": [
+      90.4,
+      100.0
+     ]
+    },
+    "route": {
+     "k": 44,
+     "n": 48,
+     "p": 0.9167,
+     "ci95": [
+      80.4,
+      96.7
+     ]
+    },
+    "tag": {
+     "k": 28,
+     "n": 36,
+     "p": 0.7778,
+     "ci95": [
+      61.9,
+      88.3
+     ]
+    },
+    "unanswerable": {
+     "k": 30,
+     "n": 30,
+     "p": 1.0,
+     "ci95": [
+      88.6,
+      100.0
+     ]
+    }
+   },
+   "cost_run1": {
+    "calls_per_q": 3.39,
+    "repairs_per_q": 0.22,
+    "prompt_tokens_per_q": 18677,
+    "completion_tokens_per_q": 566,
+    "latency_median_s": 3.85,
+    "latency_p90_s": 7.32,
+    "no_answer": 2,
+    "refused": 10
+   },
+   "cost_all_runs": {
+    "calls_per_q": 3.33,
+    "repairs_per_q": 0.23,
+    "prompt_tokens_per_q": 18107,
+    "completion_tokens_per_q": 543,
+    "latency_median_s": 3.63,
+    "latency_p90_s": 7.99,
+    "no_answer": 2,
+    "refused": 30
+   }
+  },
+  "qwen3-8b:baseline": {
+   "runs": 3,
+   "run1": {
+    "k": 25,
+    "n": 72,
+    "p": 0.3472,
+    "ci95": [
+     24.8,
+     46.2
+    ]
+   },
+   "per_run_accuracy": [
+    0.3472,
+    0.3611,
+    0.375
+   ],
+   "mean": 0.3611,
+   "pooled": {
+    "k": 78,
+    "n": 216,
+    "p": 0.3611,
+    "ci95": [
+     30.0,
+     42.7
+    ]
+   },
+   "by_tier_pooled": {
+    "compliance": {
+     "k": 0,
+     "n": 36,
+     "p": 0.0,
+     "ci95": [
+      0.0,
+      9.6
+     ]
+    },
+    "crs": {
+     "k": 21,
+     "n": 30,
+     "p": 0.7,
+     "ci95": [
+      52.1,
+      83.3
+     ]
+    },
+    "join": {
+     "k": 14,
+     "n": 36,
+     "p": 0.3889,
+     "ci95": [
+      24.8,
+      55.1
+     ]
+    },
+    "route": {
+     "k": 0,
+     "n": 48,
+     "p": 0.0,
+     "ci95": [
+      0.0,
+      7.4
+     ]
+    },
+    "tag": {
+     "k": 13,
+     "n": 36,
+     "p": 0.3611,
+     "ci95": [
+      22.5,
+      52.4
+     ]
+    },
+    "unanswerable": {
+     "k": 30,
+     "n": 30,
+     "p": 1.0,
+     "ci95": [
+      88.6,
+      100.0
+     ]
+    }
+   },
+   "cost_run1": {
+    "calls_per_q": 1.0,
+    "repairs_per_q": 0.0,
+    "prompt_tokens_per_q": 1987,
+    "completion_tokens_per_q": 139,
+    "latency_median_s": 1.14,
+    "latency_p90_s": 4.37,
+    "no_answer": 0,
+    "refused": 11
+   },
+   "cost_all_runs": {
+    "calls_per_q": 1.0,
+    "repairs_per_q": 0.0,
+    "prompt_tokens_per_q": 1987,
+    "completion_tokens_per_q": 143,
+    "latency_median_s": 1.1,
+    "latency_p90_s": 4.37,
+    "no_answer": 0,
+    "refused": 33
+   }
+  },
+  "qwen3-8b:agent": {
+   "runs": 3,
+   "run1": {
+    "k": 14,
+    "n": 72,
+    "p": 0.1944,
+    "ci95": [
+     12.0,
+     30.0
+    ]
+   },
+   "per_run_accuracy": [
+    0.1944,
+    0.1944,
+    0.2083
+   ],
+   "mean": 0.1991,
+   "pooled": {
+    "k": 43,
+    "n": 216,
+    "p": 0.1991,
+    "ci95": [
+     15.1,
+     25.7
+    ]
+   },
+   "by_tier_pooled": {
+    "compliance": {
+     "k": 0,
+     "n": 36,
+     "p": 0.0,
+     "ci95": [
+      0.0,
+      9.6
+     ]
+    },
+    "crs": {
+     "k": 3,
+     "n": 30,
+     "p": 0.1,
+     "ci95": [
+      3.5,
+      25.6
+     ]
+    },
+    "join": {
+     "k": 3,
+     "n": 36,
+     "p": 0.0833,
+     "ci95": [
+      2.9,
+      21.8
+     ]
+    },
+    "route": {
+     "k": 10,
+     "n": 48,
+     "p": 0.2083,
+     "ci95": [
+      11.7,
+      34.3
+     ]
+    },
+    "tag": {
+     "k": 9,
+     "n": 36,
+     "p": 0.25,
+     "ci95": [
+      13.8,
+      41.1
+     ]
+    },
+    "unanswerable": {
+     "k": 18,
+     "n": 30,
+     "p": 0.6,
+     "ci95": [
+      42.3,
+      75.4
+     ]
+    }
+   },
+   "cost_run1": {
+    "calls_per_q": 6.83,
+    "repairs_per_q": 1.08,
+    "prompt_tokens_per_q": 45557,
+    "completion_tokens_per_q": 315,
+    "latency_median_s": 9.66,
+    "latency_p90_s": 15.2,
+    "no_answer": 31,
+    "refused": 14
+   },
+   "cost_all_runs": {
+    "calls_per_q": 6.78,
+    "repairs_per_q": 1.04,
+    "prompt_tokens_per_q": 45150,
+    "completion_tokens_per_q": 306,
+    "latency_median_s": 9.6,
+    "latency_p90_s": 15.03,
+    "no_answer": 89,
+    "refused": 44
+   }
+  },
+  "qwen3-8b:ablation": {
+   "runs": 3,
+   "run1": {
+    "k": 13,
+    "n": 72,
+    "p": 0.1806,
+    "ci95": [
+     10.9,
+     28.5
+    ]
+   },
+   "per_run_accuracy": [
+    0.1806,
+    0.1667,
+    0.1667
+   ],
+   "mean": 0.1713,
+   "pooled": {
+    "k": 37,
+    "n": 216,
+    "p": 0.1713,
+    "ci95": [
+     12.7,
+     22.7
+    ]
+   },
+   "by_tier_pooled": {
+    "compliance": {
+     "k": 0,
+     "n": 36,
+     "p": 0.0,
+     "ci95": [
+      0.0,
+      9.6
+     ]
+    },
+    "crs": {
+     "k": 1,
+     "n": 30,
+     "p": 0.0333,
+     "ci95": [
+      0.6,
+      16.7
+     ]
+    },
+    "join": {
+     "k": 10,
+     "n": 36,
+     "p": 0.2778,
+     "ci95": [
+      15.8,
+      44.0
+     ]
+    },
+    "route": {
+     "k": 3,
+     "n": 48,
+     "p": 0.0625,
+     "ci95": [
+      2.1,
+      16.8
+     ]
+    },
+    "tag": {
+     "k": 6,
+     "n": 36,
+     "p": 0.1667,
+     "ci95": [
+      7.9,
+      31.9
+     ]
+    },
+    "unanswerable": {
+     "k": 17,
+     "n": 30,
+     "p": 0.5667,
+     "ci95": [
+      39.2,
+      72.6
+     ]
+    }
+   },
+   "cost_run1": {
+    "calls_per_q": 6.56,
+    "repairs_per_q": 1.29,
+    "prompt_tokens_per_q": 34155,
+    "completion_tokens_per_q": 315,
+    "latency_median_s": 7.21,
+    "latency_p90_s": 11.3,
+    "no_answer": 22,
+    "refused": 14
+   },
+   "cost_all_runs": {
+    "calls_per_q": 6.65,
+    "repairs_per_q": 1.29,
+    "prompt_tokens_per_q": 34660,
+    "completion_tokens_per_q": 321,
+    "latency_median_s": 7.47,
+    "latency_p90_s": 12.73,
+    "no_answer": 70,
+    "refused": 44
+   }
+  },
+  "qwen3-8b_think:baseline": {
+   "runs": 1,
+   "run1": {
+    "k": 21,
+    "n": 72,
+    "p": 0.2917,
+    "ci95": [
+     19.9,
+     40.5
+    ]
+   },
+   "per_run_accuracy": [
+    0.2917
+   ],
+   "mean": 0.2917,
+   "pooled": {
+    "k": 21,
+    "n": 72,
+    "p": 0.2917,
+    "ci95": [
+     19.9,
+     40.5
+    ]
+   },
+   "by_tier_pooled": {
+    "compliance": {
+     "k": 0,
+     "n": 12,
+     "p": 0.0,
+     "ci95": [
+      0.0,
+      24.2
+     ]
+    },
+    "crs": {
+     "k": 6,
+     "n": 10,
+     "p": 0.6,
+     "ci95": [
+      31.3,
+      83.2
+     ]
+    },
+    "join": {
+     "k": 2,
+     "n": 12,
+     "p": 0.1667,
+     "ci95": [
+      4.7,
+      44.8
+     ]
+    },
+    "route": {
+     "k": 0,
+     "n": 16,
+     "p": 0.0,
+     "ci95": [
+      0.0,
+      19.4
+     ]
+    },
+    "tag": {
+     "k": 3,
+     "n": 12,
+     "p": 0.25,
+     "ci95": [
+      8.9,
+      53.2
+     ]
+    },
+    "unanswerable": {
+     "k": 10,
+     "n": 10,
+     "p": 1.0,
+     "ci95": [
+      72.2,
+      100.0
+     ]
+    }
+   },
+   "cost_run1": {
+    "calls_per_q": 0.99,
+    "repairs_per_q": 0.0,
+    "prompt_tokens_per_q": 1955,
+    "completion_tokens_per_q": 44,
+    "latency_median_s": 0.55,
+    "latency_p90_s": 1.18,
+    "no_answer": 0,
+    "refused": 41
+   },
+   "cost_all_runs": {
+    "calls_per_q": 0.99,
+    "repairs_per_q": 0.0,
+    "prompt_tokens_per_q": 1955,
+    "completion_tokens_per_q": 44,
+    "latency_median_s": 0.55,
+    "latency_p90_s": 1.18,
+    "no_answer": 0,
+    "refused": 41
+   }
+  },
+  "qwen3-8b_think:agent": {
+   "runs": 1,
+   "run1": {
+    "k": 13,
+    "n": 72,
+    "p": 0.1806,
+    "ci95": [
+     10.9,
+     28.5
+    ]
+   },
+   "per_run_accuracy": [
+    0.1806
+   ],
+   "mean": 0.1806,
+   "pooled": {
+    "k": 13,
+    "n": 72,
+    "p": 0.1806,
+    "ci95": [
+     10.9,
+     28.5
+    ]
+   },
+   "by_tier_pooled": {
+    "compliance": {
+     "k": 1,
+     "n": 12,
+     "p": 0.0833,
+     "ci95": [
+      1.5,
+      35.4
+     ]
+    },
+    "crs": {
+     "k": 1,
+     "n": 10,
+     "p": 0.1,
+     "ci95": [
+      1.8,
+      40.4
+     ]
+    },
+    "join": {
+     "k": 1,
+     "n": 12,
+     "p": 0.0833,
+     "ci95": [
+      1.5,
+      35.4
+     ]
+    },
+    "route": {
+     "k": 6,
+     "n": 16,
+     "p": 0.375,
+     "ci95": [
+      18.5,
+      61.4
+     ]
+    },
+    "tag": {
+     "k": 0,
+     "n": 12,
+     "p": 0.0,
+     "ci95": [
+      0.0,
+      24.2
+     ]
+    },
+    "unanswerable": {
+     "k": 4,
+     "n": 10,
+     "p": 0.4,
+     "ci95": [
+      16.8,
+      68.7
+     ]
+    }
+   },
+   "cost_run1": {
+    "calls_per_q": 6.26,
+    "repairs_per_q": 0.75,
+    "prompt_tokens_per_q": 43778,
+    "completion_tokens_per_q": 2178,
+    "latency_median_s": 26.84,
+    "latency_p90_s": 61.07,
+    "no_answer": 25,
+    "refused": 8
+   },
+   "cost_all_runs": {
+    "calls_per_q": 6.26,
+    "repairs_per_q": 0.75,
+    "prompt_tokens_per_q": 43778,
+    "completion_tokens_per_q": 2178,
+    "latency_median_s": 26.84,
+    "latency_p90_s": 61.07,
+    "no_answer": 25,
+    "refused": 8
+   }
+  }
+ },
+ "paired": {
+  "deepseek:agent vs qwen3-8b:agent": {
+   "run1": {
+    "only_first": 54,
+    "only_second": 0,
+    "only_first_ids": [
+     "C01",
+     "C02",
+     "C03",
+     "C04",
+     "C05",
+     "C06",
+     "C07",
+     "C08",
+     "C09",
+     "D04",
+     "D05",
+     "D06",
+     "D07",
+     "D08",
+     "D09",
+     "D10",
+     "D11",
+     "D12",
+     "D13",
+     "D14",
+     "D16",
+     "E01",
+     "E02",
+     "E03",
+     "E04",
+     "E05",
+     "E06",
+     "E07",
+     "E08",
+     "E09",
+     "E10",
+     "E11",
+     "E12",
+     "J02",
+     "J03",
+     "J04",
+     "J05",
+     "J06",
+     "J07",
+     "J08",
+     "J09",
+     "J10",
+     "J11",
+     "J12",
+     "T02",
+     "T04",
+     "T05",
+     "T08",
+     "T09",
+     "T11",
+     "U01",
+     "U05",
+     "U07",
+     "U08"
+    ],
+    "only_second_ids": [],
+    "mcnemar_exact_p": 1.11e-16
+   },
+   "majority_of_3": {
+    "only_first": 53,
+    "only_second": 0,
+    "only_first_ids": [
+     "C01",
+     "C02",
+     "C04",
+     "C05",
+     "C06",
+     "C07",
+     "C08",
+     "C09",
+     "D04",
+     "D05",
+     "D06",
+     "D07",
+     "D08",
+     "D09",
+     "D10",
+     "D11",
+     "D12",
+     "D13",
+     "D14",
+     "D16",
+     "E01",
+     "E02",
+     "E03",
+     "E04",
+     "E05",
+     "E06",
+     "E07",
+     "E08",
+     "E09",
+     "E10",
+     "E11",
+     "E12",
+     "J02",
+     "J03",
+     "J04",
+     "J05",
+     "J06",
+     "J07",
+     "J08",
+     "J09",
+     "J10",
+     "J11",
+     "J12",
+     "T02",
+     "T04",
+     "T05",
+     "T08",
+     "T09",
+     "T11",
+     "U01",
+     "U05",
+     "U07",
+     "U08"
+    ],
+    "only_second_ids": [],
+    "mcnemar_exact_p": 2.22e-16
+   }
+  },
+  "qwen3-8b:baseline vs qwen3-8b:agent": {
+   "run1": {
+    "only_first": 18,
+    "only_second": 7,
+    "only_first_ids": [
+     "C01",
+     "C02",
+     "C04",
+     "C06",
+     "C07",
+     "C08",
+     "C09",
+     "J06",
+     "J07",
+     "J10",
+     "J12",
+     "T04",
+     "T07",
+     "T09",
+     "U01",
+     "U05",
+     "U07",
+     "U08"
+    ],
+    "only_second_ids": [
+     "C10",
+     "D01",
+     "D02",
+     "D03",
+     "J01",
+     "T03",
+     "T12"
+    ],
+    "mcnemar_exact_p": 0.0433
+   },
+   "majority_of_3": {
+    "only_first": 19,
+    "only_second": 7,
+    "only_first_ids": [
+     "C01",
+     "C02",
+     "C04",
+     "C06",
+     "C07",
+     "C08",
+     "C09",
+     "J05",
+     "J06",
+     "J07",
+     "J10",
+     "J12",
+     "T04",
+     "T07",
+     "T09",
+     "U01",
+     "U05",
+     "U07",
+     "U08"
+    ],
+    "only_second_ids": [
+     "C10",
+     "D01",
+     "D02",
+     "D03",
+     "J01",
+     "T03",
+     "T12"
+    ],
+    "mcnemar_exact_p": 0.029
+   }
+  },
+  "qwen3-8b:ablation vs qwen3-8b:agent": {
+   "run1": {
+    "only_first": 6,
+    "only_second": 7,
+    "only_first_ids": [
+     "D10",
+     "J02",
+     "J10",
+     "J11",
+     "T02",
+     "U07"
+    ],
+    "only_second_ids": [
+     "D01",
+     "D02",
+     "D03",
+     "T01",
+     "T03",
+     "U04",
+     "U10"
+    ],
+    "mcnemar_exact_p": 1.0
+   },
+   "majority_of_3": {
+    "only_first": 7,
+    "only_second": 9,
+    "only_first_ids": [
+     "D10",
+     "J02",
+     "J10",
+     "J11",
+     "T02",
+     "U07",
+     "U08"
+    ],
+    "only_second_ids": [
+     "C10",
+     "D01",
+     "D02",
+     "D03",
+     "J01",
+     "T01",
+     "T03",
+     "U04",
+     "U10"
+    ],
+    "mcnemar_exact_p": 0.804
+   }
+  },
+  "deepseek:baseline vs qwen3-8b:baseline": {
+   "run1": {
+    "only_first": 28,
+    "only_second": 2,
+    "only_first_ids": [
+     "C03",
+     "C10",
+     "D01",
+     "D03",
+     "D11",
+     "D13",
+     "D14",
+     "E01",
+     "E03",
+     "E04",
+     "E06",
+     "E07",
+     "E09",
+     "E11",
+     "E12",
+     "J03",
+     "J04",
+     "J05",
+     "J09",
+     "J11",
+     "T02",
+     "T03",
+     "T05",
+     "T06",
+     "T08",
+     "T10",
+     "T11",
+     "T12"
+    ],
+    "only_second_ids": [
+     "C07",
+     "C08"
+    ],
+    "mcnemar_exact_p": 8.68e-07
+   },
+   "majority_of_3": {
+    "only_first": 30,
+    "only_second": 2,
+    "only_first_ids": [
+     "C03",
+     "C10",
+     "D01",
+     "D03",
+     "D07",
+     "D11",
+     "D13",
+     "D14",
+     "E01",
+     "E03",
+     "E04",
+     "E05",
+     "E06",
+     "E07",
+     "E09",
+     "E10",
+     "E11",
+     "E12",
+     "J03",
+     "J04",
+     "J09",
+     "J11",
+     "T02",
+     "T03",
+     "T05",
+     "T06",
+     "T08",
+     "T10",
+     "T11",
+     "T12"
+    ],
+    "only_second_ids": [
+     "C07",
+     "C08"
+    ],
+    "mcnemar_exact_p": 2.46e-07
+   }
+  },
+  "deepseek:agent vs qwen3-8b_think:agent": {
+   "run1": {
+    "only_first": 56,
+    "only_second": 1,
+    "only_first_ids": [
+     "C01",
+     "C02",
+     "C03",
+     "C04",
+     "C05",
+     "C06",
+     "C07",
+     "C08",
+     "C10",
+     "D04",
+     "D06",
+     "D07",
+     "D09",
+     "D10",
+     "D11",
+     "D12",
+     "D13",
+     "D14",
+     "D16",
+     "E01",
+     "E02",
+     "E03",
+     "E04",
+     "E05",
+     "E06",
+     "E07",
+     "E09",
+     "E10",
+     "E11",
+     "E12",
+     "J02",
+     "J03",
+     "J04",
+     "J05",
+     "J06",
+     "J07",
+     "J08",
+     "J09",
+     "J10",
+     "J11",
+     "J12",
+     "T01",
+     "T02",
+     "T03",
+     "T04",
+     "T05",
+     "T08",
+     "T09",
+     "T11",
+     "T12",
+     "U01",
+     "U02",
+     "U03",
+     "U06",
+     "U08",
+     "U09"
+    ],
+    "only_second_ids": [
+     "D15"
+    ],
+    "mcnemar_exact_p": 8.05e-16
+   }
+  },
+  "qwen3-8b:agent vs qwen3-8b_think:agent": {
+   "run1": {
+    "only_first": 8,
+    "only_second": 7,
+    "only_first_ids": [
+     "C10",
+     "T01",
+     "T03",
+     "T12",
+     "U02",
+     "U03",
+     "U06",
+     "U09"
+    ],
+    "only_second_ids": [
+     "C09",
+     "D05",
+     "D08",
+     "D15",
+     "E08",
+     "U05",
+     "U07"
+    ],
+    "mcnemar_exact_p": 1.0
+   }
+  },
+  "qwen3-8b:baseline vs qwen3-8b_think:baseline": {
+   "run1": {
+    "only_first": 4,
+    "only_second": 0,
+    "only_first_ids": [
+     "C08",
+     "J06",
+     "J12",
+     "T04"
+    ],
+    "only_second_ids": [],
+    "mcnemar_exact_p": 0.125
+   }
+  }
+ }
+}

@@ -1,0 +1,116 @@
+{
+ "qwen3-8b:agent": {
+  "question_runs": 216,
+  "wrong": 173,
+  "by_cause": {
+   "text_tool_call": 48,
+   "steps_exhausted": 36,
+   "wrong_result": 29,
+   "name_resolution": 23,
+   "count_misuse": 17,
+   "answered_unanswerable": 12,
+   "tool_loop": 5,
+   "false_refusal": 3
+  },
+  "tool_argument_errors": 107,
+  "tool_argument_errors_per_question": 0.5,
+  "calls_per_question": 6.78,
+  "repairs_per_question": 1.04
+ },
+ "deepseek:agent": {
+  "question_runs": 216,
+  "wrong": 13,
+  "by_cause": {
+   "wrong_result": 11,
+   "false_refusal": 2
+  },
+  "tool_argument_errors": 3,
+  "tool_argument_errors_per_question": 0.01,
+  "calls_per_question": 3.01,
+  "repairs_per_question": 0.16
+ },
+ "qwen3-8b:ablation": {
+  "question_runs": 216,
+  "wrong": 179,
+  "by_cause": {
+   "wrong_result": 43,
+   "text_tool_call": 39,
+   "count_misuse": 35,
+   "steps_exhausted": 27,
+   "name_resolution": 19,
+   "false_refusal": 8,
+   "tool_loop": 4,
+   "answered_unanswerable": 4
+  },
+  "tool_argument_errors": 168,
+  "tool_argument_errors_per_question": 0.78,
+  "calls_per_question": 6.65,
+  "repairs_per_question": 1.29
+ },
+ "deepseek:ablation": {
+  "question_runs": 216,
+  "wrong": 28,
+  "by_cause": {
+   "wrong_result": 25,
+   "count_misuse": 1,
+   "steps_exhausted": 1,
+   "tool_loop": 1
+  },
+  "tool_argument_errors": 0,
+  "tool_argument_errors_per_question": 0.0,
+  "calls_per_question": 3.33,
+  "repairs_per_question": 0.23
+ },
+ "local_qwen3-8b_think_run1:agent": {
+  "question_runs": 72,
+  "wrong": 59,
+  "by_cause": {
+   "text_tool_call": 24,
+   "count_misuse": 14,
+   "wrong_result": 12,
+   "answered_unanswerable": 4,
+   "name_resolution": 3,
+   "false_refusal": 1,
+   "steps_exhausted": 1
+  },
+  "tool_argument_errors": 9,
+  "tool_argument_errors_per_question": 0.12,
+  "calls_per_question": 6.26,
+  "repairs_per_question": 0.75
+ },
+ "diag_qwen3-8b_salvage:agent": {
+  "question_runs": 72,
+  "wrong": 53,
+  "by_cause": {
+   "steps_exhausted": 11,
+   "wrong_result": 10,
+   "name_resolution": 9,
+   "count_misuse": 8,
+   "text_tool_call": 6,
+   "answered_unanswerable": 4,
+   "false_refusal": 3,
+   "tool_loop": 2
+  },
+  "tool_argument_errors": 38,
+  "tool_argument_errors_per_question": 0.53,
+  "calls_per_question": 6.04,
+  "repairs_per_question": 1.08
+ },
+ "diag_qwen3-8b_salvage:ablation": {
+  "question_runs": 72,
+  "wrong": 53,
+  "by_cause": {
+   "wrong_result": 17,
+   "count_misuse": 14,
+   "steps_exhausted": 9,
+   "name_resolution": 7,
+   "false_refusal": 3,
+   "tool_loop": 2,
+   "answered_unanswerable": 1
+  },
+  "tool_argument_errors": 55,
+  "tool_argument_errors_per_question": 0.76,
+  "calls_per_question": 5.72,
+  "repairs_per_question": 1.29
+ }
+}

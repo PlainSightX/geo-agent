@@ -1,0 +1,310 @@
+{
+ "set": "test",
+ "gold_frozen_at": "2026-10-18T09:49:44+00:00",
+ "questions_sha256": "857a519312f587f36f051975ade9f231c072f3120dd0d669d5ab5dcebae11aa6",
+ "runs": {
+  "diag_qwen3-8b_salvage": {
+   "agent": {
+    "overall": {
+     "k": 19,
+     "n": 72,
+     "p": 0.2639,
+     "ci95": [
+      0.1759,
+      0.3758
+     ]
+    },
+    "by_tier": {
+     "compliance": {
+      "k": 0,
+      "n": 12,
+      "p": 0.0,
+      "ci95": [
+       0.0,
+       0.2425
+      ]
+     },
+     "crs": {
+      "k": 1,
+      "n": 10,
+      "p": 0.1,
+      "ci95": [
+       0.0179,
+       0.4042
+      ]
+     },
+     "join": {
+      "k": 3,
+      "n": 12,
+      "p": 0.25,
+      "ci95": [
+       0.0889,
+       0.5323
+      ]
+     },
+     "route": {
+      "k": 5,
+      "n": 16,
+      "p": 0.3125,
+      "ci95": [
+       0.1416,
+       0.556
+      ]
+     },
+     "tag": {
+      "k": 4,
+      "n": 12,
+      "p": 0.3333,
+      "ci95": [
+       0.1381,
+       0.6094
+      ]
+     },
+     "unanswerable": {
+      "k": 6,
+      "n": 10,
+      "p": 0.6,
+      "ci95": [
+       0.3127,
+       0.8318
+      ]
+     }
+    },
+    "valid_sql_rate": {
+     "k": 14,
+     "n": 16,
+     "p": 0.875,
+     "ci95": [
+      0.6398,
+      0.965
+     ]
+    },
+    "unit_error_rate": {
+     "k": 1,
+     "n": 12,
+     "p": 0.0833,
+     "ci95": [
+      0.0149,
+      0.3539
+     ]
+    },
+    "failures": {
+     "no_answer": 19,
+     "wrong_result": 18,
+     "false_refusal": 12,
+     "answered_unanswerable": 4
+    },
+    "calls_per_question": 6.04,
+    "tokens_in": 2882743,
+    "tokens_out": 19670,
+    "cost_usd": 0.8884,
+    "cost_per_question_usd": 0.01234,
+    "latency_s_median": 6.97,
+    "latency_s_p90": 10.74,
+    "reruns": []
+   },
+   "ablation": {
+    "overall": {
+     "k": 19,
+     "n": 72,
+     "p": 0.2639,
+     "ci95": [
+      0.1759,
+      0.3758
+     ]
+    },
+    "by_tier": {
+     "compliance": {
+      "k": 0,
+      "n": 12,
+      "p": 0.0,
+      "ci95": [
+       0.0,
+       0.2425
+      ]
+     },
+     "crs": {
+      "k": 2,
+      "n": 10,
+      "p": 0.2,
+      "ci95": [
+       0.0567,
+       0.5098
+      ]
+     },
+     "join": {
+      "k": 4,
+      "n": 12,
+      "p": 0.3333,
+      "ci95": [
+       0.1381,
+       0.6094
+      ]
+     },
+     "route": {
+      "k": 1,
+      "n": 16,
+      "p": 0.0625,
+      "ci95": [
+       0.0111,
+       0.2833
+      ]
+     },
+     "tag": {
+      "k": 3,
+      "n": 12,
+      "p": 0.25,
+      "ci95": [
+       0.0889,
+       0.5323
+      ]
+     },
+     "unanswerable": {
+      "k": 9,
+      "n": 10,
+      "p": 0.9,
+      "ci95": [
+       0.5958,
+       0.9821
+      ]
+     }
+    },
+    "valid_sql_rate": {
+     "k": 29,
+     "n": 45,
+     "p": 0.6444,
+     "ci95": [
+      0.4984,
+      0.7678
+     ]
+    },
+    "unit_error_rate": {
+     "k": 0,
+     "n": 12,
+     "p": 0.0,
+     "ci95": [
+      0.0,
+      0.2425
+     ]
+    },
+    "failures": {
+     "wrong_result": 31,
+     "no_answer": 11,
+     "false_refusal": 10,
+     "answered_unanswerable": 1
+    },
+    "calls_per_question": 5.72,
+    "tokens_in": 2132210,
+    "tokens_out": 19181,
+    "cost_usd": 0.6627,
+    "cost_per_question_usd": 0.0092,
+    "latency_s_median": 5.23,
+    "latency_s_p90": 8.03,
+    "reruns": []
+   }
+  }
+ },
+ "pooled": {
+  "agent": {
+   "runs": [
+    "diag_qwen3-8b_salvage"
+   ],
+   "per_run_accuracy": [
+    0.2639
+   ],
+   "mean_accuracy": 0.2639,
+   "sd_accuracy": 0.0,
+   "pooled": {
+    "k": 19,
+    "n": 72,
+    "p": 0.2639,
+    "ci95": [
+     0.1759,
+     0.3758
+    ]
+   },
+   "by_tier_mean": {
+    "compliance": 0.0,
+    "crs": 0.1,
+    "join": 0.25,
+    "route": 0.3125,
+    "tag": 0.3333,
+    "unanswerable": 0.6
+   },
+   "question_level_agreement": {
+    "k": 72,
+    "n": 72,
+    "p": 1.0,
+    "ci95": [
+     0.9493,
+     1.0
+    ]
+   },
+   "cost_usd_total": 0.8884
+  },
+  "ablation": {
+   "runs": [
+    "diag_qwen3-8b_salvage"
+   ],
+   "per_run_accuracy": [
+    0.2639
+   ],
+   "mean_accuracy": 0.2639,
+   "sd_accuracy": 0.0,
+   "pooled": {
+    "k": 19,
+    "n": 72,
+    "p": 0.2639,
+    "ci95": [
+     0.1759,
+     0.3758
+    ]
+   },
+   "by_tier_mean": {
+    "compliance": 0.0,
+    "crs": 0.2,
+    "join": 0.3333,
+    "route": 0.0625,
+    "tag": 0.25,
+    "unanswerable": 0.9
+   },
+   "question_level_agreement": {
+    "k": 72,
+    "n": 72,
+    "p": 1.0,
+    "ci95": [
+     0.9493,
+     1.0
+    ]
+   },
+   "cost_usd_total": 0.6627
+  }
+ },
+ "paired_run1": {
+  "ablation_vs_agent": {
+   "both_correct": 11,
+   "both_wrong": 45,
+   "only_first": [
+    "C06",
+    "C09",
+    "D10",
+    "J02",
+    "U01",
+    "U05",
+    "U07",
+    "U08"
+   ],
+   "only_second": [
+    "C10",
+    "D01",
+    "D02",
+    "D03",
+    "D06",
+    "D07",
+    "T01",
+    "U04"
+   ],
+   "mcnemar_exact_p": 1.0
+  }
+ }
+}

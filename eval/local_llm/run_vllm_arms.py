@@ -1,6 +1,6 @@
 """用本地 OpenAI 兼容端点（vLLM 部署的 Qwen3-8B 等）跑第二轮冻结题集的两个评测臂（可选消融臂）。
 
-准备好但**未在本任务中运行**（本机无 GPU）；之后的 GPU 会话只需要提供端点 URL：
+2026-10-18 已在 GPU 上运行（结果见 README“本地 Qwen3-8B”）；GPU 会话只需要提供端点 URL：
 
   # GPU 机器上（示例）
   vllm serve Qwen/Qwen3-8B --port 8000 --enable-auto-tool-choice --tool-call-parser hermes \
