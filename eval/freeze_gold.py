@@ -76,9 +76,11 @@ def main() -> int:
                     issues.append("gold result empty")
                 elif len(res.rows) == 1 and len(res.columns) == 1 and res.rows[0][0] in (0, None):
                     issues.append("gold scalar is 0/NULL (weak signal)")
-                for spec in q.get("radius_check") and (
-                    q["radius_check"] if isinstance(q["radius_check"], list) else [q["radius_check"]]
-                ) or []:
+                for spec in (
+                    q.get("radius_check")
+                    and (q["radius_check"] if isinstance(q["radius_check"], list) else [q["radius_check"]])
+                    or []
+                ):
                     issues += check_radius(conn, spec)
                 if q.get("topk_check"):
                     issues += check_topk(conn, q["topk_check"])

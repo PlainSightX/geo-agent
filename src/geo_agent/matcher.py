@@ -47,7 +47,10 @@ def _rows_match(gold_rows: list[tuple], pred_rows: list[tuple], order_matters: b
     if len(gold_rows) != len(pred_rows):
         return False
     if order_matters:
-        return all(all(values_equal(g, p) for g, p in zip(gr, pr, strict=True)) for gr, pr in zip(gold_rows, pred_rows, strict=True))
+        return all(
+            all(values_equal(g, p) for g, p in zip(gr, pr, strict=True))
+            for gr, pr in zip(gold_rows, pred_rows, strict=True)
+        )
     # 多重集合匹配：容差比较不满足传递性，不能排序后比较，这里用贪心 + 回溯的二分匹配
     remaining = list(range(len(pred_rows)))
 

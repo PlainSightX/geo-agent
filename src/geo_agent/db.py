@@ -75,7 +75,9 @@ def run_select(
             with c.cursor() as cur:
                 cur.execute("SET TRANSACTION READ ONLY")
                 cur.execute(
-                    pgsql.SQL("SET LOCAL statement_timeout = {}").format(pgsql.Literal(s.statement_timeout_ms))
+                    pgsql.SQL("SET LOCAL statement_timeout = {}").format(
+                        pgsql.Literal(s.statement_timeout_ms)
+                    )
                 )
                 try:
                     cur.execute(text)  # type: ignore[arg-type]

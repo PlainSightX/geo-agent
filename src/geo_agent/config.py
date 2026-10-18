@@ -28,7 +28,9 @@ class Settings:
     )
     # 只允许 deepseek-chat（Flash）；模型名写死在评测预注册里，改动需同步更新预注册
     model: str = field(default_factory=lambda: os.environ.get("GEO_AGENT_MODEL", "deepseek-chat"))
-    base_url: str = field(default_factory=lambda: os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
+    base_url: str = field(
+        default_factory=lambda: os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
+    )
     statement_timeout_ms: int = 5000
     row_limit: int = 200
     # 价格按任务约定的保守口径估算（美元/百万 token），不区分缓存命中
