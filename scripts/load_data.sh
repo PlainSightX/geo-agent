@@ -11,10 +11,14 @@ GDAL_IMAGE="ghcr.io/osgeo/gdal:ubuntu-small-3.10.3@sha256:dab45abca3ca83695d4420
 # 南京市（OSM relation 2131524）外包框，来自 Nominatim，略向外扩 0.01 度
 BBOX="118.32 31.21 119.25 32.63"
 
-# Git Bash 下禁止 MSYS 把 /data 之类的容器路径改写成 Windows 路径
-export MSYS_NO_PATHCONV=1
-
 bash "$ROOT/scripts/fetch_data.sh"
+
+# Git Bash 下：宿主路径用 pwd -W 转成 D:/... 形式交给 docker，
+# 同时禁止 MSYS 把 /data 之类的容器内路径改写成 Windows 路径
+if pwd -W >/dev/null 2>&1; then
+  ROOT="$(cd "$ROOT" && pwd -W)"
+  export MSYS_NO_PATHCONV=1
+fi
 docker compose -f "$ROOT/docker-compose.yml" up -d --wait db
 
 NET="$(docker inspect geo-agent-db --format '{{range $k, $v := .NetworkSettings.Networks}}{{$k}}{{end}}')"
