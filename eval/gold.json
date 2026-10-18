@@ -1,7 +1,7 @@
 {
  "frozen_at": "2026-10-18T07:47:22+00:00",
  "questions_file": "questions.json",
- "questions_sha256": "c1f7ac5465835843c73098f303224f803fec09d42974231781d02f8fff90118c",
+ "questions_sha256": "8253f263796cc5866345d278c8d09ebbda35bd20438b74d964ec1907b738758f",
  "data": {
   "table_counts": {
    "districts": 11,
