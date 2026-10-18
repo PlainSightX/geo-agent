@@ -1,31 +1,31 @@
 {
- "trajectories": 1397,
- "rendered": 1397,
+ "trajectories": 1342,
+ "rendered": 1342,
  "dropped_total": 0,
  "dropped": {},
  "tools_dict_source": "vllm",
- "tokens_total": 9211974,
- "loss_tokens_total": 180663,
+ "tokens_total": 8853514,
+ "loss_tokens_total": 172654,
  "seq_len": {
-  "mean": 6594.1,
+  "mean": 6597.3,
   "min": 6240,
-  "p10": 6338,
-  "p50": 6474,
-  "p90": 7187,
-  "p99": 7487,
-  "max": 7651
+  "p10": 6337,
+  "p50": 6472,
+  "p90": 7207,
+  "p99": 7494,
+  "max": 7567
  },
  "loss_tokens_per_traj": {
-  "mean": 129.3,
-  "min": 64,
+  "mean": 128.7,
+  "min": 48,
   "p10": 78,
-  "p50": 126,
-  "p90": 208,
-  "p99": 224,
-  "max": 234
+  "p50": 124,
+  "p90": 210,
+  "p99": 225,
+  "max": 233
  },
  "loss_turns_per_traj": {
-  "mean": 2.8,
+  "mean": 2.7,
   "min": 1,
   "p10": 2,
   "p50": 3,
@@ -33,12 +33,12 @@
   "p99": 4,
   "max": 4
  },
- "hermes_roundtrip_ok_turns": 3880,
- "history_think_tokens_total": 11244,
+ "hermes_roundtrip_ok_turns": 3689,
+ "history_think_tokens_total": 10608,
  "vllm_tokenize_check": {
-  "trajectories": 528,
-  "with_error_turn": 328,
-  "prompts": 1782,
+  "trajectories": 505,
+  "with_error_turn": 305,
+  "prompts": 1686,
   "mismatch": 0
  }
 }

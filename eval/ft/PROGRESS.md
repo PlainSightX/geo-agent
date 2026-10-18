@@ -12,29 +12,32 @@
 
 | 阶段 | 状态 | 提交 |
 |---|---|---|
-| (a) 生成器与不相交检查 | 完成（train 1,397 条轨迹，tag 层只有 147 条通过、低于配额 250，见 build_summary.json；disjointness ok） | 8bd545c |
+| (a) 生成器与不相交检查 | 完成（train 1,342 条轨迹，sha256 83b2ac14…；tag 层只有 92 条通过、低于配额 250，见 build_summary.json；disjointness ok） | 8bd545c |
 | (b) heldout 冻结 + 预注册附录（训练前） | 完成（150 题，questions_sha256 16be7e4a…，items_sha256 65b2da3a…） | 67d5782 |
-| (c) 渲染/往返解析、训练代码、20 步试训 | 完成（见下） | 本提交 |
+| (c) 渲染/往返解析、训练代码、20 步试训 | 完成（见下；2868545 用错了数据，本提交更正） | 2868545 + 本提交 |
 | (d) 正式训练、评测、README、推送 | 未开始 | |
 
-更正：此前本文件写的 “train 1,342 条” 有误；`train_trajectories.jsonl.gz` 自 8bd545c 起就是 1,397 条（按层 tag 147 / join 260 / crs 230 / route 320 / compliance 240 / unanswerable 200）。
+**数据事故与更正**：本会话开始后，工作区的 `train_trajectories.jsonl.gz`、`build_summary.json`、`disjointness.json`、`heldout/gold.json`
+被一次未提交的重建（`eval/runs/scratch/ft_build.log`，22:24，train 1,397 条、tag 147）覆盖；heldout 题面与金标逐题不变，只有 `frozen_at` 不同。
+2868545 的渲染与试训误用了这份 1,397 条的未提交数据，PROGRESS 中“更正为 1,397”也是错的。已把四个文件恢复为提交版本
+（重建产物备份在 `eval/runs/scratch/ft_rebuild_2224/`，不进仓库），并在**提交版 1,342 条**上重做渲染与试训；正式训练只用提交版。
 
-## 阶段 (c) 结果
+## 阶段 (c) 结果（提交版 1,342 条）
 
-- 渲染（`data/render_report.json`）：1,397 条全部渲染、0 条丢弃；3,880 个计损失轮次全部通过 hermes 往返（工具名与参数 dict 相等、无多余文本）。
+- 渲染（`data/render_report.json`）：1,342 条全部渲染、0 条丢弃；3,689 个计损失轮次全部通过 hermes 往返（工具名与参数 dict 相等、无多余文本）。
   工具字典来源 vLLM `ChatCompletionToolsParam.model_dump()`。每条轨迹在 C_k 之前的 token（去掉之前轮次的空 think 块后）与单独编码的推理 prompt 逐 token 相等。
-- vLLM `/tokenize` 核对（运行中的基座服务、原始 tools、`enable_thinking=False`）：528 条轨迹（全部 328 条含错误轮次 + 200 条随机）、1,782 个 prompt，0 个不等。
-- 长度：序列 token 均值 6,594，p10 6,338 / p50 6,474 / p90 7,187 / p99 7,487 / max 7,651；计损失 token 共 180,663（每条均值 129，max 234）；每条 1–4 个计损失轮次（均值 2.8）。
-- 与推理的唯一差别：单次前向序列中，之前轮次保留了生成前缀里的空 think 块（推理模板在历史轮次里去掉它）；共 11,244 token，占 0.12%。
-  每个计损失 completion 紧邻的前缀与推理 prompt 完全相同。完全逐轮精确需要每轮单独前向（约 2.8 倍算力），未采用；README 中披露。
-- 20 步试训（`data/smoke/`）：16.45 s/步、3,221 token/s，单次验证（71 条）43 s；外推全量 332 步 + 7 次验证 = **1.6 GPU 小时**（< 6，配方不变）。
-  显存 allocated 峰值 20.8 GB、reserved 32.4 GB。损失 1.03 → 0.25，第 20 步验证损失 0.187。
-- 续训测试：从 ckpt-00010 在新进程中续训 2 步：第 11 步损失 0.34240 vs 0.34240（相同），第 12 步 0.37747 vs 0.37769（bf16 反向的非确定性）；学习率一致。
+- vLLM `/tokenize` 核对（运行中的基座服务、原始 tools、`enable_thinking=False`）：505 条轨迹（全部 305 条含错误轮次 + 200 条随机）、1,686 个 prompt，0 个不等。
+- 长度：序列 token 均值 6,597，p10 6,337 / p50 6,472 / p90 7,207 / p99 7,494 / max 7,567；计损失 token 共 172,654（每条均值 129，max 233）；每条 1–4 个计损失轮次（均值 2.7）。
+- 与推理的唯一差别：单次前向序列中，之前轮次保留了生成前缀里的空 think 块（推理模板在历史轮次里去掉它）；共 10,608 token，占 0.12%。
+  每个计损失 completion 紧邻的前缀与推理 prompt 完全相同。完全逐轮精确需要每轮单独前向（约 2.7 倍算力），未采用；README 中披露。
+- 20 步试训（`data/smoke/`）：train 1,273 / val 69，16.5 s/步、3,219 token/s，单次验证 42 s；外推全量 320 步 + 7 次验证 = **1.55 GPU 小时**（< 6，配方不变）。
+  显存 allocated 峰值 20.8 GB、reserved 33.6 GB。损失 0.81 → 0.23，第 20 步验证损失 0.212。
+- 续训测试：从 ckpt-00010 在新进程中续训 2 步：第 11 步损失 0.32699 vs 0.32699（相同），第 12 步 0.25728 vs 0.25753（bf16 反向的非确定性）；学习率一致。
   检查点（adapter fp32 + 优化器）约 500 MB，保留最近 2 个。
 
 ## 产物（路径与 sha256）
 
-- 远端 `$RROOT/data/train_tokens.jsonl.gz`（7,408,181 字节，sha256 `50ee3fa16a4d0b36df55f9b845168f6cfbfdde0aff2de0e18a7fd9f313d9af07`）：不进仓库，可由 render.py 确定性重建。
+- 远端 `$RROOT/data/train_tokens.jsonl.gz`（7,120,347 字节，sha256 `4343542c3d5c2704489c6802f68233b2c7b100ecc2c06566a9c603a1df10d354`）：不进仓库，可由 render.py 确定性重建。
 - 本地：`eval/ft/data/render_report.json`、`eval/ft/data/smoke/{smoke.json,train_log.jsonl,resume_train_log.jsonl}`。
 
 ## 远端进程
@@ -58,6 +61,6 @@
 
 ## 下一步
 
-正式训练（`gpu "$R train"`，约 1.6 小时）→ `serve`（基座 + geo）→ 本机 SSH 端口转发后
+正式训练（`gpu "$R train"`，约 1.55 小时）→ `serve`（基座 + geo）→ 本机 SSH 端口转发后
 `uv run python eval/ft/run_eval_ft.py --base-url http://127.0.0.1:<本地端口>/v1 --sets heldout,r2 --runs 3` → `uv run python eval/ft/score_ft.py`
 → README “LoRA 微调（Qwen3-8B）” → 审计 → 推送 → 停止远端进程。
