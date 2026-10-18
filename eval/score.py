@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Any
 
 from geo_agent.config import get_settings
-from geo_agent.matcher import compare
+from geo_agent.matcher import compare, values_equal
 from geo_agent.stats import mcnemar_exact, wilson
 from geo_agent.units import lint_units, uses_measure
 
@@ -76,15 +76,22 @@ def score_one(rec: dict | None, gold: dict, gold_sql: str | None) -> dict[str, A
         final_sql = rec.get("final_sql") or rec.get("sql") or ""
         static = bool(final_sql) and bool(lint_units(final_sql))
         scale = False
-        if "final_rows" in rec and rec.get("final_rows") and gold["rows"]:
-            scale = any(
-                power_of_ten_off(v, gold["rows"][0][j])
-                for j, gc in enumerate(gold["columns"])
-                if isinstance(gold["rows"][0][j], (int, float))
-                for v in (rec["final_rows"][0] if rec["final_rows"] else [])
-                if isinstance(v, (int, float))
-            )
+        # 数量级检查：金标的每个数值列，若预测结果中没有任何列与之相等、但有某列恰好差 10 的整数次幂，
+        # 视为单位换算错误。（判分修订 R1：首版实现对“已匹配正确”的题也会因同时返回 m 与 km 两列而误报，
+        # 见 eval/REPORT.md“预注册之后的改动”。）
+        if not out.get("correct") and rec.get("final_rows") and gold["rows"]:
+            pred_row = [
+                v for v in rec["final_rows"][0] if isinstance(v, (int, float)) and not isinstance(v, bool)
+            ]
+            for gv in gold["rows"][0]:
+                if not isinstance(gv, (int, float)) or isinstance(gv, bool):
+                    continue
+                if any(values_equal(v, gv) for v in pred_row):
+                    continue
+                if any(power_of_ten_off(v, gv) for v in pred_row):
+                    scale = True
         out["unit_error"] = static or scale
+        out["unit_error_static"] = static
     return out
 
 

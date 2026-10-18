@@ -1,0 +1,1058 @@
+{
+ "baseline": [
+  {
+   "id": "A01",
+   "tier": "attribute",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "A02",
+   "tier": "attribute",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "A03",
+   "tier": "attribute",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "A04",
+   "tier": "attribute",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "A05",
+   "tier": "attribute",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "A06",
+   "tier": "attribute",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "A07",
+   "tier": "attribute",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "A08",
+   "tier": "attribute",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "B01",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "B02",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "B03",
+   "tier": "distance",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "B04",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "B05",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "B06",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "B07",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "B08",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "B09",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "C01",
+   "tier": "nearest",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "C02",
+   "tier": "nearest",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "C03",
+   "tier": "nearest",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "C04",
+   "tier": "nearest",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "C05",
+   "tier": "nearest",
+   "status": "bad_output",
+   "correct": false,
+   "reason": "no result (bad_output): {\"sql\": \"WITH xuanwu AS (SELECT geom FROM water_areas WHERE name = '玄武湖' ORDER BY ST_Area(geom::geography) DESC LIMIT 1) SELECT p.name, ROUND(MIN(ST_Distance(p.geom::geography,",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "C06",
+   "tier": "nearest",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "C07",
+   "tier": "nearest",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "C08",
+   "tier": "nearest",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "D01",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "D02",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "D03",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "D04",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "D05",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "D06",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "D07",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "D08",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "D09",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "D10",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "E01",
+   "tier": "multistep",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "E02",
+   "tier": "multistep",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "E03",
+   "tier": "multistep",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "E04",
+   "tier": "multistep",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "E05",
+   "tier": "multistep",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "E06",
+   "tier": "multistep",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'km'",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "E07",
+   "tier": "multistep",
+   "status": "bad_output",
+   "correct": false,
+   "reason": "no result (bad_output): {\"sql\": \"WITH counts AS (SELECT d.id, d.name, COUNT(p.id) AS cnt FROM districts d LEFT JOIN pois p ON p.subtype = 'hospital' AND ST_Within(p.geom, d.geom) GROUP BY d.id, d.name"
+  },
+  {
+   "id": "E08",
+   "tier": "multistep",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "E09",
+   "tier": "multistep",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "F01",
+   "tier": "crs_unit",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "F02",
+   "tier": "crs_unit",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "F03",
+   "tier": "crs_unit",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "F04",
+   "tier": "crs_unit",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "F05",
+   "tier": "crs_unit",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "F06",
+   "tier": "crs_unit",
+   "status": "bad_output",
+   "correct": false,
+   "reason": "no result (bad_output): {\"sql\": \"SELECT ST_Area(ST_Intersection(w.geom, d.geom)::geography) / 1000000.0 AS area_km2 FROM water_areas w JOIN districts d ON ST_Intersects(w.geom, d.geom) WHERE w.name = ",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "F07",
+   "tier": "crs_unit",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "F08",
+   "tier": "crs_unit",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "U01",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  },
+  {
+   "id": "U02",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  },
+  {
+   "id": "U03",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  },
+  {
+   "id": "U04",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  },
+  {
+   "id": "U05",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  },
+  {
+   "id": "U06",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  },
+  {
+   "id": "U07",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  },
+  {
+   "id": "U08",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  },
+  {
+   "id": "U09",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  }
+ ],
+ "agent": [
+  {
+   "id": "A01",
+   "tier": "attribute",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "A02",
+   "tier": "attribute",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "A03",
+   "tier": "attribute",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "A04",
+   "tier": "attribute",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "A05",
+   "tier": "attribute",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'"
+  },
+  {
+   "id": "A06",
+   "tier": "attribute",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "A07",
+   "tier": "attribute",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "A08",
+   "tier": "attribute",
+   "status": "no_answer",
+   "correct": false,
+   "reason": "no result (no_answer): "
+  },
+  {
+   "id": "B01",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "B02",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "B03",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "B04",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "B05",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "B06",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "B07",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "B08",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "B09",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "C01",
+   "tier": "nearest",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "C02",
+   "tier": "nearest",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "C03",
+   "tier": "nearest",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "C04",
+   "tier": "nearest",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "C05",
+   "tier": "nearest",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "C06",
+   "tier": "nearest",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "C07",
+   "tier": "nearest",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "C08",
+   "tier": "nearest",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "D01",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "D02",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "D03",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "D04",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "D05",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "D06",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "D07",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "D08",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "D09",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "D10",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "E01",
+   "tier": "multistep",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "E02",
+   "tier": "multistep",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "E03",
+   "tier": "multistep",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "E04",
+   "tier": "multistep",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "E05",
+   "tier": "multistep",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "E06",
+   "tier": "multistep",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'km'",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "E07",
+   "tier": "multistep",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "E08",
+   "tier": "multistep",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "E09",
+   "tier": "multistep",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "F01",
+   "tier": "crs_unit",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "F02",
+   "tier": "crs_unit",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'ha'",
+   "unit_scope": true,
+   "unit_error": true,
+   "unit_error_static": false
+  },
+  {
+   "id": "F03",
+   "tier": "crs_unit",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "F04",
+   "tier": "crs_unit",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "F05",
+   "tier": "crs_unit",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "F06",
+   "tier": "crs_unit",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "F07",
+   "tier": "crs_unit",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "F08",
+   "tier": "crs_unit",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "unit_error_static": false
+  },
+  {
+   "id": "U01",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  },
+  {
+   "id": "U02",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  },
+  {
+   "id": "U03",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  },
+  {
+   "id": "U04",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  },
+  {
+   "id": "U05",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  },
+  {
+   "id": "U06",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  },
+  {
+   "id": "U07",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  },
+  {
+   "id": "U08",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  },
+  {
+   "id": "U09",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  }
+ ]
+}

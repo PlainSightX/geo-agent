@@ -1,0 +1,50 @@
+{
+ "note": "post-hoc, not pre-registered; baseline parser relaxed to first JSON object",
+ "recovered": {
+  "C05": {
+   "recovered_sql": null,
+   "correct": false,
+   "reason": "no JSON object"
+  },
+  "E07": {
+   "recovered_sql": null,
+   "correct": false,
+   "reason": "no JSON object"
+  },
+  "F06": {
+   "recovered_sql": "SELECT ST_Area(ST_Intersection(w.geom, d.geom)::geography) / 1000000.0 AS area_km2 FROM water_areas w JOIN districts d ON ST_Intersects(w.geom, d.geom) WHERE w.name = '石臼湖' AND ST_Area(ST_Intersection(w.geom, d.geom)::geography) > 0",
+   "correct": false,
+   "reason": "row count 4 != gold 1"
+  }
+ },
+ "baseline_overall": {
+  "k": 56,
+  "n": 61,
+  "p": 0.918,
+  "ci95": [
+   0.8221,
+   0.9645
+  ]
+ },
+ "unrecoverable_truncated_log": [
+  "C05",
+  "E07"
+ ],
+ "baseline_overall_upper_bound": {
+  "k": 58,
+  "n": 61,
+  "p": 0.9508
+ },
+ "only_baseline_correct": [
+  "A05",
+  "A08",
+  "F02"
+ ],
+ "only_agent_correct": [
+  "B03",
+  "C05",
+  "E07",
+  "F06"
+ ],
+ "mcnemar_exact_p": 1.0
+}

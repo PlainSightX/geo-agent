@@ -84,7 +84,8 @@ class SingleShotBaseline:
         try:
             out = _parse(msg.content or "")
         except (json.JSONDecodeError, TypeError):
-            run.status, run.error = "bad_output", (msg.content or "")[:300]
+            # 保存完整原始输出（test1 时只存了前 300 字符，导致事后无法复核，见 REPORT.md）
+            run.status, run.error = "bad_output", msg.content or ""
             run.latency_s = time.perf_counter() - t0
             return run
         if out.get("refuse"):
