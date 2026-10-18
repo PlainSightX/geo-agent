@@ -1,0 +1,602 @@
+[
+ {
+  "id": "T01",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "T02",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "T03",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "T04",
+  "tier": "tag",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "T05",
+  "tier": "tag",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "T06",
+  "tier": "tag",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "T07",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "T08",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "T09",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "T10",
+  "tier": "tag",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 当前数据没有该兴趣点数据：数据库只有 OSM 的位置、类别与标签，没有实时数据",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "T11",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "T12",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "J01",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "J02",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "J03",
+  "tier": "join",
+  "status": "answered",
+  "correct": false,
+  "reason": "row count 4 != gold 3",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "J04",
+  "tier": "join",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'district'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "J05",
+  "tier": "join",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 数据库只有 OSM 的位置、类别与标签，没有实时数据",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "false_refusal"
+ },
+ {
+  "id": "J06",
+  "tier": "join",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "J07",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "J08",
+  "tier": "join",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'dist_m'",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "wrong_result"
+ },
+ {
+  "id": "J09",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "J10",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "J11",
+  "tier": "join",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "no_answer"
+ },
+ {
+  "id": "J12",
+  "tier": "join",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "C01",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "C02",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "C03",
+  "tier": "crs",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'area_3857_km2'",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "wrong_result"
+ },
+ {
+  "id": "C04",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "C05",
+  "tier": "crs",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 数据库只有 OSM 的位置、类别与标签，没有该类路网的长度数据",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "false_refusal"
+ },
+ {
+  "id": "C06",
+  "tier": "crs",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'name'",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "wrong_result"
+ },
+ {
+  "id": "C07",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "C08",
+  "tier": "crs",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'km2'",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "wrong_result"
+ },
+ {
+  "id": "C09",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "C10",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "D01",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "D02",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "D03",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "D04",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "D05",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "D06",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "D07",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "D08",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "D09",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "D10",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "D11",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "D12",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "D13",
+  "tier": "route",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "D14",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "D15",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "D16",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "E01",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "E02",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": false,
+  "reason": "conclusion True != gold False",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "E03",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "E04",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "E05",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "E06",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "E07",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": false,
+  "reason": "conclusion False != gold True",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "E08",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "E09",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "E10",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "E11",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "E12",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "U01",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "U02",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "U03",
+  "tier": "unanswerable",
+  "status": "answered",
+  "correct": false,
+  "reason": "should refuse, got answered",
+  "failure": "answered_unanswerable"
+ },
+ {
+  "id": "U04",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "U05",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "U06",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "U07",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "U08",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "U09",
+  "tier": "unanswerable",
+  "status": "answered",
+  "correct": false,
+  "reason": "should refuse, got answered",
+  "failure": "answered_unanswerable"
+ },
+ {
+  "id": "U10",
+  "tier": "unanswerable",
+  "status": "answered",
+  "correct": false,
+  "reason": "should refuse, got answered",
+  "failure": "answered_unanswerable"
+ }
+]

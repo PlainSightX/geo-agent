@@ -1,0 +1,1031 @@
+{
+ "heldout": {
+  "gold_questions_sha256": "16be7e4a8d8abdcdeca0a0f1513b7c8927539ffa6ab76e02f38b52a254c1eefc",
+  "systems": {
+   "base": {
+    "runs": 3,
+    "run1": {
+     "k": 59,
+     "n": 150,
+     "p": 0.3933,
+     "ci95": [
+      31.9,
+      47.3
+     ]
+    },
+    "per_run": [
+     59,
+     59,
+     56
+    ],
+    "pooled": {
+     "k": 174,
+     "n": 450,
+     "p": 0.3867,
+     "ci95": [
+      34.3,
+      43.2
+     ]
+    },
+    "mean": 0.3867,
+    "agreement": 0.94,
+    "by_tier_pooled": {
+     "compliance": {
+      "k": 15,
+      "n": 75,
+      "p": 0.2,
+      "ci95": [
+       12.5,
+       30.4
+      ]
+     },
+     "crs": {
+      "k": 37,
+      "n": 75,
+      "p": 0.4933,
+      "ci95": [
+       38.3,
+       60.4
+      ]
+     },
+     "join": {
+      "k": 30,
+      "n": 75,
+      "p": 0.4,
+      "ci95": [
+       29.7,
+       51.3
+      ]
+     },
+     "route": {
+      "k": 15,
+      "n": 75,
+      "p": 0.2,
+      "ci95": [
+       12.5,
+       30.4
+      ]
+     },
+     "tag": {
+      "k": 8,
+      "n": 75,
+      "p": 0.1067,
+      "ci95": [
+       5.5,
+       19.7
+      ]
+     },
+     "unanswerable": {
+      "k": 69,
+      "n": 75,
+      "p": 0.92,
+      "ci95": [
+       83.6,
+       96.3
+      ]
+     }
+    },
+    "cost_run1": {
+     "calls_per_q": 6.12,
+     "repairs_per_q": 0.78,
+     "arg_errors_per_q": 0.267,
+     "no_answer": 50,
+     "refused": 36,
+     "errors": 0,
+     "latency_median_s": 6.14,
+     "latency_p90_s": 12.11,
+     "prompt_tokens_per_q": 40203
+    },
+    "cost_all": {
+     "calls_per_q": 6.16,
+     "repairs_per_q": 0.78,
+     "arg_errors_per_q": 0.269,
+     "no_answer": 155,
+     "refused": 113,
+     "errors": 0,
+     "latency_median_s": 6.1,
+     "latency_p90_s": 12.11,
+     "prompt_tokens_per_q": 40448
+    },
+    "text_tool_calls": {
+     "calls": 2771,
+     "text_only": 534,
+     "rate": 0.1927
+    }
+   },
+   "lora": {
+    "runs": 3,
+    "run1": {
+     "k": 130,
+     "n": 150,
+     "p": 0.8667,
+     "ci95": [
+      80.3,
+      91.2
+     ]
+    },
+    "per_run": [
+     130,
+     130,
+     130
+    ],
+    "pooled": {
+     "k": 390,
+     "n": 450,
+     "p": 0.8667,
+     "ci95": [
+      83.2,
+      89.5
+     ]
+    },
+    "mean": 0.8667,
+    "agreement": 0.98,
+    "by_tier_pooled": {
+     "compliance": {
+      "k": 69,
+      "n": 75,
+      "p": 0.92,
+      "ci95": [
+       83.6,
+       96.3
+      ]
+     },
+     "crs": {
+      "k": 75,
+      "n": 75,
+      "p": 1.0,
+      "ci95": [
+       95.1,
+       100.0
+      ]
+     },
+     "join": {
+      "k": 72,
+      "n": 75,
+      "p": 0.96,
+      "ci95": [
+       88.9,
+       98.6
+      ]
+     },
+     "route": {
+      "k": 69,
+      "n": 75,
+      "p": 0.92,
+      "ci95": [
+       83.6,
+       96.3
+      ]
+     },
+     "tag": {
+      "k": 30,
+      "n": 75,
+      "p": 0.4,
+      "ci95": [
+       29.7,
+       51.3
+      ]
+     },
+     "unanswerable": {
+      "k": 75,
+      "n": 75,
+      "p": 1.0,
+      "ci95": [
+       95.1,
+       100.0
+      ]
+     }
+    },
+    "cost_run1": {
+     "calls_per_q": 2.96,
+     "repairs_per_q": 0.18,
+     "arg_errors_per_q": 0.0,
+     "no_answer": 2,
+     "refused": 36,
+     "errors": 0,
+     "latency_median_s": 3.9,
+     "latency_p90_s": 6.8,
+     "prompt_tokens_per_q": 19003
+    },
+    "cost_all": {
+     "calls_per_q": 2.96,
+     "repairs_per_q": 0.18,
+     "arg_errors_per_q": 0.0,
+     "no_answer": 4,
+     "refused": 110,
+     "errors": 0,
+     "latency_median_s": 3.9,
+     "latency_p90_s": 7.67,
+     "prompt_tokens_per_q": 18993
+    },
+    "text_tool_calls": {
+     "calls": 1331,
+     "text_only": 3,
+     "rate": 0.0023
+    }
+   }
+  },
+  "paired_run1": {
+   "base_vs_lora": {
+    "only_first": 2,
+    "only_second": 73,
+    "only_first_ids": [
+     "HO-D0028",
+     "HO-T0027"
+    ],
+    "only_second_ids": [
+     "HO-C0002",
+     "HO-C0004",
+     "HO-C0005",
+     "HO-C0007",
+     "HO-C0008",
+     "HO-C0009",
+     "HO-C0010",
+     "HO-C0015",
+     "HO-C0016",
+     "HO-C0021",
+     "HO-C0022",
+     "HO-C0023",
+     "HO-C0025",
+     "HO-D0001",
+     "HO-D0002",
+     "HO-D0004",
+     "HO-D0007",
+     "HO-D0009",
+     "HO-D0011",
+     "HO-D0012",
+     "HO-D0013",
+     "HO-D0015",
+     "HO-D0016",
+     "HO-D0017",
+     "HO-D0018",
+     "HO-D0021",
+     "HO-D0022",
+     "HO-D0023",
+     "HO-D0024",
+     "HO-D0025",
+     "HO-D0026",
+     "HO-E0001",
+     "HO-E0002",
+     "HO-E0004",
+     "HO-E0005",
+     "HO-E0006",
+     "HO-E0008",
+     "HO-E0009",
+     "HO-E0010",
+     "HO-E0011",
+     "HO-E0014",
+     "HO-E0015",
+     "HO-E0016",
+     "HO-E0017",
+     "HO-E0018",
+     "HO-E0020",
+     "HO-E0021",
+     "HO-E0022",
+     "HO-E0024",
+     "HO-J0001",
+     "HO-J0002",
+     "HO-J0005",
+     "HO-J0007",
+     "HO-J0010",
+     "HO-J0011",
+     "HO-J0014",
+     "HO-J0016",
+     "HO-J0018",
+     "HO-J0019",
+     "HO-J0023",
+     "HO-J0024",
+     "HO-J0027",
+     "HO-J0029",
+     "HO-T0003",
+     "HO-T0004",
+     "HO-T0006",
+     "HO-T0008",
+     "HO-T0009",
+     "HO-T0011",
+     "HO-T0020",
+     "HO-T0026",
+     "HO-U0022",
+     "HO-U0024"
+    ],
+    "mcnemar_exact_p": 1.51e-19
+   }
+  },
+  "paired_majority": {
+   "base_vs_lora": {
+    "only_first": 2,
+    "only_second": 76,
+    "only_first_ids": [
+     "HO-D0028",
+     "HO-T0027"
+    ],
+    "only_second_ids": [
+     "HO-C0002",
+     "HO-C0004",
+     "HO-C0005",
+     "HO-C0007",
+     "HO-C0008",
+     "HO-C0009",
+     "HO-C0010",
+     "HO-C0015",
+     "HO-C0016",
+     "HO-C0021",
+     "HO-C0022",
+     "HO-C0023",
+     "HO-C0025",
+     "HO-D0001",
+     "HO-D0002",
+     "HO-D0004",
+     "HO-D0007",
+     "HO-D0008",
+     "HO-D0009",
+     "HO-D0011",
+     "HO-D0012",
+     "HO-D0013",
+     "HO-D0015",
+     "HO-D0016",
+     "HO-D0017",
+     "HO-D0018",
+     "HO-D0021",
+     "HO-D0022",
+     "HO-D0023",
+     "HO-D0024",
+     "HO-D0025",
+     "HO-D0026",
+     "HO-E0001",
+     "HO-E0002",
+     "HO-E0004",
+     "HO-E0005",
+     "HO-E0006",
+     "HO-E0008",
+     "HO-E0009",
+     "HO-E0010",
+     "HO-E0011",
+     "HO-E0014",
+     "HO-E0015",
+     "HO-E0016",
+     "HO-E0017",
+     "HO-E0018",
+     "HO-E0020",
+     "HO-E0021",
+     "HO-E0022",
+     "HO-E0024",
+     "HO-J0001",
+     "HO-J0002",
+     "HO-J0005",
+     "HO-J0007",
+     "HO-J0010",
+     "HO-J0011",
+     "HO-J0014",
+     "HO-J0016",
+     "HO-J0018",
+     "HO-J0019",
+     "HO-J0023",
+     "HO-J0024",
+     "HO-J0027",
+     "HO-J0029",
+     "HO-T0002",
+     "HO-T0003",
+     "HO-T0004",
+     "HO-T0006",
+     "HO-T0008",
+     "HO-T0009",
+     "HO-T0011",
+     "HO-T0016",
+     "HO-T0020",
+     "HO-T0026",
+     "HO-U0022",
+     "HO-U0024"
+    ],
+    "mcnemar_exact_p": 2.04e-20
+   }
+  }
+ },
+ "r2": {
+  "gold_questions_sha256": "857a519312f587f36f051975ade9f231c072f3120dd0d669d5ab5dcebae11aa6",
+  "systems": {
+   "base": {
+    "runs": 3,
+    "run1": {
+     "k": 15,
+     "n": 72,
+     "p": 0.2083,
+     "ci95": [
+      13.1,
+      31.6
+     ]
+    },
+    "per_run": [
+     15,
+     14,
+     14
+    ],
+    "pooled": {
+     "k": 43,
+     "n": 216,
+     "p": 0.1991,
+     "ci95": [
+      15.1,
+      25.7
+     ]
+    },
+    "mean": 0.1991,
+    "agreement": 0.9861,
+    "by_tier_pooled": {
+     "compliance": {
+      "k": 0,
+      "n": 36,
+      "p": 0.0,
+      "ci95": [
+       0.0,
+       9.6
+      ]
+     },
+     "crs": {
+      "k": 3,
+      "n": 30,
+      "p": 0.1,
+      "ci95": [
+       3.5,
+       25.6
+      ]
+     },
+     "join": {
+      "k": 3,
+      "n": 36,
+      "p": 0.0833,
+      "ci95": [
+       2.9,
+       21.8
+      ]
+     },
+     "route": {
+      "k": 10,
+      "n": 48,
+      "p": 0.2083,
+      "ci95": [
+       11.7,
+       34.3
+      ]
+     },
+     "tag": {
+      "k": 9,
+      "n": 36,
+      "p": 0.25,
+      "ci95": [
+       13.8,
+       41.1
+      ]
+     },
+     "unanswerable": {
+      "k": 18,
+      "n": 30,
+      "p": 0.6,
+      "ci95": [
+       42.3,
+       75.4
+      ]
+     }
+    },
+    "cost_run1": {
+     "calls_per_q": 6.86,
+     "repairs_per_q": 1.03,
+     "arg_errors_per_q": 0.5,
+     "no_answer": 31,
+     "refused": 14,
+     "errors": 0,
+     "latency_median_s": 9.14,
+     "latency_p90_s": 15.37,
+     "prompt_tokens_per_q": 45743
+    },
+    "cost_all": {
+     "calls_per_q": 6.87,
+     "repairs_per_q": 1.02,
+     "arg_errors_per_q": 0.505,
+     "no_answer": 95,
+     "refused": 41,
+     "errors": 0,
+     "latency_median_s": 9.0,
+     "latency_p90_s": 14.41,
+     "prompt_tokens_per_q": 45733
+    },
+    "text_tool_calls": {
+     "calls": 1483,
+     "text_only": 464,
+     "rate": 0.3129
+    }
+   },
+   "lora": {
+    "runs": 3,
+    "run1": {
+     "k": 51,
+     "n": 72,
+     "p": 0.7083,
+     "ci95": [
+      59.5,
+      80.1
+     ]
+    },
+    "per_run": [
+     51,
+     52,
+     51
+    ],
+    "pooled": {
+     "k": 154,
+     "n": 216,
+     "p": 0.713,
+     "ci95": [
+      64.9,
+      76.9
+     ]
+    },
+    "mean": 0.713,
+    "agreement": 0.9861,
+    "by_tier_pooled": {
+     "compliance": {
+      "k": 30,
+      "n": 36,
+      "p": 0.8333,
+      "ci95": [
+       68.1,
+       92.1
+      ]
+     },
+     "crs": {
+      "k": 18,
+      "n": 30,
+      "p": 0.6,
+      "ci95": [
+       42.3,
+       75.4
+      ]
+     },
+     "join": {
+      "k": 15,
+      "n": 36,
+      "p": 0.4167,
+      "ci95": [
+       27.1,
+       57.8
+      ]
+     },
+     "route": {
+      "k": 45,
+      "n": 48,
+      "p": 0.9375,
+      "ci95": [
+       83.2,
+       97.9
+      ]
+     },
+     "tag": {
+      "k": 24,
+      "n": 36,
+      "p": 0.6667,
+      "ci95": [
+       50.3,
+       79.8
+      ]
+     },
+     "unanswerable": {
+      "k": 22,
+      "n": 30,
+      "p": 0.7333,
+      "ci95": [
+       55.6,
+       85.8
+      ]
+     }
+    },
+    "cost_run1": {
+     "calls_per_q": 3.18,
+     "repairs_per_q": 0.18,
+     "arg_errors_per_q": 0.056,
+     "no_answer": 1,
+     "refused": 10,
+     "errors": 0,
+     "latency_median_s": 4.6,
+     "latency_p90_s": 7.34,
+     "prompt_tokens_per_q": 20437
+    },
+    "cost_all": {
+     "calls_per_q": 3.18,
+     "repairs_per_q": 0.19,
+     "arg_errors_per_q": 0.056,
+     "no_answer": 3,
+     "refused": 30,
+     "errors": 0,
+     "latency_median_s": 4.57,
+     "latency_p90_s": 7.46,
+     "prompt_tokens_per_q": 20411
+    },
+    "text_tool_calls": {
+     "calls": 686,
+     "text_only": 18,
+     "rate": 0.0262
+    }
+   },
+   "deepseek": {
+    "runs": 3,
+    "run1": {
+     "k": 68,
+     "n": 72,
+     "p": 0.9444,
+     "ci95": [
+      86.6,
+      97.8
+     ]
+    },
+    "per_run": [
+     68,
+     67,
+     68
+    ],
+    "pooled": {
+     "k": 203,
+     "n": 216,
+     "p": 0.9398,
+     "ci95": [
+      90.0,
+      96.4
+     ]
+    },
+    "mean": 0.9398,
+    "agreement": 0.9722,
+    "by_tier_pooled": {
+     "compliance": {
+      "k": 36,
+      "n": 36,
+      "p": 1.0,
+      "ci95": [
+       90.4,
+       100.0
+      ]
+     },
+     "crs": {
+      "k": 28,
+      "n": 30,
+      "p": 0.9333,
+      "ci95": [
+       78.7,
+       98.2
+      ]
+     },
+     "join": {
+      "k": 36,
+      "n": 36,
+      "p": 1.0,
+      "ci95": [
+       90.4,
+       100.0
+      ]
+     },
+     "route": {
+      "k": 46,
+      "n": 48,
+      "p": 0.9583,
+      "ci95": [
+       86.0,
+       98.8
+      ]
+     },
+     "tag": {
+      "k": 27,
+      "n": 36,
+      "p": 0.75,
+      "ci95": [
+       58.9,
+       86.2
+      ]
+     },
+     "unanswerable": {
+      "k": 30,
+      "n": 30,
+      "p": 1.0,
+      "ci95": [
+       88.6,
+       100.0
+      ]
+     }
+    },
+    "cost_run1": {
+     "calls_per_q": 3.06,
+     "repairs_per_q": 0.19,
+     "arg_errors_per_q": 0.014,
+     "no_answer": 0,
+     "refused": 10,
+     "errors": 0,
+     "latency_median_s": 3.6,
+     "latency_p90_s": 5.6,
+     "prompt_tokens_per_q": 20591
+    },
+    "cost_all": {
+     "calls_per_q": 3.01,
+     "repairs_per_q": 0.16,
+     "arg_errors_per_q": 0.014,
+     "no_answer": 0,
+     "refused": 32,
+     "errors": 0,
+     "latency_median_s": 3.11,
+     "latency_p90_s": 5.6,
+     "prompt_tokens_per_q": 20166
+    }
+   }
+  },
+  "paired_run1": {
+   "base_vs_lora": {
+    "only_first": 3,
+    "only_second": 39,
+    "only_first_ids": [
+     "U03",
+     "U09",
+     "U10"
+    ],
+    "only_second_ids": [
+     "C01",
+     "C02",
+     "C04",
+     "C07",
+     "C09",
+     "D04",
+     "D05",
+     "D07",
+     "D08",
+     "D09",
+     "D10",
+     "D11",
+     "D12",
+     "D14",
+     "D15",
+     "D16",
+     "E01",
+     "E03",
+     "E04",
+     "E05",
+     "E06",
+     "E08",
+     "E09",
+     "E10",
+     "E11",
+     "E12",
+     "J02",
+     "J07",
+     "J09",
+     "J10",
+     "T02",
+     "T07",
+     "T08",
+     "T09",
+     "T11",
+     "U01",
+     "U05",
+     "U07",
+     "U08"
+    ],
+    "mcnemar_exact_p": 5.63e-09
+   },
+   "deepseek_vs_lora": {
+    "only_first": 19,
+    "only_second": 2,
+    "only_first_ids": [
+     "C03",
+     "C05",
+     "C06",
+     "C08",
+     "D13",
+     "E02",
+     "E07",
+     "J03",
+     "J04",
+     "J05",
+     "J06",
+     "J08",
+     "J11",
+     "J12",
+     "T04",
+     "T05",
+     "U03",
+     "U09",
+     "U10"
+    ],
+    "only_second_ids": [
+     "D15",
+     "T07"
+    ],
+    "mcnemar_exact_p": 0.000221
+   },
+   "deepseek_vs_base": {
+    "only_first": 53,
+    "only_second": 0,
+    "only_first_ids": [
+     "C01",
+     "C02",
+     "C03",
+     "C04",
+     "C05",
+     "C06",
+     "C07",
+     "C08",
+     "C09",
+     "D04",
+     "D05",
+     "D07",
+     "D08",
+     "D09",
+     "D10",
+     "D11",
+     "D12",
+     "D13",
+     "D14",
+     "D16",
+     "E01",
+     "E02",
+     "E03",
+     "E04",
+     "E05",
+     "E06",
+     "E07",
+     "E08",
+     "E09",
+     "E10",
+     "E11",
+     "E12",
+     "J02",
+     "J03",
+     "J04",
+     "J05",
+     "J06",
+     "J07",
+     "J08",
+     "J09",
+     "J10",
+     "J11",
+     "J12",
+     "T02",
+     "T04",
+     "T05",
+     "T08",
+     "T09",
+     "T11",
+     "U01",
+     "U05",
+     "U07",
+     "U08"
+    ],
+    "only_second_ids": [],
+    "mcnemar_exact_p": 2.22e-16
+   }
+  },
+  "paired_majority": {
+   "base_vs_lora": {
+    "only_first": 3,
+    "only_second": 40,
+    "only_first_ids": [
+     "U03",
+     "U09",
+     "U10"
+    ],
+    "only_second_ids": [
+     "C01",
+     "C02",
+     "C04",
+     "C07",
+     "C09",
+     "D04",
+     "D05",
+     "D06",
+     "D07",
+     "D08",
+     "D09",
+     "D10",
+     "D11",
+     "D12",
+     "D14",
+     "D15",
+     "D16",
+     "E01",
+     "E03",
+     "E04",
+     "E05",
+     "E06",
+     "E08",
+     "E09",
+     "E10",
+     "E11",
+     "E12",
+     "J02",
+     "J07",
+     "J09",
+     "J10",
+     "T02",
+     "T07",
+     "T08",
+     "T09",
+     "T11",
+     "U01",
+     "U05",
+     "U07",
+     "U08"
+    ],
+    "mcnemar_exact_p": 3.02e-09
+   },
+   "deepseek_vs_lora": {
+    "only_first": 18,
+    "only_second": 2,
+    "only_first_ids": [
+     "C05",
+     "C06",
+     "C08",
+     "D13",
+     "E02",
+     "E07",
+     "J03",
+     "J04",
+     "J05",
+     "J06",
+     "J08",
+     "J11",
+     "J12",
+     "T04",
+     "T05",
+     "U03",
+     "U09",
+     "U10"
+    ],
+    "only_second_ids": [
+     "D15",
+     "T07"
+    ],
+    "mcnemar_exact_p": 0.000402
+   },
+   "deepseek_vs_base": {
+    "only_first": 53,
+    "only_second": 0,
+    "only_first_ids": [
+     "C01",
+     "C02",
+     "C04",
+     "C05",
+     "C06",
+     "C07",
+     "C08",
+     "C09",
+     "D04",
+     "D05",
+     "D06",
+     "D07",
+     "D08",
+     "D09",
+     "D10",
+     "D11",
+     "D12",
+     "D13",
+     "D14",
+     "D16",
+     "E01",
+     "E02",
+     "E03",
+     "E04",
+     "E05",
+     "E06",
+     "E07",
+     "E08",
+     "E09",
+     "E10",
+     "E11",
+     "E12",
+     "J02",
+     "J03",
+     "J04",
+     "J05",
+     "J06",
+     "J07",
+     "J08",
+     "J09",
+     "J10",
+     "J11",
+     "J12",
+     "T02",
+     "T04",
+     "T05",
+     "T08",
+     "T09",
+     "T11",
+     "U01",
+     "U05",
+     "U07",
+     "U08"
+    ],
+    "only_second_ids": [],
+    "mcnemar_exact_p": 2.22e-16
+   }
+  }
+ },
+ "decision": {
+  "heldout_significant": true,
+  "heldout_p": 1.51e-19,
+  "r2_not_worse": true,
+  "verdict": "微调有效"
+ }
+}

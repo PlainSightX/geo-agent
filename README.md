@@ -10,7 +10,9 @@
   Agent **68/72 = 94.4%** [86.6, 97.8] vs 单次 text-to-SQL **51/72 = 70.8%** [59.5, 80.1]（run1），配对 McNemar **p = 0.0005**；
   3 次均值 94.0% vs 72.7%。差距几乎全部来自路网与合规题；在原始标签题上 Agent 反而更差（75% vs 97%）。代价约 8.4 倍费用、2.8 倍延迟。
 - **本地 Qwen3-8B**（vLLM，同一题集与系统，只换模型，各臂 3 次）：Agent **19.9%** [15.1, 25.7]，低于它自己的单次 SQL（36.1%）和 DeepSeek Agent（94.0%），
-  run1 配对 54 vs 0（p ≈ 1e-16）。主要失败是工具调用写成纯文本、名称解析循环和计数方式误用，不能直接替换；微调计划见 `eval/local_llm/FINETUNE_PLAN.md`（未训练）。
+  run1 配对 54 vs 0（p ≈ 1e-16）。主要失败是工具调用写成纯文本、名称解析循环和计数方式误用，不能直接替换。
+- **Qwen3-8B LoRA 微调**（1,342 条程序化金标轨迹，1.5 GPU 小时，预注册判定）：新冻结的 150 题 heldout 上 **130/150 = 86.7%** vs 基座 59/150（p = 1.5e-19）；
+  r2 72 题 **51/72 = 70.8%** vs 基座 15/72（p = 5.6e-9），仍低于 DeepSeek Agent 68/72（19 vs 2，p = 0.0002）。按预注册规则判定为“微调有效”。
 
 ![第二轮演示：南湾营融康苑步行 12.5 分钟等时圈与圈内中学，按 GB 50180-2018 初中服务半径判定](docs/screenshot_r2.png)
 
@@ -360,7 +362,7 @@ Agent 臂 3 次共错 173 题次：
 
 ## 是否微调
 
-值得做，已写好计划，本任务未训练：`eval/local_llm/FINETUNE_PLAN.md`。理由：差距很大（p ≈ 1e-16）；主要失败（纯文本调用、名称后缀循环、
+值得做，计划见 `eval/local_llm/FINETUNE_PLAN.md`；已按计划训练并评测，结果见下文“LoRA 微调（Qwen3-8B）”。理由：差距很大（p ≈ 1e-16）；主要失败（纯文本调用、名称后缀循环、
 `result_as` 误用、合规链路缺失、不可回答题硬答）都是工具调用行为，正确做法确定，可以用确定性工具程序化生成训练轨迹，
 不需要 DeepSeek 或人工标注。计划要求训练集与新的冻结 heldout 集在小区、地点、设施类型、条文和题面模板上与这 72 题**互不相交**，
 heldout 在训练前冻结；LoRA r16 改写风电 SFT 的 `train_lora.py`（多轮、对全部 assistant 轮次计损失）。估计训练约 3–3.5 GPU 小时，含评测约 4–5 小时。
@@ -377,6 +379,96 @@ heldout 在训练前冻结；LoRA r16 改写风电 SFT 的 `train_lora.py`（多
 - 本地台账由并发进程追加写入，有 14 行被交错写坏，已按记录起始位置无损重组；台账调用数比逐题记录少约 2%，逐题记录中的 token 与延迟是完整的。
 - 运行与文件：`eval/runs/local/local_qwen3-8b_run{1,2,3}`（主结果）、`local_qwen3-8b_think_run1`（思考模式）、`diag_qwen3-8b_{textlog,salvage}`（诊断）；
   汇总 `eval/runs/local/r2_summary_test.json`、与 DeepSeek 的对比 `compare_deepseek.json`（`eval/local_llm/compare_deepseek.py`）。
+
+# LoRA 微调（Qwen3-8B）
+
+问题：上一节的失败集中在工具调用行为。用程序化生成的金标轨迹做 LoRA，能不能把 8B 本地模型拉到可用？
+预注册附录 `eval/ft/PREREGISTRATION_FT.md` 与 150 题 heldout 在任何训练之前提交（`67d5782`）；r2 72 题不改动，只作次要评测。
+
+**结论：按预注册规则判定为“微调有效”。** heldout 从 39.3% 升到 86.7%，r2 从 20.8% 升到 70.8%，提升在两个集合上都显著；
+但在 r2 上仍比 DeepSeek Agent 低约 24 个百分点（p = 0.0002），不能当作 DeepSeek 的等价替代。
+
+## 结果（方括号为 Wilson 95% 区间）
+
+| 指标 | 基座 Qwen3-8B Agent | LoRA Agent | DeepSeek Agent（r2run1..3） |
+|---|---|---|---|
+| **heldout run1（150 题，主指标）** | 59/150 = 39.3% [31.9, 47.3] | **130/150 = 86.7%** [80.3, 91.2] | — |
+| heldout 3 次逐次 / 合并 | 59 / 59 / 56；174/450 = 38.7% [34.3, 43.2] | 130 / 130 / 130；390/450 = 86.7% [83.2, 89.5] | — |
+| **r2 run1（72 题）** | 15/72 = 20.8% [13.1, 31.6] | **51/72 = 70.8%** [59.5, 80.1] | 68/72 = 94.4% [86.6, 97.8] |
+| r2 3 次逐次 / 合并 | 15 / 14 / 14；43/216 = 19.9% [15.1, 25.7] | 51 / 52 / 51；154/216 = 71.3% [64.9, 76.9] | 68 / 67 / 68；203/216 = 94.0% [90.0, 96.4] |
+| 纯文本工具调用率（heldout / r2） | 19.3% / 31.3% | **0.2% / 2.6%** | — |
+| 工具参数校验错误 / 题（heldout / r2） | 0.27 / 0.51 | **0.00 / 0.06** | — / 0.01 |
+| no_answer（heldout 450 / r2 216 题次） | 155 / 95 | **4 / 3** | — / 0 |
+| 模型调用 / 题（r2） | 6.87 | 3.18 | 3.01 |
+| prompt token / 题（r2） | 45.7k | 20.4k | 20.2k |
+| 延迟中位数 / p90（r2） | 9.0 s / 14.4 s | 4.6 s / 7.5 s | 3.1 s / 5.6 s |
+
+**配对（run1，精确 McNemar）**
+
+- heldout 基座 vs LoRA（主指标）：仅基座对 2 题，仅 LoRA 对 73 题，**p = 1.5×10⁻¹⁹**。3 次多数票配对：2 vs 76，p = 2.0×10⁻²⁰。
+- r2 基座 vs LoRA：3 vs 39，**p = 5.6×10⁻⁹**（多数票 3 vs 40）。r2 run1 上 LoRA 51 ≥ 基座 15，满足“r2 不下降”。
+- r2 DeepSeek vs LoRA：仅 DeepSeek 对 19 题，仅 LoRA 对 2 题，**p = 0.0002**（多数票 18 vs 2）。
+
+判定（`eval/ft/score_ft.py` 的 `decide`，规则未改）：heldout 显著（LoRA 更好，p < 0.05）且 r2 不下降 → **“微调有效”**。
+
+**按层（3 次合并正确率）**
+
+| 层 | heldout 基座 | heldout LoRA | r2 基座 | r2 LoRA | r2 DeepSeek |
+|---|---|---|---|---|---|
+| tag 原始标签 | 10.7% | **40.0%** | 25.0% | 66.7% | 75.0% |
+| join 多表/别名 | 40.0% | 96.0% | 8.3% | **41.7%** | 100% |
+| crs 投影与度量 | 49.3% | 100% | 10.0% | 60.0% | 93.3% |
+| route 路网 | 20.0% | 92.0% | 20.8% | **93.8%** | 95.8% |
+| compliance 合规 | 20.0% | 92.0% | 0% | **83.3%** | 100% |
+| unanswerable 不可回答 | 92.0% | 100% | 60.0% | 73.3% | 100% |
+
+r2 上路网与合规层接近 DeepSeek，剩下的差距主要在 join、crs 和不可回答。
+
+## 怎么做的
+
+- **数据**：`eval/ft/run_build.py`（seed 0）用确定性求解脚本驱动真实的 `R2Agent` 工具（结果与校验器提示都来自数据库），只保留终答被判对的轨迹：
+  1,342 条（tag 92 / join 260 / crs 230 / route 320 / compliance 240 / unanswerable 200），305 条含一次可恢复错误（纯文本调用、名称后缀、图层、度量、条文等；错误轮次不计损失）。
+  train 与 heldout、r2 在实体、设施类型、条文、标签键、数值与句式上互不相交（`eval/ft/disjointness.json`）；训练数据不读取 r2 题面与金标。
+- **格式一致性**（`eval/ft/render.py`，在 vLLM 0.11.2 环境中运行）：同一 Qwen3 chat template、`tools=R2_SPECS` 经 vLLM `ChatCompletionToolsParam.model_dump()` 转换、
+  `R2Agent.system_prompt()` 原文、`enable_thinking=False`。1,342 条全部渲染、0 条丢弃；3,689 个计损失轮次全部通过 vLLM hermes 解析器往返（工具名与参数相等）；
+  运行中的 vLLM `/tokenize` 对 505 条轨迹（含全部 305 条带错误轮次的）共 1,686 个 prompt 逐 token 核对，0 个不等。序列长度均值 6,597 token（p90 7,207，max 7,567）。
+- **训练**（`eval/ft/train_lora.py`）：r=16、alpha=32、dropout 0，q/k/v/o/gate/up/down，lr 1e-4（5% 预热 + 余弦），每次更新 8 条轨迹，2 epoch（320 步），seed 0；
+  整条轨迹一次前向，只对 assistant 轮次计损失。train 1,273 / 内部验证 69（只记录损失，0.035 → 0.0048，未早停）。
+  RTX PRO 6000 96 GB 上 **5,229 s 训练 + 验证，会话共 1.54 小时**（20 步试训外推 1.55 小时），显存峰值 20.8 GB；每 25 分钟一个检查点，试训中验证过跨进程续训。
+- **评测**：vLLM 同一服务同时提供 `qwen3-8b` 与 `geo`（LoRA），参数按预注册；本机运行 `eval/ft/run_eval_ft.py`，12 个运行并发，6,271 次模型调用，墙钟 8.5 分钟。
+- **adapter**：174,655,536 字节（167 MB，fp32），`adapter_model.safetensors` sha256 `bf56562164c3c3fbd298339fb1af91b9e5933db020f37d4546f023b340c1aecc`，
+  `adapter_config.json` sha256 `64592d4e…`；不进仓库，保存在 GPU 机器的数据盘上。
+
+## 失败案例
+
+逐题判分在 `eval/runs/ft/<heldout|r2>/<base|lora>_run<i>/per_question.json`，原始轨迹在同目录 `agent.jsonl`。
+
+- **heldout LoRA run1 错 20 题，15 道在 tag 层**，其中 11 道是**误拒答**，理由全部是同一句“数据库只有 OSM 的位置、类别与标签，没有……数据”（支付方式、楼层、禁烟、婴儿护理台等）。
+  这句话逐字来自训练集 200 条不可回答轨迹。heldout 的 tag 题用的是训练没见过的标签键，模型 `tag_values` 查了几次没有直接命中，就套用了学到的拒答模板。
+  这是微调引入的新失败：基座的 13 次误拒答里没有一次是这句话。
+- **r2 LoRA run1 错 21 题**：wrong_result 14、误拒答 3（同样是那句模板）、不可回答题硬答 3（U03、U09、U10）、no_answer 1（J11：只调了一次 `find_entity`（结果 R1），之后三次 `final_answer` 都引用不存在的 R2，校验器每次拒绝）。
+  join 层错 7 道，主要是**输出列不对**：J04/J06/J12 金标要 `district`/`n` 列，模型用 `count_by_district` 或自写 SQL 给出了别的列名或口径；J08 没有输出距离列；J03 多算了一行。
+  训练集的 join 题型（“最近 k 个”“按区计数”）比 r2 的组合窄，这在预注册的已知局限里写过。
+- C03（Web 墨卡托放大倍数）LoRA 仍然错，与 DeepSeek run2/run3 的失败同类，训练数据没有这一题型。E02 合规题结论与金标相反（True vs False），链路是对的：`retrieve_standard → check_compliance → final_answer`。
+- 基座只对、LoRA 错的题：heldout 2 道、r2 3 道。
+
+## 预注册之后的改动与偏离（披露）
+
+1. **数据事故**：phase (c) 开始后，工作区的 train 数据、`build_summary.json`、`disjointness.json`、`heldout/gold.json` 被一次未提交的重建覆盖（train 1,397 条；heldout 题面与金标逐题不变，只有 `frozen_at` 不同）。
+   提交 `2868545` 的渲染与试训误用了这份数据；随后恢复为提交版（`ca8a866`），渲染与试训在提交版 1,342 条上重做，**正式训练与评测只用提交版**。heldout 与 r2 文件没有改动。
+2. **历史轮次的空 think 块**：整条轨迹一次前向时，之前轮次保留了生成前缀里的 `<think>\n\n</think>\n\n`，而推理时模板会在历史轮次里去掉它。
+   共 10,608 token（占 0.12%）。每个计损失 completion 紧邻的前缀与推理 prompt 逐 token 相同（render.py 逐轮核对）。完全一致需要每轮单独前向，约 2.7 倍算力，未采用。
+3. **tag 层配额不足**：预注册写的 tag 配额是 250，生成器只得到 92 条通过裕度检查的轨迹（`build_summary.json`），其余层满额。预注册写的是“实际条数见 build_summary.json”，未补数据。
+4. 训练代码相对计划的改动：adapter 目录不另存 tokenizer（vLLM 对基座与 LoRA 用同一个基座 tokenizer）；增加了按步数保存检查点的选项，只用于续训测试。
+
+## 局限
+
+- **heldout 与 train 出自同一个生成器**：句式、实体、设施和条文不同，但题型、工具链和答案格式相同。heldout 86.7% 衡量的是同一任务分布内的泛化；
+  r2 70.8% 更接近“未见题面”，而那里与 DeepSeek 的差距仍然显著。
+- **拒答模板过拟合**：200 条不可回答轨迹都用同一句拒答理由，模型学会了在找不到数据时套用它，造成 heldout tag 层的 11 次误拒答。不可回答训练数据需要更多样的理由与更多“看似缺数据其实有”的正例。
+- 最后 40 步训练损失均值 0.0045、验证损失 0.0048，说明训练数据对 8B 来说很容易拟合；没有做学习率、步数或数据量的消融，配方是事先固定的一组。
+- 温度 0 下 3 次运行几乎相同（LoRA heldout 三次都是 130），合并区间低估了解码或提示词变化带来的方差。单一基座、单一城市、单一解析器（hermes）。
+- 训练数据、heldout 题目和金标都由同一作者通过同一套脚本生成；判分规则与 r2 相同。
 
 ## 第二轮快速开始
 
@@ -401,8 +493,9 @@ src/geo_agent/            第一轮：sql_guard · units · tools · agent · ba
                           第二轮：routing · r2_tools · embed · r2_schema · r2_prompts · r2_baseline · r2_agent · matcher_r2
 eval/                     第一轮：PREREGISTRATION.md · questions.json · gold.json · freeze_gold.py · run_eval.py · score.py · sensitivity.py
 eval/r2/                  第二轮：PREREGISTRATION.md · questions.json · gold.json · gold_sql.py · build_questions.py · freeze_gold.py · run_eval.py · score.py · sensitivity.py
-eval/local_llm/           本地 vLLM（Qwen3-8B）评测、对比、失败分类与格式诊断脚本；FINETUNE_PLAN.md（微调计划，未训练）
-eval/runs/                test1（第一轮）· r2dev1 · r2run1..3 · r2_summary_test.json · ledger.jsonl · local/（Qwen3-8B 运行与台账）
+eval/local_llm/           本地 vLLM（Qwen3-8B）评测、对比、失败分类与格式诊断脚本；FINETUNE_PLAN.md（微调计划）
+eval/ft/                  LoRA 微调：生成器、heldout（150 题，训练前冻结）、PREREGISTRATION_FT.md、render.py · train_lora.py · remote_train.sh · run_eval_ft.py · score_ft.py · PROGRESS.md
+eval/runs/                test1（第一轮）· r2dev1 · r2run1..3 · r2_summary_test.json · ledger.jsonl · local/（Qwen3-8B 运行与台账）· ft/（微调评测运行与 summary.json）
 tests/                    123 个 pytest；无数据库时跳过 25 个集成测试，不需要 API key、GPU 或向量模型
 ```
 

@@ -1,0 +1,1258 @@
+[
+ {
+  "id": "HO-T0001",
+  "tier": "tag",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-T0002",
+  "tier": "tag",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-T0003",
+  "tier": "tag",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-T0004",
+  "tier": "tag",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-T0005",
+  "tier": "tag",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-T0006",
+  "tier": "tag",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-T0007",
+  "tier": "tag",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-T0008",
+  "tier": "tag",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 没有找到支持微信付款的电影院名称。",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-T0009",
+  "tier": "tag",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'name'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-T0010",
+  "tier": "tag",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 目前数据库中没有记录显示有果蔬店支持刷银联卡。这可能是因为相关数据未被收录或标签信息不完整。",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-T0011",
+  "tier": "tag",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-T0013",
+  "tier": "tag",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-T0014",
+  "tier": "tag",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-T0015",
+  "tier": "tag",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-T0016",
+  "tier": "tag",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-T0017",
+  "tier": "tag",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-T0018",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-T0019",
+  "tier": "tag",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 没有找到支持微信付款的青年旅舍。可能的原因包括：数据中没有相关记录，或者这些旅舍未在数据库中详细标注支付方式。建议检查数据源或使用其他方法进行验证。",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-T0020",
+  "tier": "tag",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-T0021",
+  "tier": "tag",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 无法找到名为 'hostel' 的实体，且没有其他相关信息来确定符合条件的青年旅舍。",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-T0022",
+  "tier": "tag",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-T0025",
+  "tier": "tag",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-T0026",
+  "tier": "tag",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'name'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-T0027",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-T0028",
+  "tier": "tag",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-J0001",
+  "tier": "join",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-J0002",
+  "tier": "join",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-J0003",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0005",
+  "tier": "join",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-J0006",
+  "tier": "join",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-J0007",
+  "tier": "join",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-J0009",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0010",
+  "tier": "join",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-J0011",
+  "tier": "join",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 找不到地铁毛纺厂路站的相关信息。可能是名称有误或者该站点不在数据库中。请确认站点名称并重新查询。",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-J0012",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0013",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0014",
+  "tier": "join",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-J0016",
+  "tier": "join",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 无法找到地铁站'尧化门站'，请确认名称是否正确或检查是否有其他拼写方式。",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-J0017",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0018",
+  "tier": "join",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-J0019",
+  "tier": "join",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'name'",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-J0020",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0021",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0023",
+  "tier": "join",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-J0024",
+  "tier": "join",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-J0026",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0027",
+  "tier": "join",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-J0028",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0029",
+  "tier": "join",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-J0030",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0001",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0002",
+  "tier": "crs",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-C0003",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0004",
+  "tier": "crs",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'area_m2'",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-C0005",
+  "tier": "crs",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-C0006",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0007",
+  "tier": "crs",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'len_km'",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-C0008",
+  "tier": "crs",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-C0009",
+  "tier": "crs",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'area_km2'",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-C0010",
+  "tier": "crs",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'len_km'",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-C0011",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0012",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0013",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0014",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0015",
+  "tier": "crs",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-C0016",
+  "tier": "crs",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'len_km'",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-C0017",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0018",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0019",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0020",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0021",
+  "tier": "crs",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'area_ha'",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-C0022",
+  "tier": "crs",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): The residential_areas layer is not a polygon layer, so we cannot calculate its perimeter.",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-C0023",
+  "tier": "crs",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 龙王大街地铁站 not found in metro_stations; check if it's a bus stop or verify the name",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-C0024",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0025",
+  "tier": "crs",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 无法找到“定淮门长江隧道”在指定图层中的信息。请确认该名称是否正确，或尝试使用其他方法进行查询。",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-D0001",
+  "tier": "route",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 无法找到'中山湖站'在地铁站中的对应记录",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-D0002",
+  "tier": "route",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'walk_m'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-D0003",
+  "tier": "route",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'area_km2'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-D0004",
+  "tier": "route",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-D0005",
+  "tier": "route",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-D0007",
+  "tier": "route",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 无法找到 '燕归苑小区' 或 '悦客假日酒店' 的确切名称以进行步行路线查询。",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-D0008",
+  "tier": "route",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-D0009",
+  "tier": "route",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 无法找到名为 '仙鹤门站' 的地铁站。请确认名称是否正确或尝试其他方法。",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-D0011",
+  "tier": "route",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'walk_m'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-D0012",
+  "tier": "route",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-D0013",
+  "tier": "route",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-D0014",
+  "tier": "route",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 找不到名为“万寿站”的地铁站。请确认名称是否正确或尝试其他名称。",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-D0015",
+  "tier": "route",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'walk_min'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-D0016",
+  "tier": "route",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-D0017",
+  "tier": "route",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-D0018",
+  "tier": "route",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-D0020",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0021",
+  "tier": "route",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-D0022",
+  "tier": "route",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-D0023",
+  "tier": "route",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'walk_m'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-D0024",
+  "tier": "route",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-D0025",
+  "tier": "route",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-D0026",
+  "tier": "route",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-D0028",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0030",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0004",
+  "tier": "compliance",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-E0001",
+  "tier": "compliance",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-E0006",
+  "tier": "compliance",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-E0005",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": false,
+  "reason": "conclusion False != gold True",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-E0003",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0007",
+  "tier": "compliance",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-E0008",
+  "tier": "compliance",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-E0002",
+  "tier": "compliance",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-E0011",
+  "tier": "compliance",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-E0009",
+  "tier": "compliance",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-E0013",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0036",
+  "tier": "compliance",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-E0010",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": false,
+  "reason": "compliance answer must be 1 row, got 5",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-E0016",
+  "tier": "compliance",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-E0012",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0017",
+  "tier": "compliance",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-E0014",
+  "tier": "compliance",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-E0015",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0019",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0018",
+  "tier": "compliance",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 万欣翠园小区不在 residential_areas 表中，无法查询其是否符合室外综合健身场地服务半径的要求。",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-E0024",
+  "tier": "compliance",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 根据 GB 50180-2018 的条款 '社区卫生服务站服务半径'（clause_id: GB50180-2018:C.0.2:社区卫生服务站），社区卫生服务站的服务半径不宜大于 300 米。然而，未能找到名为 '弘阳·旭日爱上城第六区小区' 的住宅区，因此无法评估该小区是否符合此要求。",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-E0022",
+  "tier": "compliance",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 无法找到名为“太平花苑南苑小区”的住宅区，因此无法进一步检查其是否在标准给定的体育场馆服务半径内。请确认名称是否正确，或尝试其他相关名称。",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-E0021",
+  "tier": "compliance",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-E0020",
+  "tier": "compliance",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-E0025",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0001",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0002",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0003",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0004",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0005",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0006",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0007",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0008",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0009",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0010",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0011",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0012",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0013",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0014",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0015",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0016",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0017",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0018",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0019",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0020",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0021",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0022",
+  "tier": "unanswerable",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "should refuse, got no_answer",
+  "failure": "answered_unanswerable"
+ },
+ {
+  "id": "HO-U0023",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0024",
+  "tier": "unanswerable",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "should refuse, got no_answer",
+  "failure": "answered_unanswerable"
+ },
+ {
+  "id": "HO-U0025",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ }
+]

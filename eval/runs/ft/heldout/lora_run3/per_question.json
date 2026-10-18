@@ -1,0 +1,1258 @@
+[
+ {
+  "id": "HO-T0001",
+  "tier": "tag",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 数据库只有 OSM 的位置、类别与标签，没有银联卡支付数据",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-T0002",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-T0003",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-T0004",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-T0005",
+  "tier": "tag",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 数据库只有 OSM 的位置、类别与标签，没有楼层数据",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-T0006",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-T0007",
+  "tier": "tag",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 数据库只有 OSM 的位置、类别与标签，没有支付方式数据",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-T0008",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-T0009",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-T0010",
+  "tier": "tag",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 数据库只有 OSM 的位置、类别与标签，没有支付数据",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-T0011",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-T0013",
+  "tier": "tag",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-T0014",
+  "tier": "tag",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 数据库只有 OSM 的位置、类别与标签，没有婴儿护理台的统计数据",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-T0015",
+  "tier": "tag",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-T0016",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-T0017",
+  "tier": "tag",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 数据库只有 OSM 的位置、类别与标签，没有吸烟区数据",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-T0018",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-T0019",
+  "tier": "tag",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 数据库只有 OSM 的位置、类别与标签，没有微信支付数据",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-T0020",
+  "tier": "tag",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 数据库只有 OSM 的原始标签，没有「地下一层」这样的中文标签。",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-T0021",
+  "tier": "tag",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 数据库只有 OSM 的位置、类别与标签，没有支付方式数据",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-T0022",
+  "tier": "tag",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-T0025",
+  "tier": "tag",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 数据库只有 OSM 的位置、类别与标签，没有楼层数据",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-T0026",
+  "tier": "tag",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-T0027",
+  "tier": "tag",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 数据库只有 OSM 的位置、类别与标签，没有支付方式数据",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-T0028",
+  "tier": "tag",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-J0001",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0002",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0003",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0005",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0006",
+  "tier": "join",
+  "status": "answered",
+  "correct": false,
+  "reason": "no pred column matches gold column 'n'",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-J0007",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0009",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0010",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0011",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0012",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0013",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0014",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0016",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0017",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0018",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0019",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0020",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0021",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0023",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0024",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0026",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0027",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0028",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0029",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-J0030",
+  "tier": "join",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0001",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0002",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0003",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0004",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0005",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0006",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0007",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0008",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0009",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0010",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0011",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0012",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0013",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0014",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0015",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0016",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0017",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0018",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0019",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0020",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0021",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0022",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0023",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0024",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-C0025",
+  "tier": "crs",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "unit_scope": true,
+  "unit_error": false,
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0001",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0002",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0003",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0004",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0005",
+  "tier": "route",
+  "status": "refused",
+  "correct": false,
+  "reason": "no result (refused): 数据库只有 OSM 的 amenity、shop 和 tourism 类兴趣点，没有 youth_hostel 类",
+  "failure": "false_refusal"
+ },
+ {
+  "id": "HO-D0007",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0008",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0009",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0011",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0012",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0013",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0014",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0015",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0016",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0017",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0018",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0020",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0021",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0022",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0023",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0024",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0025",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0026",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-D0028",
+  "tier": "route",
+  "status": "no_answer",
+  "correct": false,
+  "reason": "no result (no_answer): ",
+  "failure": "no_answer"
+ },
+ {
+  "id": "HO-D0030",
+  "tier": "route",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0004",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0001",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0006",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0005",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0003",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0007",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": false,
+  "reason": "conclusion False != gold True",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-E0008",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0002",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0011",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0009",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0013",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0036",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": false,
+  "reason": "conclusion False != gold True",
+  "failure": "wrong_result"
+ },
+ {
+  "id": "HO-E0010",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0016",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0012",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0017",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0014",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0015",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0019",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0018",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0024",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0022",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0021",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0020",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-E0025",
+  "tier": "compliance",
+  "status": "answered",
+  "correct": true,
+  "reason": "match",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0001",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0002",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0003",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0004",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0005",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0006",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0007",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0008",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0009",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0010",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0011",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0012",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0013",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0014",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0015",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0016",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0017",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0018",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0019",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0020",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0021",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0022",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0023",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0024",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ },
+ {
+  "id": "HO-U0025",
+  "tier": "unanswerable",
+  "status": "refused",
+  "correct": true,
+  "reason": "refused",
+  "failure": "ok"
+ }
+]

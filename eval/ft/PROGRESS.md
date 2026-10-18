@@ -15,7 +15,7 @@
 | (a) 生成器与不相交检查 | 完成（train 1,342 条轨迹，sha256 83b2ac14…；tag 层只有 92 条通过、低于配额 250，见 build_summary.json；disjointness ok） | 8bd545c |
 | (b) heldout 冻结 + 预注册附录（训练前） | 完成（150 题，questions_sha256 16be7e4a…，items_sha256 65b2da3a…） | 67d5782 |
 | (c) 渲染/往返解析、训练代码、20 步试训 | 完成（见下；2868545 用错了数据，本提交更正） | 2868545 + 本提交 |
-| (d) 正式训练、评测、README、推送 | 未开始 | |
+| (d) 正式训练、评测、README、推送 | 完成：320 步 1.54 小时；heldout LoRA 130/150 vs 基座 59/150（p 1.5e-19）；r2 51/72 vs 15/72，DeepSeek 68/72；判定“微调有效” | 本提交 |
 
 **数据事故与更正**：本会话开始后，工作区的 `train_trajectories.jsonl.gz`、`build_summary.json`、`disjointness.json`、`heldout/gold.json`
 被一次未提交的重建（`eval/runs/scratch/ft_build.log`，22:24，train 1,397 条、tag 147）覆盖；heldout 题面与金标逐题不变，只有 `frozen_at` 不同。
@@ -40,9 +40,14 @@
 - 远端 `$RROOT/data/train_tokens.jsonl.gz`（7,120,347 字节，sha256 `4343542c3d5c2704489c6802f68233b2c7b100ecc2c06566a9c603a1df10d354`）：不进仓库，可由 render.py 确定性重建。
 - 本地：`eval/ft/data/render_report.json`、`eval/ft/data/smoke/{smoke.json,train_log.jsonl,resume_train_log.jsonl}`。
 
+- 正式训练：`$LORA_DIR/adapter/adapter_model.safetensors`（174,655,536 字节，sha256 `bf56562164c3c3fbd298339fb1af91b9e5933db020f37d4546f023b340c1aecc`）、
+  `adapter_config.json`（sha256 `64592d4ec6990aef6c56bf64a6e28356804787e8935f0e1362d0b60969bf0f13`），另有 `ckpt-00264`、`ckpt-00320`；不进仓库。
+  训练日志副本 `eval/ft/data/train/train_log.jsonl`（验证损失 50 步 0.035 → 320 步 0.0048）。
+- 评测：`eval/runs/ft/{heldout,r2}/{base,lora}_run{1,2,3}/`（agent.jsonl + per_question.json）、`calls.jsonl`、`ledger_ft.jsonl`、`summary.json`。
+
 ## 远端进程
 
-无（试训与核对用的 vLLM 已按 pid 停止，GPU 0 MiB）。
+无（vLLM 已按 pid 进程组停止，GPU 0 MiB；实例未关机，adapter 留在 `$LORA_DIR`）。
 
 ## 代码（eval/ft/）
 
@@ -59,8 +64,11 @@
   然后 `gpu "$R render http://127.0.0.1:8000"`（需先 `serve-base`）、`gpu "$R smoke"`、`gpu "$R train"`、`gpu "$R serve"`、`gpu "$R status"`、`gpu "$R stop"`。
 - 正式训练产物：`$LORA_DIR/adapter`（最终）、`$LORA_DIR/ckpt-*`（≤ 25 分钟一次 + 结束时，自动续训）、`$LORA_DIR/train_log.jsonl`、`done.json`。
 
+## 复现评测
+
+`gpu "$R serve"` → 本机 `gpu -N -o ExitOnForwardFailure=yes -L <本地端口>:127.0.0.1:8000`（后台；本机 18000 端口被其他服务占用，用了 28400）→
+`uv run python eval/ft/run_eval_ft.py --base-url http://127.0.0.1:<本地端口>/v1 --sets heldout,r2 --runs 3` → `uv run python eval/ft/score_ft.py` → `gpu "$R stop"`。
+
 ## 下一步
 
-正式训练（`gpu "$R train"`，约 1.55 小时）→ `serve`（基座 + geo）→ 本机 SSH 端口转发后
-`uv run python eval/ft/run_eval_ft.py --base-url http://127.0.0.1:<本地端口>/v1 --sets heldout,r2 --runs 3` → `uv run python eval/ft/score_ft.py`
-→ README “LoRA 微调（Qwen3-8B）” → 审计 → 推送 → 停止远端进程。
+全部阶段完成。可选：消融臂（`--ablation`，不进判定）；不可回答训练数据的拒答理由多样化（见 README 局限）。
