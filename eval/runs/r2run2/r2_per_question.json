@@ -1,0 +1,1808 @@
+{
+ "baseline": [
+  {
+   "id": "T01",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T02",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T03",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T04",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T05",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T06",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T07",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T08",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T09",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T10",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T11",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T12",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J01",
+   "tier": "join",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): OSM data has no school aliases/short names (简称) to map '南京炮院' to a formal name",
+   "failure": "false_refusal"
+  },
+  {
+   "id": "J02",
+   "tier": "join",
+   "status": "answered",
+   "correct": false,
+   "reason": "row count 0 != gold 1",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "J03",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J04",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J05",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "J06",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J07",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J08",
+   "tier": "join",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'dist_m'",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "J09",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J10",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J11",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "J12",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "C01",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C02",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C03",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": true,
+   "failure": "ok"
+  },
+  {
+   "id": "C04",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "C05",
+   "tier": "crs",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): GroupingError: column \"d.geom\" must appear in the GROUP BY clause or be used in an aggregate function",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "exec_error"
+  },
+  {
+   "id": "C06",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C07",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": true,
+   "failure": "ok"
+  },
+  {
+   "id": "C08",
+   "tier": "crs",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): AmbiguousColumn: column reference \"geom\" is ambiguous",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "exec_error"
+  },
+  {
+   "id": "C09",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C10",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "D01",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D02",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D03",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D04",
+   "tier": "route",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): UndefinedFunction: function round(double precision, integer) does not exist",
+   "failure": "exec_error"
+  },
+  {
+   "id": "D05",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D06",
+   "tier": "route",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): UndefinedFunction: function round(double precision, integer) does not exist",
+   "failure": "exec_error"
+  },
+  {
+   "id": "D07",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D08",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'walk_m'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D09",
+   "tier": "route",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): InvalidParameterValue: Only lon/lat coordinate systems are supported in geography.",
+   "failure": "exec_error"
+  },
+  {
+   "id": "D10",
+   "tier": "route",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): InvalidParameterValue: Only lon/lat coordinate systems are supported in geography.",
+   "failure": "exec_error"
+  },
+  {
+   "id": "D11",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D12",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D13",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D14",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D15",
+   "tier": "route",
+   "status": "invalid_sql",
+   "correct": false,
+   "reason": "no result (invalid_sql): SQL parse error: Expecting ). Line 1, Col: 600.",
+   "failure": "invalid_sql"
+  },
+  {
+   "id": "D16",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "E01",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E02",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": false,
+   "reason": "clause id GB50180-2018:C.0.1:初中 not cited (cited: [])",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "E03",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E04",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": false,
+   "reason": "conclusion True != gold False",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "E05",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E06",
+   "tier": "compliance",
+   "status": "exec_error",
+   "correct": false,
+   "reason": "no result (exec_error): InvalidColumnReference: for SELECT DISTINCT, ORDER BY expressions must appear in select list",
+   "failure": "exec_error"
+  },
+  {
+   "id": "E07",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E08",
+   "tier": "compliance",
+   "status": "invalid_sql",
+   "correct": false,
+   "reason": "no result (invalid_sql): SQL parse error: Expecting ). Line 1, Col: 597.",
+   "failure": "invalid_sql"
+  },
+  {
+   "id": "E09",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E10",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E11",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E12",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": false,
+   "reason": "conclusion False != gold True",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "U01",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U02",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U03",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U04",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U05",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U06",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U07",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U08",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U09",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U10",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  }
+ ],
+ "agent": [
+  {
+   "id": "T01",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T02",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T03",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T04",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T05",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T06",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T07",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T08",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T09",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T10",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T11",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T12",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J01",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J02",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J03",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J04",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J05",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "J06",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J07",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J08",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "J09",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J10",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J11",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "J12",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "C01",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C02",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C03",
+   "tier": "crs",
+   "status": "refused",
+   "correct": false,
+   "reason": "no result (refused): The validator blocks ST_Area on EPSG:3857 geometry (Web Mercator scale error), so the Web Mercator area and the ratio cannot be computed with the available tools. Only the ellipsoidal area is availabl",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "false_refusal"
+  },
+  {
+   "id": "C04",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "C05",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C06",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C07",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C08",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C09",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C10",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "D01",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D02",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D03",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D04",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D05",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D06",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D07",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D08",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D09",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D10",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D11",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D12",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D13",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D14",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D15",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'name'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D16",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E01",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E02",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E03",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E04",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E05",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E06",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E07",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E08",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E09",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E10",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E11",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E12",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "U01",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U02",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U03",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U04",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U05",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U06",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U07",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U08",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U09",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U10",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  }
+ ],
+ "ablation": [
+  {
+   "id": "T01",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T02",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T03",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T04",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T05",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T06",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T07",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T08",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T09",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T10",
+   "tier": "tag",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "T11",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "T12",
+   "tier": "tag",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J01",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J02",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J03",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J04",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J05",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "J06",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J07",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J08",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "J09",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J10",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "J11",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "J12",
+   "tier": "join",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "C01",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C02",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C03",
+   "tier": "crs",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'area_3857_km2'",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "wrong_result"
+  },
+  {
+   "id": "C04",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "C05",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C06",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C07",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C08",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C09",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "C10",
+   "tier": "crs",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false,
+   "failure": "ok"
+  },
+  {
+   "id": "D01",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D02",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D03",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D04",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D05",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D06",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D07",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D08",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D09",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D10",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D11",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D12",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D13",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D14",
+   "tier": "route",
+   "status": "answered",
+   "correct": false,
+   "reason": "no pred column matches gold column 'n'",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "D15",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "D16",
+   "tier": "route",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E01",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": false,
+   "reason": "clause id GB50180-2018:C.0.1:初中 not cited (cited: [])",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "E02",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E03",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E04",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E05",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": false,
+   "reason": "clause id GB50180-2018:C.0.2:幼儿园 not cited (cited: [])",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "E06",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E07",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": false,
+   "reason": "clause id GB50180-2018:C.0.1:轨道交通站点 not cited (cited: [])",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "E08",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E09",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E10",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": false,
+   "reason": "clause id GB50180-2018:C.0.1:公交车站 not cited (cited: [])",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "E11",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "failure": "ok"
+  },
+  {
+   "id": "E12",
+   "tier": "compliance",
+   "status": "answered",
+   "correct": false,
+   "reason": "clause id GB50180-2018:C.0.1:派出所 not cited (cited: [])",
+   "failure": "wrong_result"
+  },
+  {
+   "id": "U01",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U02",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U03",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U04",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U05",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U06",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U07",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U08",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U09",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  },
+  {
+   "id": "U10",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused",
+   "failure": "ok"
+  }
+ ]
+}
