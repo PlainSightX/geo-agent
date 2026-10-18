@@ -8,3 +8,6 @@ eval/runs/scratch/
 *.part
 .env
 data/models/
+
+# 微调工作的本地私有配置（远端主机、路径），不提交
+eval/ft/.local/
