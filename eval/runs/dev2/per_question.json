@@ -1,0 +1,86 @@
+{
+ "agent": [
+  {
+   "id": "DV01",
+   "tier": "attribute",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "DV02",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false
+  },
+  {
+   "id": "DV03",
+   "tier": "nearest",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false
+  },
+  {
+   "id": "DV04",
+   "tier": "district",
+   "status": "answered",
+   "correct": true,
+   "reason": "match"
+  },
+  {
+   "id": "DV05",
+   "tier": "multistep",
+   "status": "answered",
+   "correct": false,
+   "reason": "row count 10 != gold 1",
+   "unit_scope": true,
+   "unit_error": false
+  },
+  {
+   "id": "DV06",
+   "tier": "crs_unit",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false
+  },
+  {
+   "id": "DV07",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  },
+  {
+   "id": "DV08",
+   "tier": "unanswerable",
+   "status": "refused",
+   "correct": true,
+   "reason": "refused"
+  },
+  {
+   "id": "DV09",
+   "tier": "distance",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false
+  },
+  {
+   "id": "DV10",
+   "tier": "crs_unit",
+   "status": "answered",
+   "correct": true,
+   "reason": "match",
+   "unit_scope": true,
+   "unit_error": false
+  }
+ ]
+}

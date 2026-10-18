@@ -1,0 +1,129 @@
+{
+ "run": "dev2",
+ "set": "dev",
+ "gold_frozen_at": "2026-10-18T07:47:24+00:00",
+ "questions_sha256": "b7a11cd33970623f4ca8bbc806ed20fa1a042bbd8aba34252e5d9d859beaa0e1",
+ "arms": {
+  "agent": {
+   "overall": {
+    "k": 9,
+    "n": 10,
+    "p": 0.9,
+    "ci95": [
+     0.5958,
+     0.9821
+    ]
+   },
+   "execution_accuracy_answerable": {
+    "k": 7,
+    "n": 8,
+    "p": 0.875,
+    "ci95": [
+     0.5291,
+     0.9776
+    ]
+   },
+   "refusal_correct_unanswerable": {
+    "k": 2,
+    "n": 2,
+    "p": 1.0,
+    "ci95": [
+     0.3424,
+     1.0
+    ]
+   },
+   "false_refusals_on_answerable": 0,
+   "valid_sql_rate": {
+    "k": 2,
+    "n": 2,
+    "p": 1.0,
+    "ci95": [
+     0.3424,
+     1.0
+    ]
+   },
+   "unit_error_rate": {
+    "k": 0,
+    "n": 6,
+    "p": 0.0,
+    "ci95": [
+     0.0,
+     0.3903
+    ]
+   },
+   "by_tier": {
+    "attribute": {
+     "k": 1,
+     "n": 1,
+     "p": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "crs_unit": {
+     "k": 2,
+     "n": 2,
+     "p": 1.0,
+     "ci95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "distance": {
+     "k": 2,
+     "n": 2,
+     "p": 1.0,
+     "ci95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "district": {
+     "k": 1,
+     "n": 1,
+     "p": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "multistep": {
+     "k": 0,
+     "n": 1,
+     "p": 0.0,
+     "ci95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "nearest": {
+     "k": 1,
+     "n": 1,
+     "p": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "unanswerable": {
+     "k": 2,
+     "n": 2,
+     "p": 1.0,
+     "ci95": [
+      0.3424,
+      1.0
+     ]
+    }
+   },
+   "calls_per_question": 2.1,
+   "tokens_in": 80323,
+   "tokens_out": 2021,
+   "cost_usd": 0.0265,
+   "cost_per_question_usd": 0.00265,
+   "latency_s_median": 2.58,
+   "latency_s_p90": 3.21,
+   "reruns": []
+  }
+ }
+}
