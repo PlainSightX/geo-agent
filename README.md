@@ -22,11 +22,11 @@
 
 ![第二轮演示：南湾营融康苑步行 12.5 分钟等时圈与圈内中学，按 GB 50180-2018 初中服务半径判定](docs/screenshot_r2.png)
 
-# 第一轮（2026-10-18，tag `round1`）
+# 第一轮（tag `round1`）
 
 ![第一轮 Leaflet 结果页：离新街口地铁站最近的 5 家银行](docs/screenshot.png)
 
-## 关键结果（test1，2026-10-18，`deepseek-chat`，temperature 0，各臂各跑一次）
+## 关键结果（test1，`deepseek-chat`，temperature 0，各臂各跑一次）
 
 | 指标 | (a) 单次 text-to-SQL | (b) Agent（工具 + 校验 + 修复） |
 |---|---|---|
@@ -154,7 +154,7 @@ PostGIS 16-3.5（docker compose，镜像固定 digest）
 - 费用按 $0.30 / $1.20 每百万 token 统一估算，未计缓存折扣，实际账单更低。
 
 
-# 第二轮（2026-10-18）：路网、标准检索与更难的预注册题集
+# 第二轮：路网、标准检索与更难的预注册题集
 
 第一轮的结论是“题太容易、schema 注释太详细”。第二轮按 GIS + AI 岗位常见要求（路径规划、空间 RAG、空间 SQL、GeoJSON）扩展系统，
 并换一组更接近真实使用的题。第一轮的全部文件、结果与 `round1` 标签保持不变，第一轮 52 道可回答题的金标哈希在新镜像上逐题复现。
@@ -289,7 +289,7 @@ C03 用纬度余弦近似放大倍数（1.393 vs 精确 1.397）、T06/T07/T10�
 问题：在内网或私有化部署时，用本地 8B 模型替换 DeepSeek，这套 Agent 还能用吗？
 做法：同一 72 题冻结集（金标冻结于 `08309f2`，未改动）、同一提示词、工具、校验器和判分代码，只把模型换成 vLLM 0.11.2 部署的
 **Qwen3-8B 基座**（不加 adapter，bf16，单卡 RTX PRO 6000 96 GB，`--tool-call-parser hermes`，`--max-model-len 32768`）。
-温度 0，非思考模式（`enable_thinking=false`，与 DeepSeek 臂一致），三臂各跑 3 次（2026-10-18）。另跑了一次思考模式，单独报告。
+温度 0，非思考模式（`enable_thinking=false`，与 DeepSeek 臂一致），三臂各跑 3 次。另跑了一次思考模式，单独报告。
 
 **结论：不能直接替换。** Qwen3-8B 的 Agent 比它自己的单次 SQL 还差，比 DeepSeek Agent 低约 74 个百分点。
 差距主要来自工具调用协议和多步控制，GIS 知识不是主因。

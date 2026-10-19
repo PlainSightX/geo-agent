@@ -1,10 +1,10 @@
-# 本地 8B 模型评测（2026-10-18 已运行，结果见主 README“本地 Qwen3-8B（私有化部署评估）”）
+# 本地 8B 模型评测（已运行，结果见主 README“本地 Qwen3-8B（私有化部署评估）”）
 
 目的：用同一份第二轮冻结题集（`eval/r2/questions.json`，72 题）、同一提示词、同一工具与判分规则，
 评测本地部署的 Qwen3-8B（vLLM，OpenAI 兼容接口），回答“内网/私有化部署时，小模型能否替代 DeepSeek”。
 本机没有 GPU，本目录只提供脚本与离线自检；真正运行需要一台有 GPU 的机器。
 
-2026-10-18 在 AutoDL RTX PRO 6000 96 GB 上运行：vLLM 0.11.2，Qwen3-8B 基座 bf16，`--max-model-len 32768`
+在单卡 RTX PRO 6000 96 GB 上运行：vLLM 0.11.2，Qwen3-8B 基座 bf16，`--max-model-len 32768`
 （Agent 单次调用 prompt 最长约 10.3k token），`--gpu-memory-utilization 0.9 --seed 0`，只监听 127.0.0.1，经 SSH 隧道访问。
 三次运行（run1..3）作为 3 个进程并行发起，每个进程按 baseline → agent → ablation 依次调用 `run_all` 同样的 `LocalLLM` 与 `run_eval.main`；
 输出命名与 `run_vllm_arms.py --runs 3` 相同。由于并行进程共用一个台账文件，有 14 行被交错写坏，已按记录起始位置重组（无记录丢失的迹象，逐题记录完整）。

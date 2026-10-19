@@ -17,10 +17,10 @@
 | (c) 渲染/往返解析、训练代码、20 步试训 | 完成（见下；2868545 用错了数据，本提交更正） | 2868545 + 本提交 |
 | (d) 正式训练、评测、README、推送 | 完成：320 步 1.54 小时；heldout LoRA 130/150 vs 基座 59/150（p 1.5e-19）；r2 51/72 vs 15/72，DeepSeek 68/72；判定“微调有效” | 本提交 |
 
-**数据事故与更正**：本会话开始后，工作区的 `train_trajectories.jsonl.gz`、`build_summary.json`、`disjointness.json`、`heldout/gold.json`
-被一次未提交的重建（`eval/runs/scratch/ft_build.log`，22:24，train 1,397 条、tag 147）覆盖；heldout 题面与金标逐题不变，只有 `frozen_at` 不同。
+**数据事故与更正**：阶段 (c) 开始后，工作区的 `train_trajectories.jsonl.gz`、`build_summary.json`、`disjointness.json`、`heldout/gold.json`
+被一次未提交的重建（train 1,397 条、tag 147）覆盖；heldout 题面与金标逐题不变，只有 `frozen_at` 不同。
 2868545 的渲染与试训误用了这份 1,397 条的未提交数据，PROGRESS 中“更正为 1,397”也是错的。已把四个文件恢复为提交版本
-（重建产物备份在 `eval/runs/scratch/ft_rebuild_2224/`，不进仓库），并在**提交版 1,342 条**上重做渲染与试训；正式训练只用提交版。
+（重建产物另行备份，不进仓库），并在**提交版 1,342 条**上重做渲染与试训；正式训练只用提交版。
 
 ## 阶段 (c) 结果（提交版 1,342 条）
 

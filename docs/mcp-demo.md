@@ -1,4 +1,4 @@
-# MCP 客户端会话演示（2026-10-19）
+# MCP 客户端会话演示
 
 目的：确认 `geo-agent-mcp` 能被标准 MCP 客户端以 stdio 子进程方式启动，并通过协议调用已有的 `isochrone` 工具。
 环境：本地第二轮数据库（`docker compose`，只读角色 `geo_reader`），`mcp==2.3.0`（官方 Python SDK）。
