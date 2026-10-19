@@ -8,6 +8,7 @@ requires-python = ">=3.12,<3.13"
 dependencies = [
     "fastapi==0.143.3",
     "langgraph==1.2.16",
+    "mcp==2.3.0",
     "numpy==2.5.4",
     "onnxruntime==1.31.0",
     "openai==3.35.1",
@@ -17,6 +18,9 @@ dependencies = [
     "tokenizers==0.23.3",
     "uvicorn==0.54.0",
 ]
+
+[project.scripts]
+geo-agent-mcp = "geo_agent.mcp_server:main"
 
 [dependency-groups]
 dev = [

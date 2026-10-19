@@ -18,6 +18,7 @@
   run1 配对 54 vs 0（p ≈ 1e-16）。主要失败是工具调用写成纯文本、名称解析循环和计数方式误用，不能直接替换。
 - **Qwen3-8B LoRA 微调**（1,342 条程序化金标轨迹，1.5 GPU 小时，预注册判定）：新冻结的 150 题 heldout 上 **130/150 = 86.7%** vs 基座 59/150（p = 1.5e-19）；
   r2 72 题 **51/72 = 70.8%** vs 基座 15/72（p = 5.6e-9），仍低于 DeepSeek Agent 68/72（19 vs 2，p = 0.0002）。按预注册规则判定为“微调有效”。
+- **MCP 服务器**（`geo-agent-mcp`，官方 Python SDK，stdio 为主）：把第二轮 15 个已测试的空间工具、精简 schema 与条文清单暴露给 Claude Desktop、Cursor 等 MCP 客户端，只读、同一 SQL 守卫与限额，见下文“MCP 服务器”。
 
 ![第二轮演示：南湾营融康苑步行 12.5 分钟等时圈与圈内中学，按 GB 50180-2018 初中服务半径判定](docs/screenshot_r2.png)
 
@@ -486,22 +487,63 @@ uv run python eval/r2/score.py --runs myrun
 uv run uvicorn geo_agent.api:app --host 127.0.0.1 --port 8765   # 打开 /?demo=南湾营融康苑
 ```
 
+## MCP 服务器
+
+`geo-agent-mcp`（`src/geo_agent/mcp_server.py`，官方 Python SDK `mcp==2.3.0` 的 `MCPServer`，即 v1 的 FastMCP）把第二轮已测试的类型化工具按
+[Model Context Protocol](https://modelcontextprotocol.io) 暴露出来，Claude Desktop、Cursor、MCP Inspector 等客户端可以直接调用。
+工具实现不重写：每个 MCP 工具只是把参数交给 `tools` / `routing` / `r2_tools` 中的同一函数，参数类型复用 `Anchor`、`TargetFilter`、`R2TargetFilter`、`Place` 等 pydantic 模型。
+
+- **工具（15 个，中文描述，与第二轮 Agent 工具集一致，不含 `final_answer`）**：`find_entity` · `distinct_values` · `tag_values`；
+  直线 GIS `within_distance` · `nearest_k` · `count_by_district` · `measure` · `spatial_relation` · `distance_between`；
+  路网 `walk_route` · `isochrone` · `reachable`；标准 `retrieve_standard` · `check_compliance`；受限 SQL `run_sql`。
+- **返回**：结构化结果 `{columns, rows, truncated, row_count, elapsed_ms, sql, geojson}`；有几何的工具把 `geojson` 列拆成 FeatureCollection（EPSG:4326），表格里不再重复。
+  可预期的错误（守卫拒绝、名称不存在、参数越界）以 `isError` 返回原因，客户端模型可据此修正。
+- **资源**：`geo-agent://schema/lean`（第二轮精简 schema + 函数说明）、`geo-agent://standards/clauses`（条文清单元数据）。**提示模板**：`compliance_check`（小区 + 设施的合规核查步骤）。
+- **安全**：只用只读角色 `geo_reader`；`run_sql` 与 Agent 的 `run_sql` 同一路径——单位/CRS 静态检查 → sqlglot 语法树白名单（拒绝 DDL/DML/COPY/SET）→ READ ONLY 事务、5 s 超时、200 行上限。
+  服务器**没有鉴权**：推荐 stdio（客户端以子进程启动，不监听端口）；`--transport streamable-http` 固定绑定 `127.0.0.1`（默认端口 8766，`/mcp`），没有改绑其他地址的选项。
+
+```bash
+uv run geo-agent-mcp                                   # stdio（默认）
+uv run geo-agent-mcp --transport streamable-http       # http://127.0.0.1:8766/mcp，仅本机
+uv run python scripts/mcp_demo.py 南湾营融康苑 12.5     # SDK stdio 客户端：列出工具并调用 isochrone
+npx -y @modelcontextprotocol/inspector --cli uv run --directory <path-to>/geo-agent geo-agent-mcp --method tools/list
+```
+
+Claude Desktop（`claude_desktop_config.json`）或 Cursor（`.cursor/mcp.json`）配置，`<path-to>` 换成本仓库所在目录；数据库连接沿用 `GEO_AGENT_DSN`（默认即本地只读角色）：
+
+```json
+{
+  "mcpServers": {
+    "geo-agent": {
+      "command": "uv",
+      "args": ["run", "--directory", "<path-to>/geo-agent", "geo-agent-mcp"]
+    }
+  }
+}
+```
+
+**与仓库内 LangGraph Agent 的区别**：Agent 是本项目自己的编排层——固定提示词、工具调用循环、确定性校验与 ≤3 次修复、合规引用检查、
+`final_answer` 数字绑定，评测结果（94.4% 等）测的是这一整套。MCP 只暴露其中的工具、资源和一个提示模板，调用顺序与答案组织交给客户端里的模型，
+没有校验修复与数字绑定，因此**上面的评测数字不适用于 MCP 客户端**；它的用途是让任意 MCP 客户端复用同一套已测试的空间查询。
+一次真实客户端会话（SDK stdio 客户端与 MCP Inspector CLI）的调用与结果大小见 `docs/mcp-demo.md`。
+
 ## 目录
 
 ```
 docker-compose.yml        数据库服务（第二轮：docker/db.Dockerfile = pgRouting 镜像 + pgvector，均固定版本）
 db/init/01_roles.sql      只读角色
-scripts/                  fetch_data.sh（固定快照 + sha256）· load_data.sh · fetch_model.sh（向量模型 + sha256）· load_standards.py
+scripts/                  fetch_data.sh（固定快照 + sha256）· load_data.sh · fetch_model.sh（向量模型 + sha256）· load_standards.py · mcp_demo.py（MCP stdio 客户端演示）
 sql/                      build_tables.sql（第一轮）· build_r2_tables.sql · build_walk_network.sql（第二轮）
 data/standards/           GB 50180-2018 条文摘录 clauses.json 与来源/版权说明 SOURCE.md
 src/geo_agent/            第一轮：sql_guard · units · tools · agent · baseline · answer · matcher · stats · llm · api · static/
                           第二轮：routing · r2_tools · embed · r2_schema · r2_prompts · r2_baseline · r2_agent · matcher_r2
+                          MCP：mcp_server（入口 geo-agent-mcp）
 eval/                     第一轮：PREREGISTRATION.md · questions.json · gold.json · freeze_gold.py · run_eval.py · score.py · sensitivity.py
 eval/r2/                  第二轮：PREREGISTRATION.md · questions.json · gold.json · gold_sql.py · build_questions.py · freeze_gold.py · run_eval.py · score.py · sensitivity.py
 eval/local_llm/           本地 vLLM（Qwen3-8B）评测、对比、失败分类与格式诊断脚本；FINETUNE_PLAN.md（微调计划）
 eval/ft/                  LoRA 微调：生成器、heldout（150 题，训练前冻结）、PREREGISTRATION_FT.md、render.py · train_lora.py · remote_train.sh · run_eval_ft.py · score_ft.py · PROGRESS.md
 eval/runs/                test1（第一轮）· r2dev1 · r2run1..3 · r2_summary_test.json · ledger.jsonl · local/（Qwen3-8B 运行与台账）· ft/（微调评测运行与 summary.json）
-tests/                    123 个 pytest；无数据库时跳过 25 个集成测试，不需要 API key、GPU 或向量模型
+tests/                    141 个 pytest；无数据库时跳过 26 个集成测试，不需要 API key、GPU 或向量模型
 ```
 
 ## 许可
