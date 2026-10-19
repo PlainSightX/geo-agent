@@ -548,5 +548,5 @@ tests/                    141 个 pytest；无数据库时跳过 26 个集成测
 
 ## 许可
 
-代码：MIT（见 `LICENSE`）。地图数据：© OpenStreetMap contributors，ODbL 1.0。底图瓦片：OpenStreetMap 标准瓦片（需署名，遵守其使用政策）。
+代码：MIT（见 `LICENSE`）；数据许可说明见 `DATA_LICENSE.md`。地图数据：© OpenStreetMap contributors，ODbL 1.0。底图瓦片：OpenStreetMap 标准瓦片（需署名，遵守其使用政策）。
 GB 50180-2018 条文摘录来自住房和城乡建设部官网公开文本，仅作引用与研究用途，见 `data/standards/SOURCE.md`。
