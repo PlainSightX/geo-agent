@@ -1,5 +1,10 @@
 # geo-agent：南京 OSM + PostGIS / pgRouting / pgvector 空间问答 Agent（两轮预注册评测）
 
+[![CI](https://github.com/PlainSightX/geo-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/PlainSightX/geo-agent/actions/workflows/ci.yml)
+![Python 3.12](https://img.shields.io/badge/python-3.12-blue)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+![Data: OSM ODbL](https://img.shields.io/badge/data-OpenStreetMap%20ODbL-lightgrey)
+
 用中文提问城市空间问题，系统把问题交给 LangGraph Agent：它调用类型化 GIS 工具（缓冲区、最近邻、按区统计、面积/长度、拓扑关系）、
 **步行路网工具**（pgRouting 最短路、等时圈、N 分钟可达设施）、**规划标准条文检索**（GB 50180-2018 摘录 + 本地向量模型 + pgvector）
 或受限的只读 SQL，由确定性校验器检查单位/CRS、空结果、截断与条文引用，最多修复 3 次，最后输出一段**数字全部由程序从查询结果中填入**的中文答案和 GeoJSON。
